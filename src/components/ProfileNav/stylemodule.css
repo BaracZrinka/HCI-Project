@@ -1,0 +1,12 @@
+.profilePicture{
+      border-radius: 50%;
+      width: 7%;
+  
+
+}
+.border{
+    display: flex;
+    flex-flow: column;
+    width: fit-content;
+    height: 52px;
+}
