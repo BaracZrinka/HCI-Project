@@ -1,6 +1,6 @@
 export const navs = [
     {tab: 'Home', to: '/'},
-    {tab: 'Accommodation', to: '/'}, 
-    {tab: 'Photo Gallery', to: '/'}, 
-    {tab: 'Contact', to: 'contact'}
+    {tab: 'Blogs', to: '/'}, 
+    {tab: 'About', to: '/'}, 
+    {tab: 'Log in', to: 'login'}
 ]
