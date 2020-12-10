@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './style.module.css'
-const navTabs = ['Home', 'Blogs', 'About', 'Log in']
+const navTabs = ['Home', 'Blogs', 'About', 'Log in', 'Your account']
 
 const NavigationBar = ({activeTab}) => (
     <nav className={styles.navigationBar}>
