@@ -2,12 +2,12 @@ import React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-const ProfileNav = () => {
+const BookmarkIcon = () => {
     const data = useStaticQuery(graphql`
     query {
-      myImage: file(relativePath: { eq: "profilePicture.jpg" }) {
+      myImage: file(relativePath: { eq: "bookmark.png" }) {
         childImageSharp {
-          fixed(width: 50) {
+          fixed(width: 60) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -20,4 +20,4 @@ const ProfileNav = () => {
  }
  
 
-export default ProfileNav
+export default BookmarkIcon

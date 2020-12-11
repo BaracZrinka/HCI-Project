@@ -4,10 +4,10 @@ import { useStaticQuery, graphql } from "gatsby"
 import BackgroundImage from 'gatsby-background-image'
 import styles from './style.module.css'
  
-const Banner = () => {
+const PPost2 = () => {
   const data = useStaticQuery(graphql`
     query {
-      desktop: file(relativePath: { eq: "banner.jpg" }) {
+      desktop: file(relativePath: { eq: "ppost2.jpg" }) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 1920) {
             ...GatsbyImageSharpFluid_withWebp
@@ -26,19 +26,10 @@ const Banner = () => {
      fluid={data.desktop.childImageSharp.fluid}
       backgroundColor={`#040e18`}
     >
-      <div>
-        <h1>BeBio</h1>
-        <p>
-          Start exploring the world of healthy living
-        </p>
-        <section>
-          <button className={styles.button}>Hottest posts</button>
-          <button className={styles.button}>Newest posts</button>
-        </section>
-      </div>
+        <h1>First Topic</h1>
     </BackgroundImage>
 
    )
 }
  
-export default Banner
+export default PPost2

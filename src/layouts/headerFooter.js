@@ -6,7 +6,7 @@ const headerFooter = ({children, activeTab}) => (
     <>
     <NavigationHeader activeTab = {activeTab}/>
     {children}
-    <Footer/>
+    <Footer activeTab = {activeTab}/>
     </>
 )
 
