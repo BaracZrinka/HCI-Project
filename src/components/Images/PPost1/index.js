@@ -26,7 +26,11 @@ const PPost1 = () => {
      fluid={data.desktop.childImageSharp.fluid}
       backgroundColor={`#040e18`}
     >
+      <div>
         <h1>First Topic</h1>
+        <button className = {styles.button}>Delete</button>
+     </div>
+
     </BackgroundImage>
 
    )
