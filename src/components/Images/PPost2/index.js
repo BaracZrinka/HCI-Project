@@ -26,7 +26,7 @@ const PPost2 = () => {
      fluid={data.desktop.childImageSharp.fluid}
       backgroundColor={`#040e18`}
     >
-        <h1>First Topic</h1>
+        <h1>Second Topic</h1>
     </BackgroundImage>
 
    )
