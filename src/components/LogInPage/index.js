@@ -16,6 +16,7 @@ const LogInPage = () => (
                 </div>
                 <button>Log in</button>
             </form>
+            <span className={styles.span}>Don't have an account?<a href="http://localhost:8000/signup">Sign up</a></span>
         </section>
 )
 export default LogInPage

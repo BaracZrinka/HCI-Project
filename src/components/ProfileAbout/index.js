@@ -20,7 +20,7 @@ const ProfileAbout = () => (
                     voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in</p>
             </div>            
             <div>
-                <BookmarkIcon/>
+            <a href="http://localhost:8000/bookmarks"><BookmarkIcon/></a> 
                 <button>Edit</button>
             </div>
     </section>
