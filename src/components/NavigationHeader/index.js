@@ -19,7 +19,7 @@ const NavigationHeader = ({activeTab}) => (
      
     </div>
     <div className = {styles.profileNav}>
-    <ProfileNav/>
+    <ProfileNav  />
   </div>
      
      

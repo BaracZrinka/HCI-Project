@@ -19,8 +19,14 @@
   .navigation{
     grid-column:4/5 ;
     align-self:center;
+    font-weight: bolder;
+    letter-spacing: 1px;
     
   }
   .profileNav{
     grid-column-end:6;
+   justify-self: center;
+   align-self: center;
+   
   }
+  
