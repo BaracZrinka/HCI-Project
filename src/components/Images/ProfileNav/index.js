@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import styles from "./style.module.css"
 
 const ProfileNav = () => {
     const data = useStaticQuery(graphql`
@@ -16,7 +17,7 @@ const ProfileNav = () => {
       }
     }
   `)
-   return <Img fixed={data.myImage.childImageSharp.fixed} />
+   return <Img fixed={data.myImage.childImageSharp.fixed} className={styles.profileNav1} />
  }
  
 

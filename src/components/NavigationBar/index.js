@@ -6,9 +6,11 @@ import { Link } from 'gatsby'
 const NavigationBar = ({activeTab}) => (
     <nav className={styles.navigationBar}>
       {navTabs.map(({tab, to}) => (
+        <div>
         <Link to={to} >
             <li className={tab === activeTab ? styles.active : ''}>{tab}</li>
-        </Link>)
+        </Link>
+        </div>)
       )}
     </nav>
   )

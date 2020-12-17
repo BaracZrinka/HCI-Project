@@ -3,7 +3,7 @@ import styles from './style.module.css'
 
 const LogoText = () => (
   
-    <span className={styles.logoText}>BeBio</span>
+    <span className={styles.logoText}>BeBIO</span>
 
 )
 
