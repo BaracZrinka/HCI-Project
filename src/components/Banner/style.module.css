@@ -1,0 +1,34 @@
+.titleImage {
+    height: 650px;
+    width: 100%;
+    position: relative;
+}
+ 
+.titleImage > div {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-flow: column;
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+}
+ 
+.titleImage h1 {
+    font-size: 64px;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 45px;
+}
+ 
+.titleImage p {
+    font-size: 30px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    padding: 45px 12px;
+    margin: 0;
+    border-top: 2.5px solid #FFF;
+}
