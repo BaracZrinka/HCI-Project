@@ -2,10 +2,9 @@ import React from 'react'
 import styles from './style.module.css'
 
 const BlogHeader =()=>(
-    <section className = {styles.bookmarks}>
+    <section className = {styles.header}>
         <h1 className = {styles.h1}>Blog feed</h1>
-         <h2 className = {styles.select}>Filter by:</h2>
-  
+        <button className={styles.filter}>Filter by:</button>
     </section>
 )
 
