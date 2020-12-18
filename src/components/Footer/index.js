@@ -4,10 +4,10 @@ import SocialLinks from '../SocialLinks'
 import Navigation from '../Navigation'
 import Copyright from '../Copyright'
 
-const Footer = () => (
+const Footer = ({activeTab}) => (
     <footer className={styles.footer}>
         <SocialLinks/>
-        <Navigation/>
+        <Navigation activeTab = {activeTab}/>
         <Copyright/>
         
 

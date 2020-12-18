@@ -1,5 +1,5 @@
 import React from "react"
-//import { Link } from "gatsby"
+import { Link } from "gatsby"
 //import NavigationHeader from '../components/NavigationHeader'
 //import Footer from '../components/Footer'
 
@@ -12,7 +12,7 @@ import About from '../components/About'
 import HottestSection from '../components/HottestSection'
 
 const IndexPage = () => (
-    <HeaderFooterLayout activeTab = "Blogs">
+    <HeaderFooterLayout activeTab = "Home">
     <Banner/>
     <About/>
     <HottestSection/>
