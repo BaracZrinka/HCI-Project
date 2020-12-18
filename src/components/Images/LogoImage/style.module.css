@@ -1,0 +1,10 @@
+.logoImg{
+    display:grid;
+    grid-column-start: 1;
+    
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+    
+
+}

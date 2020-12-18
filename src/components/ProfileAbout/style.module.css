@@ -1,0 +1,37 @@
+.form{
+    display: grid;
+    grid-template-columns: 30% 50% 20%;
+    grid-template-rows: 2fr 1fr;    
+    grid-template-areas: 
+    "photo text bookmark"
+    "username text edit";
+}
+.firstDiv {
+    grid-area: photo;
+    align-self: center;
+    justify-self: center;
+
+}
+
+.username{
+
+    grid-area: username;
+   align-self: center;
+   justify-self: center;
+}
+.text{
+    grid-area:text;
+}
+.bookmark{
+    grid-area: bookmark;
+    justify-self: center;
+}
+.editButton{
+    grid-area: edit;
+    align-self: center;
+    justify-self: center;
+}
+
+.picture{
+    width:100px;
+}

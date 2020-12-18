@@ -1,14 +1,15 @@
 import React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import styles from "./style.module.css"
 
 const ProfileNav = () => {
     const data = useStaticQuery(graphql`
     query {
-      myImage: file(relativePath: { eq: "profilePicture.jpg" }) {
+      desktop: file(relativePath: { eq: "profilePicture.jpg" }) {
         childImageSharp {
-          fixed(width: 50) {
-            ...GatsbyImageSharpFixed
+          fluid(quality: 90, maxWidth: 85) {
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
         extension
@@ -16,7 +17,10 @@ const ProfileNav = () => {
       }
     }
   `)
-   return <Img fixed={data.myImage.childImageSharp.fixed} />
+   return(
+    <div style={{maxWidth: "800px", minWidth: "50px"}}>
+    <Img fluid={data.desktop.childImageSharp.fluid} />
+    </div>)
  }
  
 

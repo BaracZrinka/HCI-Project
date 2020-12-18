@@ -11,9 +11,17 @@ import styles from './style.module.css'
 
 const NavigationHeader = ({activeTab}) => (
   <section className={styles.navigationHeader}>
+    <div className={styles.logo}>
       <Logo/>
-      <Navigation activeTab = {activeTab}/>
-      <ProfileNav/>
+    </div>
+    <div className={styles.navigation}>
+    <Navigation activeTab = {activeTab} />
+     
+    </div>
+    <div className = {styles.profileNav}>
+    <ProfileNav  />
+  </div>
+     
      
   </section>
 )

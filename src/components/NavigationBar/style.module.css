@@ -1,25 +1,38 @@
 .navigationBar {
     display: flex;
-    justify-content: space-evenly;
+    justify-content:flex-end;
     flex-flow: row;
-    width: 480px;
+    align-items: center;
+    
+    
+    
+    
+  }
+  .navigationBar div>li{
+    display: flex;
+    justify-content:center;
+    align-items: center;
   }
   
   .navigationBar li {
     padding: 14px 15px;
     list-style: none;
     width: fit-content;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 22px;
     text-transform: uppercase;
-    color: #555
+    color:whitesmoke;
+    
+
   }
   .navigationBar li:hover {
     border-bottom: 2px solid darkgray;
     cursor: pointer;
+    transform: scale(1.1);
   }
   
   .navigationBar .active, .navigationBar .active:hover{
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid whitesmoke;
+   
   }
   

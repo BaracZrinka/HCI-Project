@@ -6,11 +6,11 @@ import BookmarkIcon from '../Images/BookmarkIcon'
 
 const ProfileAbout = () => (
     <section className={styles.form}>
-            <div>
-                <ProfileNav/>
-                <p>Username</p>
-            </div>   
-            <div>
+            <div className = {styles.firstDiv}>
+                <ProfileNav className={styles.picture}/></div> 
+                <span className={styles.username}>Username</span>
+              
+            <div className={styles.text}>
                 <h2>About user</h2>
                 <p>"Lorem ipsum dolor sit amet, consectetur
                     adipiscing elit, sed do eiusmod tempor
@@ -18,10 +18,14 @@ const ProfileAbout = () => (
                     laboris nisi ut aliquip ex ea commodo consequat. 
                     Duis aute irure dolor in reprehenderit in 
                     voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in</p>
-            </div>            
-            <div>
-                <BookmarkIcon/>
-                <button>Edit</button>
+            </div>       
+
+            <div className={styles.bookmark}>
+            <a href="http://localhost:8000/bookmarks" ><BookmarkIcon/></a> 
+            </div>  
+
+            <div className={styles.editButton}>
+                  <button>Edit</button>
             </div>
     </section>
 )

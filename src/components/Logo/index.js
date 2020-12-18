@@ -4,9 +4,13 @@ import LogoImage from '../Images/LogoImage'
 import LogoText from '../LogoText'
 
 const Logo = () => (
-    <section className = {styles.logo}>
-    <LogoImage/>
-    <LogoText/>
+    <section className = {styles.logo1}>
+        <div className={styles.divs}>
+        <LogoImage/>
+        </div>
+        <div className={styles.divs}>
+        <LogoText />
+        </div>
     </section>
 
 )

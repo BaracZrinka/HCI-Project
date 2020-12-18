@@ -1,5 +1,32 @@
 .navigationHeader {
-    height: 115px;
-    display: flex;
-    justify-content: space-between;
+    height: 85px;
+    display: grid;
+    grid-template-columns: auto-fill 20% 20% 35% 5% ;
+    grid-template-rows: 1fr;
+    background-color:#696f45;
+    
+    
+
+    
   }
+  .navigationHeader > .logo{
+    grid-column-start: 1;
+    
+    
+
+
+  }
+  .navigation{
+    grid-column:4/5 ;
+    align-self:center;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    
+  }
+  .profileNav{
+    grid-column-end:6;
+   justify-self: center;
+   align-self: center;
+   
+  }
+  

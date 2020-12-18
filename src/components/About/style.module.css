@@ -1,0 +1,64 @@
+.about{
+    display:grid;
+    grid-template-columns: 8% 34% 16% 34% 8%;
+    grid-template-rows: repeat(auto-fill,minmax(50px,1fr));
+    grid-template-areas: 
+    ". header . . ."
+    ". text1 text1 . ."
+    ". . text2 text2 . "
+    ".  . button button .";
+
+    justify-items: center;
+    align-items: center;
+    font-family: Ringside Regular A,Ringside Regular B,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;
+    font-style: normal;
+    font-weight: 700;
+    
+    background-color: #acce8d9a;
+    
+}
+
+
+.button{
+    
+    background-color: #28A535;
+    
+    color: white;
+    padding: 20px 34px;
+    text-align: center;
+    text-decoration: none;
+    
+    font-size: 24px;
+    margin: 45px 5px;
+    cursor: pointer;
+    display: grid;
+    grid-area: button;
+    justify-self: end;
+    border-bottom-left-radius: 10% 40%;
+    border-top-left-radius: 10% 40%;
+    border-bottom-right-radius: 10% 40%;
+    border-top-right-radius: 10% 40%;
+    
+
+}
+.about h2{
+    display:grid;
+    grid-area: header;
+    padding-top:10%;
+    justify-self: start;
+    font-size: 2.5em;
+
+}
+.about p{
+    grid-area: text1;
+    padding-bottom:3%;
+    font-size: 20px;
+    padding-right: 10%;
+}
+.about span{
+    grid-area: text2;
+    padding-right: 10%;
+    font-size: 20px;
+
+   
+}

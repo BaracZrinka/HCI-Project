@@ -1,0 +1,10 @@
+.SocialLinks a{
+    background-color: #494B51;
+    padding: 14px 10px;
+    width: 50px;
+    display:inline-flex;
+    justify-content: space-around;
+    align-items: center;
+
+
+}

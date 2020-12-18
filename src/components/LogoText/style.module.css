@@ -1,5 +1,8 @@
 .logoText {
+  display:grid;
+  grid-column-start:2;
   font-family: "Great Vibes";
-  font-size: 52px
+  font-size: 52px;
+  color:white;
 }
 
