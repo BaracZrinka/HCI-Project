@@ -1,0 +1,73 @@
+.profile{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+.button1{
+    display: flex;
+    justify-content: center;
+    width:100%;
+}
+.button{
+    
+     
+    background-color: #565854;
+    
+    color: white;
+    padding: 20px 34px;
+    text-align: center;
+    
+    height: 15%;
+    width: 13%;
+    font-size: 24px;
+    
+    cursor: pointer;
+    margin:1px;
+
+
+    border-bottom-left-radius: 10% 25%;
+    border-top-left-radius: 10% 25%;
+    border-bottom-right-radius: 10% 25%;
+    border-top-right-radius: 10% 25%;
+    
+}
+
+.posts{
+    display:grid;
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "first first first"
+    "second second second"
+    "third third third";
+    
+
+}
+.post1{
+    padding:10%;
+    display: grid;
+    grid-area: first;
+    grid-column:2/3;
+    
+}
+.post2{
+    padding:10%;
+    display: grid;
+    grid-area: second;
+    grid-column:2/3;
+    
+}
+.post3{
+    padding:10%;
+    display: grid;
+    grid-area: third;
+    grid-column:2/3;
+}
+
+.image{
+    height:100%;
+}

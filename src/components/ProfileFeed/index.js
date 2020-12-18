@@ -13,12 +13,21 @@ const ThirdText = 'Sed ut perspiciatis unde omnis iste natus error sit voluptate
 
 const ProfileFeed = () => (
 <section className={styles.profile}>
-    <>
+    
+    <div className = {styles.button1}>
     <button className = {styles.button}>Add new post</button>
-    <ProfilePost image={<PPost1 />}  text={FirstText}/>
-    <ProfilePost image={<PPost2 />}  text={SecondText}/>
-    <ProfilePost image={<PPost3 />}  text={ThirdText}/>
-    </>
+    </div>
+        <div className = {styles.posts}>
+            <div className = {styles.post1}>
+            <ProfilePost image={<PPost1 />}  text={FirstText}/>
+        </div>
+        <div className = {styles.post2}>
+            <ProfilePost image={<PPost2 className= {styles.image} />}  text={SecondText}/>
+        </div>
+        <div div className = {styles.post3}>
+            <ProfilePost image={<PPost3 />}  text={ThirdText}/>
+        </div>
+    </div>
 </section> 
 )
 

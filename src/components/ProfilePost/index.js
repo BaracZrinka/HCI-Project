@@ -4,10 +4,7 @@ import styles from './style.module.css'
 const ProfilePost = ({image, text}) => (
     <section className = {styles.hottestPost}>
         <div className = {styles.image} >{image}</div>
-        <div className={styles.articleHalf}>
-            
-            <p>{text}</p>
-        </div>
+        <p className = {styles.text}>{text}</p>
         <button className={styles.button}>Read more</button>
 
     </section>
