@@ -1,0 +1,14 @@
+.blog2{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.author{
+    display:inline-flex;
+}
+.profileImage{
+    border-radius: 50%;
+}
+.tags{
+    font-weight: lighter;
+    color: #097eeb;
+}

@@ -1,0 +1,39 @@
+.header{
+    display:grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 1fr 1fr;
+
+    background-color: #f5e6d8;
+}
+
+.h1{
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    grid-row:1/2;
+    grid-column: 2/3;
+}
+.filter{
+    grid-row: 2/3;
+    grid-column:2/3;
+    width:fit-content;
+
+
+    background-color: #8e6f74;
+    
+    color: white;
+    padding: 8px 40px;
+    text-align: start;
+    text-decoration:none;
+    
+    font-size: 16px;
+    margin-bottom: 30px;
+
+    cursor: pointer;
+
+    border-bottom-left-radius: 10% 40%;
+    border-top-left-radius: 10% 40%;
+    border-bottom-right-radius: 10% 40%;
+    border-top-right-radius: 10% 40%;
+
+}
