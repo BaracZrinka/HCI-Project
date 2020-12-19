@@ -41,10 +41,12 @@ const BlogPost = ({image, title}) => (
 
 
     <BlogPostBody profileImage = {<ProfileImage1/>} authorsName = {name1} text = {FirstText} tags={tags1}/>
+    
     <div className = {styles.commentHead}>
-        <h3 className = {styles.commentsTitle}>Comments:</h3>
-        <button className = {styles.button1}>Add your comment here...</button>
-        <button className = {styles.button2}>Rate</button>
+    <h3 className = {styles.commentsTitle}>Comments:</h3>
+        <div className = {styles.buttonDiv}>
+            <button className = {styles.button1}>Add your comment here...</button>
+        </div>
     </div>
 
     <div className = {styles.commentBody}>

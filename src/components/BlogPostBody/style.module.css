@@ -11,4 +11,30 @@
 .tags{
     font-weight: lighter;
     color: #097eeb;
+
+    align-self: center;
+}
+.bottom{
+    display:flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.button2{
+    background-color: #9cc9f2;
+    
+    color: black;
+    padding: 1% 7%;
+    text-align:center;
+    text-decoration: none;
+    
+    font-size: 15px;
+    margin: 45px 5px;
+    cursor: pointer;
+
+
+    border-color: gray;
+    border-bottom-left-radius: 3% 30%;
+    border-top-left-radius: 3% 30%;
+    border-bottom-right-radius: 3% 30%;
+    border-top-right-radius: 3% 30%;
 }

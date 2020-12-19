@@ -23,28 +23,35 @@
     justify-self:center;
     align-self: center;
 }
-.commentHead{
-    margin-left: 5%;
-    margin-right: 5%;
-}
+
 .commentBody{
     margin-left: 5%;
     margin-right: 5%;
+}
+.commentsTitle{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.buttonDiv{
+    display: flex;
+    flex-grow: 1;
 }
 .button1{
     background-color: white;
     
     color: lightslategray;
     padding: 1% 7%;
-    text-align: center;
+    text-align:left;
     text-decoration: none;
+
+    display: flex;
+    flex-grow: 1;
     
     font-size: 15px;
-    margin: 45px 5px;
     cursor: pointer;
-    display: grid;
-    grid-area: button;
-    justify-self: end;
+    
+    margin-left: 5%;
+    margin-right: 5%;
 
     border-color: gray;
     border-bottom-left-radius: 3% 30%;
