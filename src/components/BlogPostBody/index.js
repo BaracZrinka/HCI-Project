@@ -13,7 +13,10 @@ const BlogPostBody = ({profileImage, authorsName,text,tags}) => (
     </div>
     <p className = {styles.text}>
         <div > {text} </div>
-        <h4 className = {styles.tags}> {tags}</h4>
+        <div className = {styles.bottom}>
+            <div className = {styles.tags}> {tags}</div>
+            <button className = {styles.button2}>Rate</button>
+        </div>
     </p>
 </section>
 )
