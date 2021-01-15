@@ -25,10 +25,14 @@ const PPost2 = () => {
      className = {styles.titleImage}
      fluid={data.desktop.childImageSharp.fluid}
       backgroundColor={`#040e18`}
+      style={{ height: "105%", width: "100%" }}
+      imgStyle={{ objectFit: "contain" }}
     >
         <div>
-        <h1>Second Topic</h1>
+          <>
+        <h1 className = {styles.title}>Properly cleaning makeup brushes</h1>
         <button className = {styles.button}>Delete</button>
+        </>
      </div>
     </BackgroundImage>
 

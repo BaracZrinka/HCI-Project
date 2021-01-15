@@ -1,0 +1,40 @@
+.button{
+    background-color: #9CC9F2;
+    width:70px;
+    height:35px;
+   
+    font-size:15px;
+    padding:1% 1% 1% 1%;
+    border-radius: 10px ;
+    border:none;
+    font-weight: bold;
+    border:none;
+   box-shadow: 2px 2px grey;
+   font-family: 'Roboto', sans-serif;
+    
+   /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
+   font-weight: bold;
+
+   position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.title{
+    margin: 0 auto;
+    font-size:35px;
+    color: white;
+    /*text-shadow: 0 0 10px rgb(0, 0, 0);*/
+   
+      /* Positioning element */
+      position: absolute;
+      bottom: 10px;
+      left: 20px;
+      text-shadow: 0px 2px 2px black;
+}
+.titleImage{
+    position:relative;
+    overflow: hidden;
+    border-top-left-radius: 3% 6%;
+    border-top-right-radius: 3% 6%;
+    
+}

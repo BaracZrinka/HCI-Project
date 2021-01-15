@@ -24,7 +24,8 @@
     "react-flags-select": "^1.1.13",
     "react-helmet": "^6.1.0",
     "react-horizontal-scrolling-menu": "^0.7.8",
-    "react-select": "^3.1.1"
+    "react-select": "^3.1.1",
+    "react-view": "^2.3.5"
   },
   "devDependencies": {
     "prettier": "2.1.2"

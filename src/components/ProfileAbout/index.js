@@ -8,11 +8,11 @@ const ProfileAbout = () => (
     <section className={styles.form}>
             <div className = {styles.firstDiv}>
                 <ProfileNav className={styles.picture}/></div> 
-                <span className={styles.username}>Username</span>
+                <h2 className={styles.username}>Username</h2>
               
             <div className={styles.text}>
-                <h2>About user</h2>
-                <p>"Lorem ipsum dolor sit amet, consectetur
+                <h3>About me</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur
                     adipiscing elit, sed do eiusmod tempor
                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                     laboris nisi ut aliquip ex ea commodo consequat. 
@@ -25,7 +25,7 @@ const ProfileAbout = () => (
             </div>  
 
             <div className={styles.editButton}>
-                  <button>Edit</button>
+                  <button className = {styles.button}>Edit</button>
             </div>
     </section>
 )
