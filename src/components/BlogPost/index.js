@@ -53,9 +53,11 @@ const BlogPost = ({image, title}) => (
     <CommentSection profileImage = {<ProfileImage1/>} userName = {user1} comment = {FirstCom}/>
     <CommentSection profileImage = {<ProfileImage2/>} userName = {user2} comment = {SecondCom}/>
     <CommentSection profileImage = {<ProfileImage1/>} userName = {user3} comment = {ThirdCom}/>
-    <button className = {styles.Button}>Read more</button>
+    <div className={styles.readmore}>
+        <button className = {styles.readMoreButton}>Read more</button>
     </div>
-    
+
+    </div>
     </div>
 
 )
