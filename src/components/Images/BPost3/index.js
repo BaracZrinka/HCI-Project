@@ -24,13 +24,11 @@ const BPost3 = () => {
      Tag = "section"
      className = {styles.titleImage}
      fluid={data.desktop.childImageSharp.fluid}
-      backgroundColor={`#040e18`}
+     backgroundColor={`#040e18`}
+     style={{ height: "100%", width: "100%" }}
+     imgStyle={{ objectFit: "contain" }}
     >
-      <div>
-        <h1>Third Topic</h1>
-        <button className = {styles.button}>Remove</button>
-     </div>
-
+        <h1 className ={styles.title}>Avocado skin mask</h1>
     </BackgroundImage>
 
    )

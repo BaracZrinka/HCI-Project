@@ -29,14 +29,9 @@ const PPost1 = () => {
     imgStyle={{ objectFit: "contain" }}
  
    >
-      <div className = {styles.divEl}>
-        <>
         <h1 className={styles.title}>Skin cottage</h1>
         <button className = {styles.button}>Delete</button>
-      </>
-     </div>
-
-
+     
     </BackgroundImage>
 
    )

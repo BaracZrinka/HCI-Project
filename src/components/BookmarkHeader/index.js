@@ -1,13 +1,18 @@
 import React from 'react'
 import styles from './style.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+//import { angle-down } from '@fortawesome/free-solid-svg-icons'
 
 const BookmarkHeader =()=>(
     <section className = {styles.bookmarks}>
-        <h1 className = {styles.h1}>Bookmarks</h1>
-        <div>
-            <h2 className = {styles.select}>Filter by:</h2>
-        </div>
-  
+        <>
+        <h1 className = {styles.h1}>BOOKMARKS</h1>
+        <div className={styles.filter}>
+            <>
+        <button className = {styles.select}>Filter by</button>
+        </>
+        </div>  
+   </>
     </section>
 )
 
