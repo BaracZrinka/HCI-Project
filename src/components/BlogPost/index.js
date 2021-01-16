@@ -45,14 +45,18 @@ const BlogPost = ({image, title}) => (
     <div className = {styles.commentHead}>
     <h3 className = {styles.commentsTitle}>Comments:</h3>
         <div className = {styles.buttonDiv}>
-            <button className = {styles.button1}>Add your comment here...</button>
+            <textarea placeholder='Add your comment here...' maxLength= "160"></textarea>
         </div>
+    </div>
+    <div className={styles.commentButtons}>
+        <button className = {styles.button1}>CANCEL</button>
+        <button className = {styles.button2}>COMMENT</button>
     </div>
 
     <div className = {styles.commentBody}>
-    <CommentSection profileImage = {<ProfileImage1/>} userName = {user1} comment = {FirstCom}/>
-    <CommentSection profileImage = {<ProfileImage2/>} userName = {user2} comment = {SecondCom}/>
-    <CommentSection profileImage = {<ProfileImage1/>} userName = {user3} comment = {ThirdCom}/>
+        <CommentSection profileImage = {<ProfileImage1/>} userName = {user1} comment = {FirstCom}/>
+        <CommentSection profileImage = {<ProfileImage2/>} userName = {user2} comment = {SecondCom}/>
+        <CommentSection profileImage = {<ProfileImage1/>} userName = {user3} comment = {ThirdCom}/>
     <div className={styles.readmore}>
         <button className = {styles.readMoreButton}>Read more</button>
     </div>

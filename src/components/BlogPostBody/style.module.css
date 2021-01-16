@@ -11,14 +11,10 @@
 .tags{
     font-weight: lighter;
     color: #097eeb;
+    margin-top: 12px;
+}
 
-    align-self: center;
-}
-.bottom{
-    display:flex;
-    justify-content: space-between;
-    align-content: center;
-}
+    
 .button2{
     background-color: #9cc9f2;
     color: black;

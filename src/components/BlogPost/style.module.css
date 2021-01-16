@@ -36,7 +36,7 @@
     display: flex;
     flex-grow: 1;
 }
-.button1{
+textarea{
     background-color: white;
     
     color: lightslategray;
@@ -48,7 +48,7 @@
     flex-grow: 1;
     
     font-size: 15px;
-    cursor: pointer;
+    cursor: auto;
     
     margin-left: 5%;
     margin-right: 5%;
@@ -57,6 +57,9 @@
     border-color: gray;
     border-radius: 10px ;
 
+    outline:none;
+    resize:none;
+    
 }
 .readMoreButton{
     width:30%;
@@ -75,4 +78,59 @@
 .readmore{
     display: flex;
     justify-content: center;
+}
+.commentButtons{
+    display: flex;
+    justify-content: flex-end;
+
+    margin-right: 5%;
+    
+}
+
+.button1{
+    background-color: white;
+    color: black;
+    text-align:center;
+
+    margin: 5px 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: 95px;
+    height:35px;
+   
+    font-size:15px;
+    padding:1% 1% 1% 1%;
+    border-radius: 10px ;
+    
+    border:none;
+    
+    box-shadow: 2px 2px 2px grey;
+    font-family: 'Roboto', sans-serif;
+    
+   /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
+    font-weight: bold;
+ 
+}
+.button2{
+    background-color: #9cc9f2;
+    color: black;
+    text-align:center;
+
+    margin: 5px 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: 95px;
+    height:35px;
+   
+    font-size:15px;
+    padding:1% 1% 1% 1%;
+    border-radius: 10px ;
+    border:none;
+    
+    box-shadow: 2px 2px 2px grey;
+    font-family: 'Roboto', sans-serif;
+    
+   /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
+    font-weight: bold;
+ 
 }
