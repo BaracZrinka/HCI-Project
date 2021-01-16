@@ -24,25 +24,39 @@ const SecondCom = 'Sed ut perspiciatis unde omnis iste'
 const ThirdCom = 'ut perspiciatis'
 
 const BlogPost = ({image, title}) => (
-    <>
+    <div className={styles.wholeBlog}>
+
     <section className = {styles.blog1}>
-        <div className = {styles.image}>{image}</div>
-        <h2>{title}</h2>
-        <BlogRating/>
+        <div className = {styles.image}>{image}
+        </div>
+        <div className = {styles.head}>
+            <div className = {styles.h2}>
+                <h2>{title}</h2>
+            </div>
+            <div className = {styles.rating}>
+                <BlogRating/>
+            </div>
+        </div>
     </section>
+
+
     <BlogPostBody profileImage = {<ProfileImage1/>} authorsName = {name1} text = {FirstText} tags={tags1}/>
-    <div>
-            <h2 className = {styles.commentsTitle}>Comments:</h2>
-            <button>Add your comments here</button>
-            <button className = {styles.button}>Rate</button>
+    
+    <div className = {styles.commentHead}>
+    <h3 className = {styles.commentsTitle}>Comments:</h3>
+        <div className = {styles.buttonDiv}>
+            <button className = {styles.button1}>Add your comment here...</button>
+        </div>
     </div>
+
+    <div className = {styles.commentBody}>
     <CommentSection profileImage = {<ProfileImage1/>} userName = {user1} comment = {FirstCom}/>
     <CommentSection profileImage = {<ProfileImage2/>} userName = {user2} comment = {SecondCom}/>
     <CommentSection profileImage = {<ProfileImage1/>} userName = {user3} comment = {ThirdCom}/>
     <button className = {styles.Button}>Read more</button>
-
+    </div>
     
-    </>
+    </div>
 
 )
 export default BlogPost

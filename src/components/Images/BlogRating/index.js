@@ -11,6 +11,8 @@ const BlogRating = () => {
             ...GatsbyImageSharpFixed
           }
         }
+        extension
+        publicURL
       }
     }
   `)

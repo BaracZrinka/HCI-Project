@@ -5,13 +5,18 @@ import styles from './style.module.css'
 
 const BlogPostBody = ({profileImage, authorsName,text,tags}) => (
 <section className = {styles.blog2}>
-    <span className = {styles.author}>
-        {profileImage}
-        <h2 className = {styles.name}>{authorsName}</h2>
-    </span>
+    <div className = {styles.author}>
+        <div className = {styles.profileImage}>
+            {profileImage}
+        </div>
+        <h4 className = {styles.name}>{authorsName}</h4>
+    </div>
     <p className = {styles.text}>
         <div > {text} </div>
-        <h3> {tags}</h3>
+        <div className = {styles.bottom}>
+            <div className = {styles.tags}> {tags}</div>
+            <button className = {styles.button2}>Rate</button>
+        </div>
     </p>
 </section>
 )
