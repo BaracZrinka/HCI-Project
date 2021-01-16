@@ -3,3 +3,12 @@
     display: flex;
     justify-content: flex-end;
 }
+
+.titleImage{
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: 3% 8%;
+    border-top-right-radius: 3% 8%;
+    border-bottom-left-radius: 3% 8%;
+    border-bottom-right-radius: 3% 8%;
+}
