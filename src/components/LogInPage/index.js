@@ -15,12 +15,12 @@ const LogInPage = () => (
                 <label htmlFor="password">Password:</label>
                 <input name="password" type="text" />
             </div>
-            <div className={styles.button}>
-                <button>Log in</button>
+            <div className={styles.buttondiv}>
+                <button className={styles.button}>Log in</button>
             </div>
         </div>
 
-        <span>Don't have an account?&nbsp;<a href="http://localhost:8000/signup">Sign up</a></span>
+        <span className={styles.spanclass}>Don't have an account?&nbsp;<a href="http://localhost:8000/signup">Sign up</a></span>
     </div>
 )
 export default LogInPage
