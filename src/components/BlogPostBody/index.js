@@ -12,10 +12,8 @@ const BlogPostBody = ({profileImage, authorsName,text,tags}) => (
         <h4 className = {styles.name}>{authorsName}</h4>
     </div>
     <p className = {styles.text}>
-        <div > {text} </div>
-        
-        <div className = {styles.tags}> {tags}</div>
-        
+        <div > {text} </div> 
+        <div className = {styles.tags}> {tags}</div>   
     </p>
 </section>
 )
