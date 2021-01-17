@@ -21,7 +21,7 @@ const BookmarkFeed = () => (
     <BookmarkPost image={<BPost1 />} profileImage={<ProfileImage1/>}  authorsName = {name1} text={FirstText}/>
     </div>
     <div className={styles.post2}>
-    <BookmarkPost image={<BPost2 />} profileImage={<ProfileImage1/>}  authorsName = {name1} text={SecondText}/>
+    <BookmarkPost image={<BPost2 />} profileImage={<ProfileImage2/>}  authorsName = {name1} text={SecondText}/>
     </div>
     <div className={styles.post3}>
     <BookmarkPost image={<BPost3 />} profileImage={<ProfileImage1/>}  authorsName = {name1} text={ThirdText}/>
