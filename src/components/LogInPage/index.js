@@ -5,7 +5,7 @@ const LogInPage = () => (
     <div className={styles.form}>
         
         <div className={styles.login}>
-            <h2>Log in</h2>
+            <h2 className={styles.title}>Log in</h2>
             <div className={styles.email}>
                 <label htmlFor="username">E-mail or username:</label>
                 <input name="username" type="text" />
