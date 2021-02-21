@@ -4,7 +4,7 @@ import styles from './style.module.css';
 import ProfileNav from '../Images/ProfileNav';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faBookmark } from '@fortawesome/free-solid-svg-icons'
-import {faFileUpload } from '@fortawesome/free-solid-svg-icons'
+//import {faFileUpload } from '@fortawesome/free-solid-svg-icons'
 import {faEdit } from '@fortawesome/free-solid-svg-icons'
 
 /*<i class="far fa-bookmark"></i>*/
@@ -42,13 +42,12 @@ const ProfileAbout = () => {
             </div>       
 
             <div className={styles.icons}>
-                <div className={styles.links}>
-                    <a href="http://localhost:8000/bookmarks" className = {styles.addNew}><FontAwesomeIcon icon={faFileUpload} size ='2x' color='#696f45'/></a>  
+                <div className={styles.link}>
                     <a href="http://localhost:8000/bookmarks" className = {styles.bookamark}><FontAwesomeIcon icon={faBookmark} size ='2x'  color='#696f45' /></a>  
                 </div>
                 <div className={styles.editPosition}>
                 <FontAwesomeIcon icon={faEdit} size ='2x' color='#696f45'/>
-                 </div>
+                </div>
             </div>
     </section>
     

@@ -52,20 +52,19 @@
 }
 .icons{
     grid-area: icons;
-    display:flex;
+    display: flex;
     flex-direction: column;
+    align-content: flex-end;
     justify-content: space-between;
-    
-    
-    margin-top:30%;
 }
 
 a{
     width:0%;
 }
-.links{
-    display:flex;
-    justify-content: space-around;
+.link{
+    position:absolute;
+    right:20%;
+    top: 19%;
 }
 .editPosition{
     position:absolute;
