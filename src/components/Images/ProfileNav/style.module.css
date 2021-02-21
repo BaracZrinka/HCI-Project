@@ -1,4 +1,6 @@
 .titleImage{
-    background-position: left bottom;
+    display: block;
     position: absolute;
+    top: 20%;
+    left: 20%;
 }

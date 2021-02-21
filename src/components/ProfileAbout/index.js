@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
  
 import styles from './style.module.css';
 import ProfileNav from '../Images/ProfileNav';
@@ -10,16 +10,29 @@ import {faEdit } from '@fortawesome/free-solid-svg-icons'
 /*<i class="far fa-bookmark"></i>*/
 
 
-const ProfileAbout = () => (
+const ProfileAbout = () => {
+    const [posts, postsCounter]=useState("0");
+    const [followers, followersCounter]=useState("0");
+    return(
     <section className={styles.form}>
             <div className = {styles.firstDiv}>
-                <ProfileNav className={styles.picture}/></div> 
+                <ProfileNav className={styles.picture}/>
+                    <div className={styles.positioning}>
+                        <>
+                    <div className={styles.counters}>
+                        <h4>{posts}</h4>
+                        <h4>{followers} </h4>
+                    </div>
+                    <div className={styles.description}>
+                        <h4>posts</h4>
+                        <h4>followers</h4>
+                    </div>
+                    </>
+                    </div>
+                </div> 
                <div className={styles.text}> 
                 <h2 className={styles.username}>Username</h2>
-                
-              
            
-              
                 <p>Lorem ipsum dolor sit amet, consectetur
                     adipiscing elit, sed do eiusmod tempor
                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -39,5 +52,6 @@ const ProfileAbout = () => (
             </div>
     </section>
     
-)
+);
+    };
 export default ProfileAbout

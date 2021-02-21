@@ -9,8 +9,10 @@
 }
 .firstDiv {
     grid-area: picture;
-    align-self: center;
-    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    justify-content: space-between;
     
 }
 
@@ -84,6 +86,22 @@ a{
    box-shadow: 2px 2px lightgrey;
    font-family: 'Roboto', sans-serif;
 }*/
-.picture{
-    width: 100%;
+.counters{
+    display:flex;
+    justify-content: space-around;
+    position:relative;
+    bottom: 0%;
+
+}
+.counters h4{
+    margin:0px;
+}
+.description
+{
+    display:flex;
+    justify-content: space-around;
+    flex-wrap:nowrap;
+}
+.description h4{
+    margin:0px;
 }
