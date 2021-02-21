@@ -14,8 +14,7 @@ const ThirdText = 'Sed ut perspiciatis unde omnis iste natus error sit voluptate
 const ProfileFeed = () => (
 <section className={styles.profile}>
     
-  
-    <button className = {styles.button}>Add new post</button>
+    
    
          <div className = {styles.posts}>
             <div className = {styles.post1}>

@@ -2,16 +2,24 @@ import React from 'react'
  
 import styles from './style.module.css';
 import ProfileNav from '../Images/ProfileNav';
-import BookmarkIcon from '../Images/BookmarkIcon'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faBookmark } from '@fortawesome/free-solid-svg-icons'
+import {faFileUpload } from '@fortawesome/free-solid-svg-icons'
+import {faEdit } from '@fortawesome/free-solid-svg-icons'
+
+/*<i class="far fa-bookmark"></i>*/
+
 
 const ProfileAbout = () => (
     <section className={styles.form}>
             <div className = {styles.firstDiv}>
                 <ProfileNav className={styles.picture}/></div> 
+               <div className={styles.text}> 
                 <h2 className={styles.username}>Username</h2>
+                
               
-            <div className={styles.text}>
-                <h3>About me</h3>
+           
+              
                 <p>Lorem ipsum dolor sit amet, consectetur
                     adipiscing elit, sed do eiusmod tempor
                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -20,13 +28,16 @@ const ProfileAbout = () => (
                     voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in</p>
             </div>       
 
-            <div className={styles.bookmark}>
-            <a href="http://localhost:8000/bookmarks" ><BookmarkIcon/></a> 
-            </div>  
-
-            <div className={styles.editButton}>
-                  <button className = {styles.button}>Edit</button>
+            <div className={styles.icons}>
+                <div className={styles.links}>
+                    <a href="http://localhost:8000/bookmarks" className = {styles.addNew}><FontAwesomeIcon icon={faFileUpload} size ='2x' color='#696f45'/></a>  
+                    <a href="http://localhost:8000/bookmarks" className = {styles.bookamark}><FontAwesomeIcon icon={faBookmark} size ='2x'  color='#696f45' /></a>  
+                </div>
+                <div className={styles.editPosition}>
+                <FontAwesomeIcon icon={faEdit} size ='2x' color='#696f45'/>
+                 </div>
             </div>
     </section>
+    
 )
 export default ProfileAbout

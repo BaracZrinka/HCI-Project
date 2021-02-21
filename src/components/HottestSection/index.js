@@ -13,9 +13,14 @@ const ThirdText = 'Sed ut perspiciatis unde omnis iste natus error sit voluptate
 
 const HottestSection = () => (
 <section className={styles.hottestSection}>
+  <>
+    <h2>Hottest posts</h2>
+    <div className={styles.posts}>
     <HottestPost image={<HPost1 />} title="First topic" text={FirstText}/>
     <HottestPost image={<HPost2 />} title="Second topic" text={SecondText}/>
     <HottestPost image={<HPost3 />} title="Third topic" text={ThirdText}/>
+    </div>
+  </>
 </section> 
 )
 

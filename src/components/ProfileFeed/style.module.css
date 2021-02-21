@@ -1,4 +1,5 @@
 .profile{
+    margin-top:8%;
     display: flex;
     flex-direction: column;
     background-image: linear-gradient(180deg, white, #9E9E9E);

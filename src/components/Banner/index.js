@@ -32,12 +32,12 @@ const Banner = () => {
         <p>
           Start exploring the world of healthy living
         </p>
-        
-        <section>
-          <button className={styles.button}>Hottest posts</button>
-          <button className={styles.button}>Newest posts</button>
+       </div> 
+        <section className={styles.section}>
+          <button className={styles.button1}>Hottest posts</button>
+          <button className={styles.button2}>Newest posts</button>
         </section>
-      </div>
+      
     </BackgroundImage>
     </div>
 

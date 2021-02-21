@@ -24,7 +24,7 @@
     background-color: #28A535;
     
     color: white;
-    padding: 20px 34px;
+    /*padding: 20px 34px;
     text-align: center;
     text-decoration: none;
     
@@ -37,7 +37,25 @@
     border-bottom-left-radius: 10% 40%;
     border-top-left-radius: 10% 40%;
     border-bottom-right-radius: 10% 40%;
-    border-top-right-radius: 10% 40%;
+    border-top-right-radius: 10% 40%;*/
+    font-weight:600;
+    font-stretch: normal;
+    text-align: center;
+    
+    padding: 20px 34px;
+    
+    font-size:20px;
+    cursor: pointer;
+    
+    border-radius: 20px ;
+    border: none;
+    padding:10%;
+    height: 15px;
+    margin: 45px 5px;
+    text-align: center;
+
+    grid-area: button;
+    justify-self: end;
     
 
 }

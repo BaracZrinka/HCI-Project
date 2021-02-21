@@ -3,7 +3,7 @@ import Navigation from '../Navigation'
 //import LogoText from '../LogoText'
 //import ProfileNav from '../ProfileNav'
 import Logo from '../Logo'
-import ProfileNav from '../Images/ProfileNav'
+import ProfileImage1 from '../Images/ProfileImage1'
 
 
 
@@ -19,7 +19,7 @@ const NavigationHeader = ({activeTab}) => (
      
     </div>
     <div className = {styles.profileNav}>
-    <ProfileNav  />
+    <ProfileImage1  />
   </div>
      
      
