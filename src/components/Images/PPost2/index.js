@@ -25,7 +25,7 @@ const PPost2 = () => {
      className = {styles.titleImage}
      fluid={data.desktop.childImageSharp.fluid}
       backgroundColor={`#040e18`}
-      style={{ height: "105%", width: "100%" }}
+      style={{ height: "100%", width: "100%" }}
       imgStyle={{ objectFit: "contain" }}
     >
         <div>
