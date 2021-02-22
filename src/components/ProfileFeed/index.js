@@ -48,6 +48,7 @@ const ProfileFeed = () => (
             <ProfilePost image={<BPost3 />}  text={ThirdText}/>
             </div>
         </section>
+        
         </>
 </section>
 </>
