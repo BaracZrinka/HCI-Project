@@ -13,8 +13,6 @@ const BPost2 = () => {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
-        extension
-        publicURL
       }
     }
     
@@ -24,13 +22,11 @@ const BPost2 = () => {
      Tag = "section"
      className = {styles.titleImage}
      fluid={data.desktop.childImageSharp.fluid}
-      backgroundColor={`#040e18`}
+     backgroundColor={`#040e18`}
+     style={{ height: "100%", width: "100%" }}
+     imgStyle={{ objectFit: "contain" }}
     >
-      <div>
-        <h1>Second Topic</h1>
-        <button className = {styles.button}>Remove</button>
-     </div>
-
+        <h1 className={styles.title}>How to hydrate skin properly</h1>
     </BackgroundImage>
 
    )

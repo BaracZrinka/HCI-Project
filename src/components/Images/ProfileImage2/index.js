@@ -11,8 +11,7 @@ const ProfileImage2 = () => {
             ...GatsbyImageSharpFixed
           }
         }
-        extension
-        publicURL
+       
       }
     }
   `)
