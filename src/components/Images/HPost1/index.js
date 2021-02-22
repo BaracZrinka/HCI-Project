@@ -29,7 +29,9 @@ import React from 'react'
      imgStyle={{ objectFit: "contain" }}
   
     >
-     </BackgroundImage>
+      <h1 className = {styles.title}>Homemade lotion</h1>
+        
+    </BackgroundImage>
  
     )
   
