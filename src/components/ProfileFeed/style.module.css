@@ -26,29 +26,51 @@
 .profile{
     display: grid;
     grid-template-columns: 20% 60% 20%;
-    grid-template-rows: auto 1fr 1fr 1fr;
+    grid-template-rows: 10% 30% 30% 30%;
     grid-template-areas: ". button ."
     ". first ."
     ". second ."
-    ". third .";  
+    ". third ."; 
+    
 }
 .buttonPosition{
 
     grid-area: button;
     justify-self: center;
     margin-top:50px;
-    margin-bottom: 80px;
+    
 }
 .posts1{
     grid-area:first;
     display: flex;
-}
-.post1{
-    margin-right:3%
+    overflow: hidden;
+    flex-wrap: nowrap;
     
 }
+.posts2{
+    grid-area:second;
+    display:flex;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    
+}
+.posts3{
+    grid-area:third;
+    display: flex;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    
+}
+.post1{
+    margin-right:3%;
+   
+    
+}
+
 .post3{
-    margin-left:3%
+    margin-left:3%;
+    
+    
     
 }
 
