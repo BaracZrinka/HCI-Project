@@ -6,9 +6,10 @@ const HottestPost = ({image, title, text}) => (
         <div className = {styles.image}>{image}</div>
         <div className={styles.articleHalf}>
             <h2>{title}</h2>
-            <p>{text}</p>
+            <p classNme={styles.text}>{text}</p>
+            <button className={styles.button}>Read more</button>
         </div>
-        <button className={styles.button}>Read more</button>
+        
 
     </section>
 
