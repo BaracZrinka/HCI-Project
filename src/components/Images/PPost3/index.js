@@ -13,8 +13,6 @@ const PPost3 = () => {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
-        extension
-        publicURL
       }
     }
     
