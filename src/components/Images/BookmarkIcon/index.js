@@ -7,7 +7,7 @@ const BookmarkIcon = () => {
     query {
       myImage: file(relativePath: { eq: "bookmark.png" }) {
         childImageSharp {
-          fixed(width: 60) {
+          fixed(width: 100) {
             ...GatsbyImageSharpFixed
           }
         }
