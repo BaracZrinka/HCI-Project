@@ -28,7 +28,6 @@ const PPost3 = () => {
     >
        
         <h1 className = {styles.title}>Eating honey on a daily base</h1>
-        <button className = {styles.button}>Delete</button>
         
     </BackgroundImage>
 

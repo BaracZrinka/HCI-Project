@@ -3,6 +3,9 @@ import { useStaticQuery, graphql } from "gatsby"
 //import Img from "gatsby-image"
 import BackgroundImage from 'gatsby-background-image'
 import styles from './style.module.css'
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+//import {faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+
  
 const PPost1 = () => {
   const data = useStaticQuery(graphql`
@@ -30,7 +33,7 @@ const PPost1 = () => {
  
    >
         <h1 className={styles.title}>Skin cottage</h1>
-        <button className = {styles.button}>Delete</button>
+        
      
     </BackgroundImage>
 

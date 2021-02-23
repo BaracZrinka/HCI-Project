@@ -22,7 +22,7 @@ const ProfileFeed = () => (
     <hr className={styles.line}></hr>
     <div className={styles.buttonPosition}>
             <button className = {styles.button1}>Add new post</button>
-        </div>
+    </div>
     <section className={styles.profile}>
          <div className = {styles.posts1}>
             <div className = {styles.post1}>
