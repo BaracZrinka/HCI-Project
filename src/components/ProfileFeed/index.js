@@ -7,6 +7,9 @@ import PPost3 from '../../components/Images/PPost3'
 import BPost1 from '../../components/Images/BPost1'
 import BPost2 from '../../components/Images/BPost2'
 import BPost3 from '../../components/Images/BPost3'
+import HPost1 from '../../components/Images/HPost1'
+import HPost2 from '../../components/Images/HPost2'
+import HPost3 from '../../components/Images/HPost3'
 
 
 
@@ -17,12 +20,11 @@ const ThirdText = 'Sed ut perspiciatis unde omnis iste natus error sit voluptate
 const ProfileFeed = () => (
     <>
     <hr className={styles.line}></hr>
-    <section className={styles.profile}>
-        <>
-        <div className={styles.buttonPosition}>
+    <div className={styles.buttonPosition}>
             <button className = {styles.button1}>Add new post</button>
         </div>
-         <section className = {styles.posts1}>
+    <section className={styles.profile}>
+         <div className = {styles.posts1}>
             <div className = {styles.post1}>
             <ProfilePost image={<PPost1 />}  text={FirstText}/>
             </div>
@@ -34,8 +36,8 @@ const ProfileFeed = () => (
             <div div className = {styles.post3}>
             <ProfilePost image={<PPost3 />}  text={ThirdText}/>
             </div>
-        </section>
-        <section className = {styles.posts2}>
+        </div>
+        <div className = {styles.posts2}>
             <div className = {styles.post1}>
             <ProfilePost image={<BPost1 />}  text={FirstText}/>
             </div>
@@ -47,9 +49,20 @@ const ProfileFeed = () => (
             <div div className = {styles.post3}>
             <ProfilePost image={<BPost3 />}  text={ThirdText}/>
             </div>
-        </section>
-        
-        </>
+        </div>
+        <div className = {styles.posts3}>
+            <div className = {styles.post1}>
+            <ProfilePost image={<HPost1 />}  text={FirstText}/>
+            </div>
+
+            <div className = {styles.post2}>
+            <ProfilePost image={<HPost2/>}  text={SecondText}/>
+            </div>
+
+            <div div className = {styles.post3}>
+            <ProfilePost image={<HPost3 />}  text={ThirdText}/>
+            </div>
+        </div>
 </section>
 </>
 )
