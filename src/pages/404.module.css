@@ -1,0 +1,53 @@
+.background{
+    background-color: #fffbfa; 
+    display:grid;
+    grid-template-columns: 35% 30% 35%;
+    grid-template-rows: 1fr 4fr 1fr;
+}
+.body{
+    background-color: white;
+    box-shadow: 3px 3px 5px grey;
+    border-radius: 15px ;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    padding: 40px;
+
+    display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+.title{
+    display: flex;
+    justify-content: center;
+}
+
+.button{
+    width:30%;
+    background-color: #28a535;
+
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+
+    border-radius: 20px ;
+    border:none;
+    padding:10px;
+    box-shadow: 3px 3px 3px grey;
+    
+    margin:30px;
+}
+.buttondiv{
+    display: flex;
+    justify-content: center;
+}
+.span{
+    grid-column: 2/3;
+    grid-row: 3/4;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+

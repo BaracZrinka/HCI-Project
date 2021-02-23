@@ -6,7 +6,7 @@ import BlogFeed from '../components/BlogFeed'
 import { Link } from "gatsby"
 
 const signup = () => (
-    <HeaderFooterLayout>
+    <HeaderFooterLayout activeTab = "Blog">
     <BlogHeader/>
     <BlogFeed/>
     </HeaderFooterLayout>
