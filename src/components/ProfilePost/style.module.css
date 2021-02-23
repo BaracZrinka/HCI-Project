@@ -24,9 +24,7 @@
     height: 100%;
     display: flex ;
     justify-content: center;
-    align-items: center;
-    max-width: 100%;
-   
+    align-items: center;   
     transition-property: left, z-index, transform;
     transition-delay: 0s, 0s, 0s;
     transition-duration: 0s, 0s, 0s;
@@ -38,7 +36,7 @@
     transition-property: transform, z-index, left;
     transition-delay: 0s, 0s, 0s;
     transition-duration: 0s, 0s, 0s;
-    transform:translate(170px, -10px);
+    transform:translate(150px, -10px);
     z-index: 1;
     left:-160px;
     transform-style: preserve-3d;
@@ -47,7 +45,7 @@
 .shadow{
     background:#111;
     height:255px;
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 100%;
     display: flex ;
@@ -60,9 +58,14 @@
     transition-duration: 0s, 0s, 0s;
     z-index: 1;
     transform:translate(-10px, -10px);
-    transform: translate3d(180, 0, 0);
+    transform: translate3d(150, 0, 0);
     transform-style: preserve-3d;
     backface-visibility: hidden;
+
+    border-top-left-radius: 3% 8%;
+  border-top-right-radius: 3% 8%;
+  border-bottom-left-radius: 3% 8%;
+  border-bottom-right-radius: 3% 8%;
 }
 .shadow:hover{
     transition-property: transform, z-index, left;
@@ -80,13 +83,15 @@
     background-color: #FFFFFF;
     border-radius: 3%;
     
+    
 }
 .shadow{
     display: grid;
     position: relative;
     padding:20px;
     box-sizing:border-box;
-    background:whitesmoke;
+    background:white;
+    border-bottom: 60%;
 }
 .shadow p{
     margin:10px 0 0;
@@ -112,3 +117,15 @@
     
     
 }
+.read-more-link{
+        color: black;
+        text-decoration: underline;
+        letter-spacing: 1px;
+        cursor: pointer;
+
+        
+      }
+.extra-content{
+        color: cornflowerblue;
+        font-weight: 500;
+      }

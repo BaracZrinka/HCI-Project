@@ -28,15 +28,15 @@
     max-width: 100%;
    
     transition-property: left, z-index, transform;
-    transition-delay: 0s, .5s, .5s;
-    transition-duration: .5s, 0s, .5s;
+    transition-delay: 0s, 0s, 0s;
+    transition-duration: 0s, 0s, 0s;
     z-index: 2;
     transform:translate(-10px, -10px);
 }
 .image:hover{
     transition-property: transform, z-index, left;
-    transition-delay: 0s, .5s, .5s;
-    transition-duration: .5s, 0s, .5s;
+    transition-delay: 0s, 0s, 0s;
+    transition-duration: 0s, 0s, 0s;
     transform:translate(170px, -10px);
     z-index: 1;
     left:-160px;
@@ -53,15 +53,15 @@
     max-width: 100%;
    
     transition-property: left, z-index, transform;
-    transition-delay: 0s, .5s, .5s;
-    transition-duration: .5s, 0s, .5s;
+    transition-delay: 0s, 0s, 0s;
+    transition-duration: 0s, 0s, 0s;
     z-index: 1;
     transform:translate(-10px, -10px);
 }
 .articleHalf:hover{
     transition-property: transform, z-index, left;
-    transition-delay: 0s, .5s, .5s;
-    transition-duration: .5s, 0s, .5s;
+    transition-delay: 0s, 0s, 0s;
+    transition-duration: 0s, 0s, 0s;
     transform:translate(-160px);
     z-index: 2;
     left:160px;
