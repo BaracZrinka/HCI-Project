@@ -21,7 +21,7 @@ const SecondText='Sed ut perspiciatis unde omnis iste natus error sit voluptatem
 
 const FirstCom = 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium'
 const SecondCom = 'Sed ut perspiciatis unde omnis iste'
-const ThirdCom = 'ut perspiciatis'
+const ThirdCom = 'ut perspiciatis'  
 
 const BlogPost = ({image, title}) => (
     <div className={styles.wholeBlog}>
@@ -63,6 +63,6 @@ const BlogPost = ({image, title}) => (
 
     </div>
     </div>
-
 )
+
 export default BlogPost

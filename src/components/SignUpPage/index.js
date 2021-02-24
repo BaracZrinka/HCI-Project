@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {navigate} from 'gatsby'
 import styles from './style.module.css';
-import {myLocalStorage} from '../..helper'
+import {myLocalStorage} from '../../helper'
 
 const SignUpPage = () => {
     const [username, setUserName] = useState()
