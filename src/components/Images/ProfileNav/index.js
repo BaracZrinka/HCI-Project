@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-
+import styles from './style.module.css'
 
 const ProfileNav = () => {
     const data = useStaticQuery(graphql`
@@ -19,7 +19,7 @@ const ProfileNav = () => {
   `)
    return(
     <div style={{maxWidth: "800px", minWidth: "50px"}}>
-    <Img fluid={data.desktop.childImageSharp.fluid} />
+    <Img className = {styles.photo} fluid={data.desktop.childImageSharp.fluid} />
     </div>)
  }
  

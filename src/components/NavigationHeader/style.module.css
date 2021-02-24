@@ -1,20 +1,22 @@
+.container{
+  display: grid;
+  grid-template-columns: 20% 60% 20% ;
+  background-color:#696f45;
+}
 .navigationHeader {
-    height: 85px;
+
+  grid-column-start: 2;
+  grid-column-end: 3;
+    height: 60px;
     display: grid;
-    grid-template-columns: auto-fill 20% 20% 35% 5% ;
+    grid-template-columns: auto-fill 20% 20% 39% 1% ;
     grid-template-rows: 1fr;
     background-color:#696f45;
-    
-    
-
-    
+       
   }
   .navigationHeader > .logo{
     grid-column-start: 1;
-    
-    
-
-
+  
   }
   .navigation{
     grid-column:4/5 ;
@@ -25,8 +27,12 @@
   }
   .profileNav{
     grid-column-end:6;
-   justify-self: center;
+   justify-self: flex-end;
    align-self: center;
    
+   
+  }
+  .logo{
+    display: flex;
   }
   
