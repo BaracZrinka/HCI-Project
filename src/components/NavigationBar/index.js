@@ -3,8 +3,9 @@ import styles from './style.module.css'
 //const navTabs = ['Home', 'Blogs', 'About', 'Log in', 'Your account']
 import { navs as navTabs } from '../../constants/const'
 import { Link } from 'gatsby'
+import {myLocalStorage} from '../../helper'
 
-const loggedIn = () => !!localStorage.getItem('loggedIn')
+const loggedIn = () => !!myLocalStorage.getItem('loggedIn')
 
 const NavigationBar = ({ activeTab, useThisStyle }) => (
     <nav className={styles[useThisStyle || 'navigationBar']}>
@@ -19,7 +20,7 @@ const NavigationBar = ({ activeTab, useThisStyle }) => (
             </li>
         </Link>}
         <Link to={'/login'}>
-            <li onClick={loggedIn() ? () => localStorage.removeItem('loggedIn') : () => {}}>
+            <li onClick={loggedIn() ? () => myLocalStorage.removeItem('loggedIn') : () => {}}>
                 {loggedIn() ? 'Log out' : 'Log in'}
             </li>
         </Link>
