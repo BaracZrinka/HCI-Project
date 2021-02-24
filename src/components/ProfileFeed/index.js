@@ -24,8 +24,8 @@ const ProfileFeed = () => (
     <div className={styles.buttonPosition}>
             <button className = {styles.button1}>Add new post</button>
     </div>
+    
     <section className={styles.profile}>
-         <div className = {styles.posts1}>
             <div className = {styles.post1}>
             <ProfilePost image={<PPost1 />}  text={FirstText}/>
             </div>
@@ -37,8 +37,7 @@ const ProfileFeed = () => (
             <div div className = {styles.post3}>
             <ProfilePost image={<PPost3 />}  text={ThirdText}/>
             </div>
-        </div>
-        <div className = {styles.posts2}>
+        
             <div className = {styles.post1}>
             <ProfilePost image={<BPost1 />}  text={FirstText}/>
             </div>
@@ -50,8 +49,8 @@ const ProfileFeed = () => (
             <div div className = {styles.post3}>
             <ProfilePost image={<BPost3 />}  text={ThirdText}/>
             </div>
-        </div>
-        <div className = {styles.posts3}>
+        
+        
             <div className = {styles.post1}>
             <ProfilePost image={<HPost1 />}  text={FirstText}/>
             </div>
@@ -66,7 +65,6 @@ const ProfileFeed = () => (
             <div div className = {styles.post4}>
             <ProfilePost image={<PPost4 />}  text={FirstText}/>
             </div>
-        </div>
 </section>
 </>
 )

@@ -82,12 +82,10 @@
     position:relative;
     background-color: #FFFFFF;
     border-radius: 3%;
-    
+    height: 100%;
     
 }
 .shadow{
-    display: grid;
-    position: relative;
     padding:20px;
     box-sizing:border-box;
     background:white;
