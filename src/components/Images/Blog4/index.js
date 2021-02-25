@@ -31,9 +31,7 @@ const Blog1 = () => {
 
    >
      
-    <div className = {styles.bookmark}>
-      <BookmarkIcon/>
-    </div>
+  
     
 
    </BackgroundImage>

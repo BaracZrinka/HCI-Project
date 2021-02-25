@@ -1,5 +1,13 @@
+.imageAndIcon{
+    position: relative;
+}
 .image{
     height:250px;
+    display: block;
+}
+.bookmarkIcon{
+    position: absolute; top:12%; right:8%;
+    cursor: pointer;
 }
 .wholeBlog{
     border-radius: 3%;

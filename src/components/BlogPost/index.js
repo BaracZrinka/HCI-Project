@@ -5,7 +5,16 @@ import BlogPostBody from '../BlogPostBody'
 import ProfileImage1 from '../Images/ProfileImage1'
 import ProfileImage2 from '../Images/ProfileImage2'
 import CommentSection from '../CommentSection'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faBookmark } from '@fortawesome/free-regular-svg-icons'
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+
+library.add(
+    faBookmark
+    
+    // more icons go here
+  );
 const name1 = "_AuthorsName1"
 const name2 = "_AuthorsName2"
 
@@ -27,7 +36,11 @@ const BlogPost = ({image, title}) => (
     <div className={styles.wholeBlog}>
 
     <section className = {styles.blog1}>
-        <div className = {styles.image}>{image}
+        <div className = {styles.imageAndIcon}>
+        <div className = {styles.image} >{image}
+        </div>        
+        
+        <FontAwesomeIcon icon={['far', 'bookmark']} size ='2x' color='black' className = {styles.bookmarkIcon}/>
         </div>
         <div className = {styles.head}>
             <div className = {styles.h2}>
@@ -38,6 +51,7 @@ const BlogPost = ({image, title}) => (
             </div>
         </div>
     </section>
+    
 
 
     <BlogPostBody profileImage = {<ProfileImage1/>} authorsName = {name1} text = {FirstText} tags={tags1}/>

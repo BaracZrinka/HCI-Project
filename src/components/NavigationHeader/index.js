@@ -7,6 +7,7 @@ import ProfileNav from '../Images/ProfileNav'
 
 
 
+
 import styles from './style.module.css'
 
 const NavigationHeader = ({activeTab}) => (
@@ -15,9 +16,10 @@ const NavigationHeader = ({activeTab}) => (
     <div className={styles.logo}>
       <Logo/>
     </div>
+
+
     <div className={styles.navigation}>
     <Navigation activeTab = {activeTab} />
-     
     </div>
     <div className = {styles.profileNav}>
     <ProfileNav  />

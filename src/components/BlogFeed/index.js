@@ -99,4 +99,6 @@ const BlogFeed = () => (
 </section>
 
 )
+
+
 export default BlogFeed

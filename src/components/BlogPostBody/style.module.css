@@ -7,11 +7,18 @@
 }
 .profileImage{
     border-radius: 50%;
+    cursor:pointer;
 }
 .tags{
     font-weight: lighter;
     color: #097eeb;
     margin-top: 12px;
+}
+.name{
+    cursor:pointer;
+    padding-left: 3px;
+    font-size: 15px;
+    font-weight: 600;
 }
 
     
@@ -40,4 +47,13 @@
     font-weight: bold;
  
 
+}
+.follow{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #0095f6;
+    cursor:pointer;
 }

@@ -28,11 +28,7 @@ const Blog1 = () => {
     imgStyle={{ objectFit: "contain" }}
 
    >
-     
-    <div className = {styles.bookmark}>
-      <BookmarkIcon/>
-    </div>
-    
+
 
    </BackgroundImage>
 
