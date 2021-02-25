@@ -1,13 +1,8 @@
 import React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
-<<<<<<< HEAD
 //import Img from "gatsby-image"
 import BackgroundImage from 'gatsby-background-image'
 import styles from "./style.module.css"
-=======
-import Img from "gatsby-image"
-
->>>>>>> a600e2322b8ccf3867c05f2d653a0ae3c4dc064d
 
 const ProfileNav = () => {
     const data = useStaticQuery(graphql`
