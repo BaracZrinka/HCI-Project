@@ -4,10 +4,23 @@
     display: flex;
     color: white;
     font-size: 16px;
-    justify-content: space-between;
-    height:70px;
+    flex-direction: column;
+    justify-content: center;
+    height:200px;
     align-items: center;
     font-weight:bolder;
     
     
+}
+.navigation{
+    margin:1%;
+}
+.contact{
+    margin:0%;
+}
+.link{
+    text-decoration: underline;
+}
+.text{
+    font-weight: normal;
 }

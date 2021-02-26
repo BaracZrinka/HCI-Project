@@ -7,8 +7,11 @@ import Copyright from '../Copyright'
 const Footer = () => (
     <footer className={styles.footer}>
         <SocialLinks/>
-        <Navigation />
+        <div className={styles.navigation}>
+        <Navigation /></div>
         <Copyright/>
+        <div className={styles.contact}>
+            <span className = {styles.text}>Contact |</span> <span className={styles.link}>contactUs@gmail.com</span></div>
         
 
     </footer>
