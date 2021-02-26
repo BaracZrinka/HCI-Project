@@ -1,0 +1,38 @@
+.header{
+    display:grid;
+
+    background-color: #f5e6d8;
+    padding-top: 20px;
+}
+
+
+.filter{
+    position: relative;
+    left: 20%;
+    bottom:30px;
+    width:fit-content;
+    border:none;
+    box-shadow: 3px 3px 3px gray;
+    background-color: #8e6f74;
+    
+    font-size: 16px;
+    color: white;
+    padding: 8px 30px;
+    text-align: start;
+    text-decoration:none;
+
+    border:none;
+    box-shadow: 0px 0px 5px 0 gray;
+    cursor: pointer;
+    outline: 0;
+    margin-top: 30px;
+    margin-bottom: 0px;
+
+
+    border-bottom-left-radius: 10% 40%;
+    border-top-left-radius: 10% 40%;
+    border-bottom-right-radius: 10% 40%;
+    border-top-right-radius: 10% 40%;
+
+}
+

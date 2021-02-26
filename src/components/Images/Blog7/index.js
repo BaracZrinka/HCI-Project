@@ -8,7 +8,7 @@ import BookmarkIcon from '../BookmarkIcon'
 const Blog1 = () => {
     const data = useStaticQuery(graphql`
     query {
-      desktop: file(relativePath: { eq: "blog2.jpg" }) {
+      desktop: file(relativePath: { eq: "blog7.jpg" }) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 1920) {
             ...GatsbyImageSharpFluid_withWebp

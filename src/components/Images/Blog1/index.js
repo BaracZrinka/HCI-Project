@@ -26,11 +26,12 @@ const Blog1 = () => {
     className = {styles.titleImage}
     fluid={data.desktop.childImageSharp.fluid}
      backgroundColor={`#040e18`}
+     style={{ height: "100%", width: "100%" }}
+    imgStyle={{ objectFit: "contain" }}
+
    >
      
-    <div className = {styles.bookmark}>
-      <BookmarkIcon/>
-    </div>
+   
     
 
    </BackgroundImage>

@@ -5,7 +5,16 @@ import BlogPostBody from '../BlogPostBody'
 import ProfileImage1 from '../Images/ProfileImage1'
 import ProfileImage2 from '../Images/ProfileImage2'
 import CommentSection from '../CommentSection'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faBookmark } from '@fortawesome/free-regular-svg-icons'
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+
+library.add(
+    faBookmark
+    
+    // more icons go here
+  );
 const name1 = "_AuthorsName1"
 const name2 = "_AuthorsName2"
 
@@ -21,28 +30,53 @@ const SecondText='Sed ut perspiciatis unde omnis iste natus error sit voluptatem
 
 const FirstCom = 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium'
 const SecondCom = 'Sed ut perspiciatis unde omnis iste'
-const ThirdCom = 'ut perspiciatis'
+const ThirdCom = 'ut perspiciatis'  
 
 const BlogPost = ({image, title}) => (
-    <>
+    <div className={styles.wholeBlog}>
+
     <section className = {styles.blog1}>
-        <div className = {styles.image}>{image}</div>
-        <h2>{title}</h2>
-        <BlogRating/>
+        <div className = {styles.imageAndIcon}>
+        <div className = {styles.image} >{image}
+        </div>        
+        
+        <FontAwesomeIcon icon={['far', 'bookmark']} size ='2x' color='black' className = {styles.bookmarkIcon}/>
+        </div>
+        <div className = {styles.head}>
+            <div className = {styles.h2}>
+                <h2>{title}</h2>
+            </div>
+            <div className = {styles.rating}>
+                <BlogRating/>
+            </div>
+        </div>
     </section>
-    <BlogPostBody profileImage = {<ProfileImage1/>} authorsName = {name1} text = {FirstText} tags={tags1}/>
-    <div>
-            <h2 className = {styles.commentsTitle}>Comments:</h2>
-            <button>Add your comments here</button>
-            <button className = {styles.button}>Rate</button>
-    </div>
-    <CommentSection profileImage = {<ProfileImage1/>} userName = {user1} comment = {FirstCom}/>
-    <CommentSection profileImage = {<ProfileImage2/>} userName = {user2} comment = {SecondCom}/>
-    <CommentSection profileImage = {<ProfileImage1/>} userName = {user3} comment = {ThirdCom}/>
-    <button className = {styles.Button}>Read more</button>
-
     
-    </>
 
+
+    <BlogPostBody profileImage = {<ProfileImage1/>} authorsName = {name1} text = {FirstText} tags={tags1}/>
+    
+    <div className = {styles.commentHead}>
+    <h3 className = {styles.commentsTitle}>Comments:</h3>
+        <div className = {styles.buttonDiv}>
+            <textarea placeholder='Add your comment here...' maxLength= "160"></textarea>
+        </div>
+    </div>
+    <div className={styles.commentButtons}>
+        <button className = {styles.button1}>CANCEL</button>
+        <button className = {styles.button2}>COMMENT</button>
+    </div>
+
+    <div className = {styles.commentBody}>
+        <CommentSection profileImage = {<ProfileImage1/>} userName = {user1} comment = {FirstCom}/>
+        <CommentSection profileImage = {<ProfileImage2/>} userName = {user2} comment = {SecondCom}/>
+        <CommentSection profileImage = {<ProfileImage1/>} userName = {user3} comment = {ThirdCom}/>
+    <div className={styles.readmore}>
+        <button className = {styles.readMoreButton}>Read more</button>
+    </div>
+
+    </div>
+    </div>
 )
+
 export default BlogPost
