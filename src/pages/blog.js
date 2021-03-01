@@ -5,11 +5,11 @@ import BlogHeader from '../components/BlogHeader'
 import BlogFeed from '../components/BlogFeed'
 import { Link } from "gatsby"
 
-const signup = () => (
+const Blog = () => (
     <HeaderFooterLayout activeTab = "Blog">
     <BlogHeader/>
     <BlogFeed/>
     </HeaderFooterLayout>
 )
 
-export default signup
+export default Blog
