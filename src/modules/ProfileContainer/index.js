@@ -37,20 +37,19 @@ const ProfileContainer = () => {
  
     return (
       <section className={styles.container}>
-        <h2>Read my profile posts!</h2>
-        <ul className={styles.list}>
           {data.allContentfulBlogPost3.nodes.map(node => {
             return (
-              <Link to={`/post/${node.slug}`}>
-                <li>
-                <Img fixed={node.coverImage.fixed} />
-                  <h3>{node.title}</h3>
-                  <span>{node.summary.internal.content}</span>
-                </li>
+              <Link to={`/posts/${node.slug}`}>
+                  <div className={styles.profilePost}>
+                <Img fixed={node.coverImage.fixed} className={styles.image}/>
+               <div className={styles.shadow}>  
+                <h3>{node.title}</h3>
+                  <p className={styles.text}>{node.summary.internal.content}</p>
+                  </div>
+                  </div>
               </Link>
             )
           })}
-        </ul>
       </section>
   )
 }

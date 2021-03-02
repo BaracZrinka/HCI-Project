@@ -1,21 +1,66 @@
-.container {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-  }
-   
-  .list {
-    padding-left: 0;
-    display: flex;
-    flex-flow: column;
-    flex-wrap: wrap;
-    width: fit-content;
-    margin: 0 100px;
-    justify-content: space-between;
+.container{
+  position:relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 90px;
+  row-gap: 60px;
+  
+  margin-top:15%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom:15%;
 
-  }
+}
+.image{
+  height:255px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex ;
+  justify-content: center;
+  align-items: center;   
+ 
+  border-top-left-radius: 3% 8%;
+border-top-right-radius: 3% 8%;
+border-bottom-left-radius: 3% 8%;
+border-bottom-right-radius: 3% 8%;
+
+}
+
+.text{
+  position: relative;
    
-  .list li {
-    list-style: none;
-  }
+}
+/*.text:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  content: "";
+  background: linear-gradient(to top,
+     rgba(255,255,255, 1) 20%, 
+     rgba(255,255,255, 0) 80%
+  );
+  pointer-events: none; /* so the text is still selectable 
+}*/
+.shadow p{
+  margin:10px 0 0;
+  padding:0;
+  color:black;
+  background-color: grey;
+}
+.shadow{ 
+  border-top-left-radius: 3% 8%;
+border-top-right-radius: 3% 8%;
+border-bottom-left-radius: 3% 8%;
+border-bottom-right-radius: 3% 8%;
+}
+
+.profilePost{
+  position:relative;
+  background-color: #FFFFFF;
+  border-radius: 3%;
+  height: 100%;
+  
+}

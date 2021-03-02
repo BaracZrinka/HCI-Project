@@ -6,7 +6,7 @@ import {Link} from 'gatsby'
 import styles from './profile.module.css'
 import HeaderFooterLayout from '../layouts/headerFooter'
  
-const ProfPost = ({ pageContext }) => {
+const ProfilePost = ({ pageContext }) => {
   const { body, title, coverImage, summary, next, prev } = pageContext
  
   return (
@@ -24,8 +24,9 @@ const ProfPost = ({ pageContext }) => {
         {renderRichText(body)}
         </article>
       </main>
+      <Link to='/profile'><button className={styles.button}>Back to feed</button></Link>
     </HeaderFooterLayout>
   )
 }
  
-export default ProfPost
+export default ProfilePost

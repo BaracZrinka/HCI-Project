@@ -7,11 +7,12 @@ import ProfileContainer from '../modules/ProfileContainer'
 import { Link } from "gatsby"
 
 const Profile = () => (
+    <main>
     <HeaderFooterLayout activeTab = "Profile">
         <ProfileAbout/>
         <ProfileContainer/>
-
     </HeaderFooterLayout>
+    </main>
 )
 
 export default Profile
