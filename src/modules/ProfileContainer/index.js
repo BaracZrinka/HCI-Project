@@ -3,7 +3,7 @@ import {useStaticQuery, graphql, Link} from 'gatsby'
 import Img from 'gatsby-image'
 import styles from './style.module.css'
  
-const BlogContainer = () => {
+const ProfileContainer = () => {
   const data = useStaticQuery(graphql`
     query {
       allContentfulBlogPost3 {
@@ -43,7 +43,7 @@ const BlogContainer = () => {
             return (
               <Link to={`/post/${node.slug}`}>
                 <li>
-                  <Img fixed={node.coverImage.fixed} />
+                <Img fixed={node.coverImage.fixed} />
                   <h3>{node.title}</h3>
                   <span>{node.summary.internal.content}</span>
                 </li>
@@ -55,4 +55,4 @@ const BlogContainer = () => {
   )
 }
  
-export default BlogContainer
+export default ProfileContainer

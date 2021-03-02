@@ -2,7 +2,7 @@ import React from "react"
 import SEO from "../components/seo"
 import HeaderFooterLayout from '../layouts/headerFooter'
 import ProfileAbout from '../components/ProfileAbout'
-import ProfileFeed from '../components/ProfileFeed'
+//import ProfileFeed from '../components/ProfileFeed'
 import ProfileContainer from '../modules/ProfileContainer'
 import { Link } from "gatsby"
 
