@@ -1,3 +1,6 @@
+require("dotenv").config()
+
+process.env.ACCESS_KEY
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
