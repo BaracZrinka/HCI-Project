@@ -38,7 +38,6 @@ exports.createPages = async ({ graphql, actions }) => {
     }
     allContentfulCarousel {
       nodes {
-        summary
         body {
           raw
         }

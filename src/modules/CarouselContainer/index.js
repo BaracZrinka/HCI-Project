@@ -10,7 +10,6 @@ const CarouselContainer = () => {
     query {
       allContentfulCarousel(limit:6) {
         nodes {
-          summary
           body {
             raw
           }
@@ -18,7 +17,7 @@ const CarouselContainer = () => {
           slug
           updatedAt
           coverImage {
-            fixed(width: 300 height:250) {
+            fixed(width: 700 height:300) {
               src
               srcSet
               srcSetWebp
@@ -34,7 +33,11 @@ const CarouselContainer = () => {
     }`)
  
 return (
-        <Carousel autoPlay infiniteLoop useKeyboardArrows dynamicHeight interval={3000} transitionTime={500}>
+    <div className={styles.carouselContainer}>
+        <div className={styles.decor}>
+            <h2 className={styles.hottest}>Hottest section</h2>
+        </div>
+        <Carousel autoPlay infiniteLoop useKeyboardArrows dynamicHeight interval={5500} transitionTime={3500}>
           {data.allContentfulCarousel.nodes.map(node => {
             return (
                   <Link to={`/hottestPosts/${node.slug}`}>
@@ -48,6 +51,7 @@ return (
             )
           })}
         </Carousel>
+        </div>
         )
 }
  
