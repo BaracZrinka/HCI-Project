@@ -2,7 +2,9 @@ import React from 'react'
 import {useStaticQuery, graphql, Link} from 'gatsby'
 import Img from 'gatsby-image'
 import styles from './style.module.css'
- 
+import { Carousel } from 'react-responsive-carousel'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 const CarouselContainer = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -31,22 +33,22 @@ const CarouselContainer = () => {
       }
     }`)
  
-    return (
-      <section className={styles.container}>
+return (
+        <Carousel autoPlay infiniteLoop useKeyboardArrows dynamicHeight interval={3000} transitionTime={500}>
           {data.allContentfulCarousel.nodes.map(node => {
             return (
-              <Link to={`/hottestPosts/${node.slug}`}>
-                  <div className={styles.profilePost}>
-                <Img fixed={node.coverImage.fixed} className={styles.image}/>
-               <div className={styles.shadow}>  
-                <h3>{node.title}</h3>
-                  </div>
-                  </div>
-              </Link>
+                  <Link to={`/hottestPosts/${node.slug}`}>
+                      <div className={styles.carousel}>
+                            <Img fixed={node.coverImage.fixed} className={styles.image}/>
+                            <div className={styles.title}>
+                                <span className={styles.span}>{node.title}</span>
+                            </div>
+                      </div>
+                  </Link> 
             )
           })}
-      </section>
-  )
+        </Carousel>
+        )
 }
  
 export default CarouselContainer

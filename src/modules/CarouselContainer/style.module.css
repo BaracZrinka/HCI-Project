@@ -1,0 +1,22 @@
+.image{
+    border-top-left-radius: 3% 8%;
+  border-top-right-radius: 3% 8%;
+  border-bottom-left-radius: 3% 8%;
+  border-bottom-right-radius: 3% 8%;
+}
+.carousel{
+    position: absolute;
+    height: 300px;
+    background-color: rgb(219, 65, 65);
+    
+}
+.title{
+    position: absolute;
+    bottom: 2em;
+    width: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .5));
+}
+.span {
+    font-weight: 750;
+    
+}
