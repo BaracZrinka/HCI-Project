@@ -31,6 +31,7 @@
     "react-helmet": "^6.1.0",
     "react-horizontal-scrolling-menu": "^0.7.8",
     "react-icons": "^4.2.0",
+    "react-responsive-carousel": "^3.2.12",
     "react-select": "^3.1.1",
     "react-view": "^2.3.5"
   },
