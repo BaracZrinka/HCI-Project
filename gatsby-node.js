@@ -36,6 +36,29 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     }
+    allContentfulCarousel {
+      nodes {
+        summary
+        body {
+          raw
+        }
+        title
+        slug
+        coverImage {
+          fixed(width: 300) {
+            src
+            srcSet
+            srcSetWebp
+            srcWebp
+            width
+            height
+            base64
+            aspectRatio
+          }
+        }
+      }
+    }
+
   }`)
  
   const res = raw.data.allContentfulBlogPost.nodes
@@ -49,5 +72,18 @@ exports.createPages = async ({ graphql, actions }) => {
     },
     path: `posts/${e.slug}`,
     slug: `posts/${e.slug}`
+  }))
+
+  const res1 = raw.data.allContentfulCarousel.nodes
+ 
+  res1.forEach((e, index, array) => actions.createPage({
+    component: path.resolve(`./src/layouts/index.js`),
+    context: {
+      ...e,
+      next: index < array.length ? array[index + 1] : null,
+      prev: index > 0 ? array[index - 1] : null
+    },
+    path: `hottestPosts/${e.slug}`,
+    slug: `hottestPosts/${e.slug}`
   }))
 }
