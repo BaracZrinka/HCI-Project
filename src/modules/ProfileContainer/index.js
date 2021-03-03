@@ -6,7 +6,7 @@ import styles from './style.module.css'
 const ProfileContainer = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulBlogPost3 {
+      allContentfulBlogPost(limit:8) {
         nodes {
           summary {
             internal {
@@ -20,7 +20,7 @@ const ProfileContainer = () => {
           slug
           updatedAt
           coverImage {
-            fixed(width: 300) {
+            fixed(width: 300 height:250) {
               src
               srcSet
               srcSetWebp
@@ -37,7 +37,7 @@ const ProfileContainer = () => {
  
     return (
       <section className={styles.container}>
-          {data.allContentfulBlogPost3.nodes.map(node => {
+          {data.allContentfulBlogPost.nodes.map(node => {
             return (
               <Link to={`/posts/${node.slug}`}>
                   <div className={styles.profilePost}>

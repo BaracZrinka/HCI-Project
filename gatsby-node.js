@@ -9,7 +9,7 @@ const path = require('path')
  
 exports.createPages = async ({ graphql, actions }) => {
   const raw = await graphql(`query {
-    allContentfulBlogPost3 {
+    allContentfulBlogPost {
       nodes {
         summary {
           internal {
@@ -38,7 +38,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   }`)
  
-  const res = raw.data.allContentfulBlogPost3.nodes
+  const res = raw.data.allContentfulBlogPost.nodes
  
   res.forEach((e, index, array) => actions.createPage({
     component: path.resolve(`./src/layouts/profile.js`),
