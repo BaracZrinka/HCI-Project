@@ -1,16 +1,12 @@
 import React from "react"
-import SEO from "../components/seo"
 import HeaderFooterLayout from '../layouts/headerFooter'
-import ProfileAbout from '../components/ProfileAbout'
-//import ProfileFeed from '../components/ProfileFeed'
-import ProfileContainer from '../modules/ProfileContainer'
-import { Link } from "gatsby"
+import ProfileAll from '../modules/ProfileAll'
+
 
 const Profile = () => (
     <main>
     <HeaderFooterLayout activeTab = "Profile">
-        <ProfileAbout/>
-        <ProfileContainer/>
+        <ProfileAll/>
     </HeaderFooterLayout>
     </main>
 )
