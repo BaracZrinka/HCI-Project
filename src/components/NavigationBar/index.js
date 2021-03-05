@@ -17,16 +17,17 @@ const NavigationBar = ({activeTab}) => ( <div>
         </Link>
         )
       )}
+      {loggedIn() && <Link to={'/profile'}>
+            <li>
+                Profile
+            </li>
+            </Link>}
        <Link to={'/login'}>
             <li onClick={loggedIn() ? () => localStorage.removeItem('loggedIn') : () => {}}>
                 {loggedIn() ? 'Logout' : 'Login'}
             </li>
         </Link>
-        {loggedIn() && <Link to={'/profile'}>
-            <li>
-                Profile
-            </li>
-            </Link>}
+        
        
     </nav> </div>  
   )
