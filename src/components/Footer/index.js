@@ -11,7 +11,7 @@ const Footer = () => (
         <Navigation /></div>
         <Copyright/>
         <div className={styles.contact}>
-            <span className = {styles.text}>Contact |</span> <span className={styles.link}>contactUs@gmail.com</span></div>
+            <span className = {styles.text}>Contact |</span> <a href="https://www.gmail.com/mail/help/intl/en/about.html?utm_expid=..." target="blank" className={styles.link}>contactUs@gmail.com</a></div>
         
 
     </footer>

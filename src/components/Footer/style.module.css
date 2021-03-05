@@ -21,6 +21,9 @@
 .link{
     text-decoration: underline;
 }
+.link:hover{
+    color:green;
+}
 .text{
     font-weight: normal;
 }
