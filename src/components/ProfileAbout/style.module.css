@@ -22,6 +22,7 @@
    margin-top:10%;
    color:black;
    font-family: 'Roboto', sans-serif;
+   text-transform: uppercase;
 }
 .text{
     grid-area: text;

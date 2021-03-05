@@ -10,9 +10,10 @@ import {faEdit } from '@fortawesome/free-solid-svg-icons'
 /*<i class="far fa-bookmark"></i>*/
 
 
-const ProfileAbout = () => {
+const ProfileAbout = ({name}) => {
     const [posts, postsCounter]=useState("0");
     const [followers, followersCounter]=useState("0");
+ 
     return(
     <section className={styles.form}>
             <div className = {styles.firstDiv}>
@@ -31,7 +32,7 @@ const ProfileAbout = () => {
                     </div>
                 </div> 
                <div className={styles.text}> 
-                <h2 className={styles.username}>Username</h2>
+                <h2 className={styles.username}>{name}</h2>
            
                 <p>Lorem ipsum dolor sit amet, consectetur
                     adipiscing elit, sed do eiusmod tempor

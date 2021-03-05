@@ -16,7 +16,7 @@ const ProfileAll = () => {
   
     return (
       <main>
-        <ProfileAbout/>
+        <ProfileAbout name = {user}/>
         <ProfileContainer/>
       </main>
     )
