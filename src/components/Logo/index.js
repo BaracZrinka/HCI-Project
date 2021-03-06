@@ -6,10 +6,14 @@ import LogoText from '../LogoText'
 const Logo = () => (
     <section className = {styles.logo1}>
         <div className={styles.divs}>
-        <LogoImage/>
+            <a href="http://localhost:8000">
+                <LogoImage/>
+            </a>
         </div>
         <div className={styles.divs}>
-        <LogoText />
+            <a href="http://localhost:8000">
+                <LogoText />
+            </a>
         </div>
     </section>
 
