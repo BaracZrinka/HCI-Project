@@ -1,32 +1,40 @@
+.container{
+  display: grid;
+  grid-template-columns: 20% 60% 20% ;
+  background-color:#696f45;
+}
 .navigationHeader {
-    height: 85px;
+
+  grid-column-start: 2;
+  grid-column-end: 3;
+    height: 60px;
     display: grid;
-    grid-template-columns: auto-fill 20% 20% 35% 5% ;
+    grid-template-columns: 20% 70% 10% ;
     grid-template-rows: 1fr;
     background-color:#696f45;
-    
-    
-
-    
+       
   }
   .navigationHeader > .logo{
     grid-column-start: 1;
-    
-    
-
-
+  
   }
   .navigation{
-    grid-column:4/5 ;
+    grid-column-start: 2 ;
+    grid-column-end: 3;
     align-self:center;
     font-weight: bolder;
     letter-spacing: 1px;
     
+    
   }
   .profileNav{
-    grid-column-end:6;
-   justify-self: center;
+    grid-column-end:4;
+   justify-self: flex-end;
    align-self: center;
    
+   
+  }
+  .logo{
+    display: flex;
   }
   

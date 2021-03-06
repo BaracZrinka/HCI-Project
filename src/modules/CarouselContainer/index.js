@@ -51,7 +51,7 @@ return (
             )
           })}
         </Carousel>
-        </div>
+      </div>
         )
 }
  

@@ -2,19 +2,8 @@
     display: flex;
    justify-content: space-around;
     flex-flow: row;
-    align-items: center;
-    
-    
-    
-    
-  }
-  .navigationBar div>li{
-    display: flex;
-    flex-direction: row;
-    justify-content:center;
-    align-items: center;
-  }
-  
+ }
+
   .navigationBar li {
     padding: 14px 15px;
     list-style: none;
@@ -36,4 +25,3 @@
     border-bottom: 2px solid whitesmoke;
    
   }
-  
