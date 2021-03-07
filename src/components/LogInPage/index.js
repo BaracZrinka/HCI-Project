@@ -2,14 +2,16 @@ import React, {useState} from 'react'
 import {navigate} from 'gatsby'
 import styles from './style.module.css';
 import {myLocalStorage} from '../../helper'
+import { faChessBishop } from '@fortawesome/free-solid-svg-icons';
 const users = [
     {
       username: "zrinka",
-      password: "123"
+      password: "123",
     },
     {
       username: "petra",
-      password: "123"
+      password: "123",
+    
     },
     ]
 
@@ -49,12 +51,14 @@ return (
           <input name="username" onChange={e => setUserName(e.target.value)}/>
         </section>
 
+
         <section className={styles.field}>
           <label htmlFor="password">
             Password
           </label>
           <input name="password" type="password" onChange={e => setPassword(e.target.value)} />
         </section>
+        
 
         <p className={`${styles[error !== "Success" ? 'error' : 'success']} ${error ? styles.show : ''}`}>{error}</p>
         <div className={styles.button}>

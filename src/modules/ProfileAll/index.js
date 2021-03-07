@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import ProfileContainer from '../ProfileContainer'
 import ProfileAbout from '../../components/ProfileAbout'
-
 import {navigate} from 'gatsby'
+import {myLocalStorage} from '../../helper'
 
 const ProfileAll = () => {
-    const [user, setUser] = useState(localStorage.getItem('loggedIn'))
+    const [user, setUser] = useState(myLocalStorage.getItem('loggedIn'))
   
     if (!user) {
       setTimeout(() => navigate('/login'), 2000)
