@@ -3,6 +3,7 @@
     display:grid;
     grid-template-columns: 35% 30% 35%;
     grid-template-rows: 1fr 4fr 1fr ;
+    
 }
 
 .container{
@@ -122,11 +123,10 @@
     background: whitesmoke;  
     background: -webkit-linear-gradient(to left, #8f94fb, #696f45);  
     width: 100%;
-    height:100vh;
+    
     grid-column: 1/4;
     grid-row: 1/4;
-    /*Added for bottom fixing:*/
-    margin-bottom: -70px;
+    
    
 }
 
@@ -136,7 +136,7 @@
     left: 0;
   
     width: 100%;
-    height: 100%;
+    height: 130vh;
     overflow: hidden;
 }
 

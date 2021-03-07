@@ -70,6 +70,21 @@ return (
         </div>
       </section>
       <span className={styles.spanclass}>Already have an account?&nbsp;<a href="http://localhost:8000/login">Log in</a></span>
+    
+      <div className={styles.area} >
+            <ul className={styles.circles}>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+      </div >
     </main>
   )}
 
