@@ -1,14 +1,14 @@
 import React from 'react'
-import SEO from "../components/seo"
 import HeaderFooterLayout from '../layouts/headerFooter'
 import BlogHeader from '../components/BlogHeader'
-import BlogFeed from '../components/BlogFeed'
-import { Link } from "gatsby"
+//import BlogFeed from '../components/BlogFeed'
+import BlogContainer from '../modules/BlogContainer'
+
 
 const Blog = () => (
     <HeaderFooterLayout activeTab = "Blog">
     <BlogHeader/>
-    <BlogFeed/>
+    <BlogContainer/>
     </HeaderFooterLayout>
 )
 

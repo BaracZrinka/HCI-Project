@@ -58,7 +58,36 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
 
-  }`)
+  }
+  allContentfulBlogFeed(limit:20) {
+    nodes {
+      summary {
+        internal {
+          content
+        }
+      }
+      body {
+        raw
+      }
+      title
+      slug
+      tags
+      updatedAt
+      coverImage {
+        fixed(width: 300 height:250) {
+          src
+          srcSet
+          srcSetWebp
+          srcWebp
+          width
+          height
+          base64
+          aspectRatio
+        }
+      }
+    }
+  }
+}`)
  
   const res = raw.data.allContentfulBlogPost.nodes
  
@@ -84,5 +113,18 @@ exports.createPages = async ({ graphql, actions }) => {
     },
     path: `hottestPosts/${e.slug}`,
     slug: `hottestPosts/${e.slug}`
+  }))
+
+  const res2 = raw.data.allContentfulBlogFeed.nodes
+ 
+  res2.forEach((e, index, array) => actions.createPage({
+    component: path.resolve(`./src/layouts/blog.js`),
+    context: {
+      ...e,
+      next: index < array.length ? array[index + 1] : null,
+      prev: index > 0 ? array[index - 1] : null
+    },
+    path: `BlogPosts/${e.slug}`,
+    slug: `BlogPosts/${e.slug}`
   }))
 }
