@@ -40,8 +40,8 @@ const LogInPage = () => {
 return (
     <main className={styles.background} onKeyDown={key => {
       if (key.key === "Enter")
-        return submit()
-    }}>
+        return submit()}}>
+
       <section className={styles.container}>
         <h2 className={styles.title}>Log in</h2>
         <section className={styles.field}>
@@ -68,6 +68,21 @@ return (
         </div>
       </section>
       <span className={styles.spanclass}>Don't have an account?&nbsp;<a href="http://localhost:8000/signup">Sign up</a></span>
+    
+      <div className={styles.area} >
+            <ul className={styles.circles}>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+      </div >
     </main>
   )}
 
