@@ -55,19 +55,21 @@ return (
     <div className={styles.BlogContainer}>
           {data.allContentfulBlogFeed.nodes.map(node => {
             return (
+              <>
                   <Link to={`/blogPosts/${node.slug}`}>
                       <div className = {styles.imageAndIcon}>
                             <Img fixed={node.coverImage.fixed} className={styles.image}/>
                             <FontAwesomeIcon icon={['far', 'bookmark']} size ='2x' color='black' className = {styles.bookmarkIcon}/>
-                         </div>
+                         </div></Link> 
                         <h2>{node.title}</h2> 
                         <div className = {styles.rating}>
                               <BlogRating/>
                         </div>
                         <BlogPostBody profileImage = {<ProfileImage1/>} authorsName = {node.authorsName} text = {node.summary.internal.content} tags={node.tags}/>
-                        
-                        </Link> 
+                        <Link to={`/blogPosts/${node.slug}`}><button className = {styles.button}>Read more</button></Link>
+                </>         
             )
+           
           })}
       
       </div>
