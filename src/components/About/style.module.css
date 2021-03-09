@@ -1,4 +1,15 @@
+.container{
+    display:grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-areas: 
+    ". about ."
+}
+.blob{
+    z-index: -1;
+    transform: translate3d(-35em,5em,0em);
+}
 .about{
+    grid-area: about;
     display:grid;
     grid-template-columns: 8% 34% 16% 34% 8%;
     grid-template-rows: repeat(auto-fill,minmax(50px,1fr));
@@ -6,80 +17,61 @@
     ". header . . ."
     ". text1 text1 . ."
     ". . text2 text2 . "
-    ".  . button button .";
+    ".  button button . .";
 
     justify-items: center;
     align-items: center;
     font-family: Ringside Regular A,Ringside Regular B,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;
     font-style: normal;
     font-weight: 700;
-    
-    background-color: #acce8d9a;
-    
-
-    
-}
-
-
-
-.button{
-    
-    background-color: #28A535;
-    
-    color: white;
-    /*padding: 20px 34px;
-    text-align: center;
-    text-decoration: none;
-    
-    font-size: 24px;
-    margin: 45px 5px;
-    cursor: pointer;
-    display: grid;
-    grid-area: button;
-    justify-self: end;
-    border-bottom-left-radius: 10% 40%;
-    border-top-left-radius: 10% 40%;
-    border-bottom-right-radius: 10% 40%;
-    border-top-right-radius: 10% 40%;*/
-    font-weight:600;
-    font-stretch: normal;
-    text-align: center;
-    
-    padding: 20px 34px;
-    
-    font-size:20px;
-    cursor: pointer;
-    
-    border-radius: 20px ;
-    border: none;
-    padding:10%;
-    height: 15px;
-    margin: 45px 5px;
-    text-align: center;
-
-    grid-area: button;
-    justify-self: end;
-    
-
 }
 .about h2{
     display:grid;
     grid-area: header;
     padding-top:10%;
     justify-self: start;
-    font-size: 2.5em;
-
+    font-size: 2em;
 }
 .about p{
     grid-area: text1;
     padding-bottom:3%;
-    font-size: 20px;
+    font-size: 1em;
     padding-right: 10%;
 }
 .about span{
     grid-area: text2;
     padding-right: 10%;
-    font-size: 20px;
-
-   
+    font-size: 1em;
 }
+
+.button{
+    width:200px;
+    height: 65px;
+    background-color: #696f45;
+
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+
+    border-radius: 20px ;
+    border:none;
+    padding:10px;
+    box-shadow: 0px 0px 5px 0 gray;
+    cursor: pointer;
+    margin:50px 30px;
+    outline: 0;
+
+}
+.buttonDiv{
+    grid-area: button;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+}
+.container button:hover {
+    background-color: #28a535;
+    color: white;
+    box-shadow: none;
+    transition: all 0.5s ease-in-out;
+    
+  }
