@@ -13,11 +13,11 @@ const BlogFeed = ({ pageContext }) => {
     <HeaderFooterLayout>
       <main className={styles.container}>
         <header className={!prev || !next ? styles.headerTwo : ''}>
-          {prev && (<Link to={`/BlogPosts/${prev.slug}`}><span className={styles.button}>Previous</span></Link>)}
+          {prev && (<Link to={`/blogPosts/${prev.slug}`}><span className={styles.button}>Previous</span></Link>)}
           <h2>
             {title}
           </h2>
-          {next && (<Link to={`/BlogPosts/${next.slug}`}><span className={styles.button}>Next</span></Link>)}
+          {next && (<Link to={`/blogPosts/${next.slug}`}><span className={styles.button}>Next</span></Link>)}
         </header>
         <Img fixed={coverImage.fixed} className={styles.image}/>
         <article>

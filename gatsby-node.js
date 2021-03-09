@@ -57,8 +57,6 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     }
-
-  }
   allContentfulBlogFeed(limit:20) {
     nodes {
       summary {
@@ -124,7 +122,7 @@ exports.createPages = async ({ graphql, actions }) => {
       next: index < array.length ? array[index + 1] : null,
       prev: index > 0 ? array[index - 1] : null
     },
-    path: `BlogPosts/${e.slug}`,
-    slug: `BlogPosts/${e.slug}`
+    path: `blogPosts/${e.slug}`,
+    slug: `blogPosts/${e.slug}`
   }))
 }

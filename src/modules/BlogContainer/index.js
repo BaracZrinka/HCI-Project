@@ -52,7 +52,7 @@ return (
     <div className={styles.BlogContainer}>
           {data.allContentfulBlogFeed.nodes.map(node => {
             return (
-                  <Link to={`/BlogPosts/${node.slug}`}>
+                  <Link to={`/blogPosts/${node.slug}`}>
                       <div className = {styles.imageAndIcon}>
                             <Img fixed={node.coverImage.fixed} className={styles.image}/>
                             <FontAwesomeIcon icon={['far', 'bookmark']} size ='2x' color='black' className = {styles.bookmarkIcon}/>
