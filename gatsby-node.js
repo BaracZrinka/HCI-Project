@@ -70,6 +70,7 @@ exports.createPages = async ({ graphql, actions }) => {
       title
       slug
       tags
+      authorsName
       updatedAt
       coverImage {
         fixed(width: 300 height:250) {

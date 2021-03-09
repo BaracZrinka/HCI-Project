@@ -2,6 +2,8 @@ import React from 'react'
 import {useStaticQuery, graphql, Link} from 'gatsby'
 import Img from 'gatsby-image'
 import styles from './style.module.css'
+import ProfileImage1 from '../../components/Images/ProfileImage1'
+import BlogPostBody from '../../components/BlogPostBody'
 import BlogRating from '../../components/Images/BlogRating'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faBookmark } from '@fortawesome/free-regular-svg-icons'
@@ -31,6 +33,7 @@ const BlogContainer = () => {
               title
               slug
               tags
+              authorsName
               updatedAt
               coverImage {
                 fixed(width: 300 height:250) {
@@ -57,13 +60,12 @@ return (
                             <Img fixed={node.coverImage.fixed} className={styles.image}/>
                             <FontAwesomeIcon icon={['far', 'bookmark']} size ='2x' color='black' className = {styles.bookmarkIcon}/>
                          </div>
-                        <h2>{node.title}</h2>
-                               
-                                <div className = {styles.rating}>
-                                    <BlogRating/>
-                                </div>
+                        <h2>{node.title}</h2> 
+                        <div className = {styles.rating}>
+                              <BlogRating/>
+                        </div>
+                        <BlogPostBody profileImage = {<ProfileImage1/>} authorsName = {node.authorsName} text = {node.summary.internal.content} tags={node.tags}/>
                         
-                        <p className={styles.text}>{node.summary.internal.content}</p>
                         </Link> 
             )
           })}
