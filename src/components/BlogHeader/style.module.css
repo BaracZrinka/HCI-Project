@@ -35,4 +35,16 @@
     border-top-right-radius: 10% 40%;
 
 }
-
+.styleInfo{
+    padding-right: 10px;
+}
+elementStyle{
+    border:solid;
+    border-radius: 10px;
+      position:relative;
+      left:10v;
+      height:3vh;
+      width:20vh;
+      margin-top:5vh;
+      margin-bottom:10vh;
+}

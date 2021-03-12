@@ -34,7 +34,7 @@ const ProfileContainer = () => {
         }
       }
     }`)
- 
+ console.log(data);
     return (
       <>
       <hr className={styles.line}></hr>
