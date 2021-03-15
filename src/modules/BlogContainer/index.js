@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {useStaticQuery, graphql, Link} from 'gatsby'
 import Img from 'gatsby-image'
 import styles from './style.module.css'
@@ -9,6 +9,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faBookmark } from '@fortawesome/free-regular-svg-icons'
 
 import { library } from '@fortawesome/fontawesome-svg-core';
+//import { node } from 'prop-types'
+//import { faStripeS } from '@fortawesome/free-brands-svg-icons'
 
 library.add(
     faBookmark
@@ -17,7 +19,7 @@ library.add(
   );
 
 
-const BlogContainer = () => {
+const BlogContainer = ({tags}) => {
   const data = useStaticQuery(graphql`
     query {
         allContentfulBlogFeed(limit:20) {
@@ -50,30 +52,72 @@ const BlogContainer = () => {
             }
           }
         }`)
- 
-return (
-    <div className={styles.BlogContainer}>
-          {data.allContentfulBlogFeed.nodes.map(node => {
-            return (
-              <>
-                  <Link to={`/blogPosts/${node.slug}`}>
-                      <div className = {styles.imageAndIcon}>
-                            <Img fixed={node.coverImage.fixed} className={styles.image}/>
-                            <FontAwesomeIcon icon={['far', 'bookmark']} size ='2x' color='black' className = {styles.bookmarkIcon}/>
-                         </div></Link> 
-                        <h2>{node.title}</h2> 
-                        <div className = {styles.rating}>
-                              <BlogRating/>
-                        </div>
-                        <BlogPostBody profileImage = {<ProfileImage1/>} authorsName = {node.authorsName} text = {node.summary.internal.content} tags={node.tags}/>
-                        <Link to={`/blogPosts/${node.slug}`}><button className = {styles.button}>Read more</button></Link>
-                </>         
-            )
-           
-          })}
+
+
+
+let filtered;
+console.log(tags);
+  console.log("accepted");
+if(tags) {
+  console.log("exist");
       
-      </div>
-        )
+    filtered = data.allContentfulBlogFeed.nodes.map(node => {
+      if(node.tags.startsWith(tags)){
+        return (
+          <>
+          <Link to={`/blogPosts/${node.slug}`}>
+              <div className = {styles.imageAndIcon}>
+                    <Img fixed={node.coverImage.fixed} className={styles.image}/>
+                    <FontAwesomeIcon icon={['far', 'bookmark']} size ='2x' color='black' className = {styles.bookmarkIcon}/>
+                 </div></Link> 
+                <h2>{node.title}</h2> 
+                <div className = {styles.rating}>
+                      <BlogRating/>
+                </div>
+                <BlogPostBody profileImage = {<ProfileImage1/>} authorsName = {node.authorsName} text = {node.summary.internal.content} tags={node.tags}/>
+                <Link to={`/blogPosts/${node.slug}`}><button className = {styles.button}>Read more</button></Link>
+        </>         
+    )
+  }   
+}
+)
+console.log("result type")
+console.log(filtered);
+
+return(
+  <div>{filtered}</div>
+)
+   
+  
+        
+        
+  
+
+}
+  console.log("skipped if statement")
+  return(
+    <div>
+  {data.allContentfulBlogFeed.nodes.map(node => {
+  return (
+    <>
+        <Link to={`/blogPosts/${node.slug}`}>
+            <div className = {styles.imageAndIcon}>
+                  <Img fixed={node.coverImage.fixed} className={styles.image}/>
+                  <FontAwesomeIcon icon={['far', 'bookmark']} size ='2x' color='black' className = {styles.bookmarkIcon}/>
+               </div></Link> 
+              <h2>{node.title}</h2> 
+              <div className = {styles.rating}>
+                    <BlogRating/>
+              </div>
+              <BlogPostBody profileImage = {<ProfileImage1/>} authorsName = {node.authorsName} text = {node.summary.internal.content} tags={node.tags}/>
+              <Link to={`/blogPosts/${node.slug}`}><button className = {styles.button}>Read more</button></Link>
+      </>         
+  )}
+  )
+}
+</div>
+  )
+
 }
  
 export default BlogContainer
