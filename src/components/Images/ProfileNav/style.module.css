@@ -1,6 +1,5 @@
-.titleImage{
-    display: block;
-    position: absolute;
-    top: 20%;
-    left: 20%;
+.titleImage {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
 }
