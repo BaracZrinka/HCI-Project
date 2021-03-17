@@ -1,77 +1,74 @@
-.container{
-    display:grid;
-    grid-template-columns: 20% 60% 20%;
-    grid-template-areas: 
-    ". about ."
+.container {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-areas: ". about .";
 }
-.blob{
-    z-index: -1;
-    transform: translate3d(-35em,5em,0em);
+.blob {
+  z-index: -1;
+  transform: translate3d(-35em, 5em, 0em);
 }
-.about{
-    grid-area: about;
-    display:grid;
-    grid-template-columns: 8% 34% 16% 34% 8%;
-    grid-template-rows: repeat(auto-fill,minmax(50px,1fr));
-    grid-template-areas: 
+.about {
+  grid-area: about;
+  display: grid;
+  grid-template-columns: 8% 34% 16% 34% 8%;
+  grid-template-rows: 20% 30% 30% 20%;
+  grid-template-areas:
     ". header . . ."
     ". text1 text1 . ."
     ". . text2 text2 . "
     ".  button button . .";
 
-    justify-items: center;
-    align-items: center;
-    font-family: Ringside Regular A,Ringside Regular B,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;
-    font-style: normal;
-    font-weight: 700;
+  justify-items: center;
+  align-items: center;
+  font-family: Ringside Regular A, Ringside Regular B, Rubik, Lato,
+    Lucida Grande, Lucida Sans Unicode, Tahoma, Sans-Serif;
+  font-style: normal;
 }
-.about h2{
-    display:grid;
-    grid-area: header;
-    padding-top:10%;
-    justify-self: start;
-    font-size: 2em;
+.about h2 {
+  display: grid;
+  grid-area: header;
+  padding-top: 10%;
+  justify-self: start;
+  font-size: 2em;
 }
-.about p{
-    grid-area: text1;
-    padding-bottom:3%;
-    font-size: 1em;
-    padding-right: 10%;
+.about .text1 {
+  grid-area: text1;
+  padding-bottom: 3%;
+  font-size: 1.1em;
+  padding-right: 10%;
 }
-.about span{
-    grid-area: text2;
-    padding-right: 10%;
-    font-size: 1em;
+.about .text2 {
+  grid-area: text2;
+  padding-right: 10%;
+  font-size: 1.1em;
 }
+.button {
+  width: 200px;
+  height: 65px;
+  background-color: #696f45;
 
-.button{
-    width:200px;
-    height: 65px;
-    background-color: #696f45;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
 
-    color: white;
-    font-size: 1.2em;
-    font-weight: bold;
-
-    border-radius: 20px ;
-    border:none;
-    padding:10px;
-    box-shadow: 0px 0px 5px 0 gray;
-    cursor: pointer;
-    margin:50px 30px;
-    outline: 0;
-
+  border-radius: 20px;
+  border: none;
+  padding: 10px;
+  box-shadow: 0px 0px 5px 0 gray;
+  cursor: pointer;
+  margin: 50px 30px;
+  outline: 0;
 }
-.buttonDiv{
-    grid-area: button;
-    display: flex;
-    justify-content: center;
-    justify-self: center;
+.buttonDiv {
+  grid-area: button;
+  display: flex;
+  justify-content: center;
+  justify-self: center;
 }
 .container button:hover {
-    background-color: #28a535;
-    color: white;
-    box-shadow: none;
-    transition: all 0.5s ease-in-out;
-    
-  }
+  background-color: #28a535;
+  color: white;
+  box-shadow: none;
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.05);
+}
