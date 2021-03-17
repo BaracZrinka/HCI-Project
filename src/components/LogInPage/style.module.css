@@ -108,17 +108,16 @@
 .area {
   z-index: -1;
   background: whitesmoke;
-  background: -webkit-linear-gradient(to left, #8f94fb, #696f45);
   width: 100%;
-
   grid-column: 1/4;
   grid-row: 1/4;
 }
 
 .circles {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  
 
   width: 100%;
   height: 100%;
