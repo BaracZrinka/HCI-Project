@@ -28,13 +28,11 @@ const ProfileContainer = () => {
           slug
           updatedAt
           coverImage {
-            fixed(width: 300 height:250) {
+            fluid(quality: 90, maxWidth: 1920){
               src
               srcSet
               srcSetWebp
               srcWebp
-              width
-              height
               base64
               aspectRatio
             }
@@ -43,6 +41,7 @@ const ProfileContainer = () => {
       }
     }`)
  
+
 return (
   <>
     <hr className={styles.line}></hr>
@@ -55,8 +54,8 @@ return (
         return (
           <Link to={`/posts/${node.slug}`}>
             <div className={styles.profilePost}>
-              <FontAwesomeIcon icon={['fas', 'trash-alt']} fill='white' size ='2x' color='black' className = {styles.bookmarkIcon}/>
-              <Img fixed={node.coverImage.fixed} className={styles.image}/>
+              <FontAwesomeIcon icon={['fas', 'trash-alt']} fill='white' size ='2x' color='black' className = {styles.trashIcon}/>
+              <Img fluid={node.coverImage.fluid} className={styles.image}/>
               <div className={styles.body}>  
                 <div className={styles.title}>
                   <h3>{node.title}</h3>
@@ -74,5 +73,7 @@ return (
   </>
   )
 }
+
+
  
 export default ProfileContainer
