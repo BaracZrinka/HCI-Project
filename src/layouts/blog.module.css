@@ -8,8 +8,11 @@
   display: flex;
   justify-content: space-between;
 }
-.button {
+header .button {
   display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: white;
   color: black;
   text-align: center;
@@ -42,14 +45,22 @@
   position: relative;
 }
 .image {
-  height: 250px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  /*height: 300px;
+  width: 600px;*/
   display: block;
 }
 .bookmarkIcon {
   position: absolute;
   top: 12%;
-  right: 8%;
+  right: 5%;
+  transition: transform 0.2s;
   cursor: pointer;
+}
+.bookmarkIcon:hover {
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.2);
 }
 .head {
   display: grid;
@@ -66,9 +77,16 @@
   grid-column: 3/4;
   justify-self: center;
   align-self: center;
+  cursor: pointer;
 }
 .wholeBlog article {
-  margin-left: 5%;
+  margin: 5%;
+  font-size: 18px;
+  line-height: 1.75;
+}
+.commentButtons {
+  display: flex;
+  justify-content: flex-end;
   margin-right: 5%;
 }
 .button1 {
@@ -77,14 +95,14 @@
   text-align: center;
 
   margin-bottom: 10px;
+  margin-right: 4px;
   cursor: pointer;
   width: 130px;
   height: 40px;
 
   font-size: 15px;
-  padding: 1% 1% 1% 1%;
+  padding: 1%;
   border-radius: 10px;
-
   border: none;
 
   box-shadow: 2px 2px 2px grey;
@@ -94,18 +112,18 @@
   font-weight: bold;
 }
 .button2 {
-  background-color: #9cc9f2;
-  color: black;
+  background-color: #696f45;
+  color: white;
   text-align: center;
 
   margin: 5px 5px;
   margin-bottom: 10px;
   cursor: pointer;
-  width: 95px;
+  width: 100px;
   height: 35px;
 
   font-size: 15px;
-  padding: 1% 1% 1% 1%;
+  padding: 1%;
   border-radius: 10px;
   border: none;
 
@@ -154,7 +172,7 @@ textarea {
 }
 .readMoreButton {
   width: 30%;
-  background-color: #fae4ce;
+  background-color: white;
 
   border-radius: 20px;
   border: none;
@@ -162,22 +180,38 @@ textarea {
   box-shadow: 3px 3px grey;
   /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
   font-weight: bold;
-
   margin-bottom: 15px;
+  cursor: pointer;
 }
 .readmore {
   display: flex;
   justify-content: center;
-}
-.commentButtons {
-  display: flex;
-  justify-content: flex-end;
-
-  margin-right: 5%;
 }
 
 .backButton {
   display: flex;
   flex-flow: column;
   align-items: center;
+}
+.buttonBack {
+  width: 200px;
+  height: 65px;
+  background-color: #696f45;
+
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+
+  border-radius: 20px;
+  border: none;
+  padding: 10px;
+  box-shadow: 0px 0px 5px 0 gray;
+  cursor: pointer;
+  margin: 30px 30px;
+  outline: 0;
+}
+.buttonBack:hover {
+  box-shadow: none;
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.05);
 }

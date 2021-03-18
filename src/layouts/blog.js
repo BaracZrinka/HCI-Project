@@ -15,7 +15,6 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 
 library.add(
   faBookmark
-
   // more icons go here
 )
 
@@ -115,7 +114,7 @@ const BlogFeed = ({ pageContext }) => {
       <div className={styles.backButton}>
         <div className={styles.back}>
           <Link to="/blog">
-            <button className={styles.button1}>Back to feed</button>
+            <button className={styles.buttonBack}>Back to feed</button>
           </Link>
         </div>
       </div>
