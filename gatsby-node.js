@@ -73,13 +73,11 @@ exports.createPages = async ({ graphql, actions }) => {
       authorsName
       updatedAt
       coverImage {
-        fixed(width: 300 height:250) {
+        fluid(quality: 90, maxWidth: 1920){
           src
           srcSet
           srcSetWebp
           srcWebp
-          width
-          height
           base64
           aspectRatio
         }

@@ -1,11 +1,7 @@
 .header{
     display:grid;
-
-    background-color: #f5e6d8;
     padding-top: 20px;
 }
-
-
 .filter{
     position: relative;
     left: 20%;
@@ -13,7 +9,7 @@
     width:fit-content;
     border:none;
     box-shadow: 3px 3px 3px gray;
-    background-color: #8e6f74;
+    background-color: #e5e6de;
     
     font-size: 16px;
     color: white;
@@ -29,22 +25,5 @@
     margin-bottom: 0px;
 
 
-    border-bottom-left-radius: 10% 40%;
-    border-top-left-radius: 10% 40%;
-    border-bottom-right-radius: 10% 40%;
-    border-top-right-radius: 10% 40%;
-
-}
-.styleInfo{
-    padding-right: 10px;
-}
-elementStyle{
-    border:solid;
-    border-radius: 10px;
-      position:relative;
-      left:10v;
-      height:3vh;
-      width:20vh;
-      margin-top:5vh;
-      margin-bottom:10vh;
+    border-radius: 20%;
 }

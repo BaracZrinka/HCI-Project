@@ -1,25 +1,7 @@
-.imageAndIcon{
-    position: relative;
+.container{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
 }
-.bookmarkIcon{
-    position: absolute; top:12%; left:47%;
-    cursor: pointer;
-}
-.head{
-    display:grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 1fr;
-    
-}
-.rating{
-    grid-column: 3/4;
-
-    justify-self:center;
-    align-self: center;
-}
-.h2{
+.post{
     grid-column: 2/3;
-
-    justify-self: center;
-    align-self: center;
 }

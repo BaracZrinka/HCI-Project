@@ -35,12 +35,12 @@ const ProfileAbout = ({ name }) => {
           <div className={styles.nameAndEdit}>
             <h2 className={styles.username}>{name}</h2>
             <div className={styles.editDiv}>
-              <FontAwesomeIcon icon={faEdit} size="2x" color="gray" />
+              <FontAwesomeIcon icon={faEdit} size="2x" color="#696f45" />
             </div>
           </div>
           <div className={styles.bookmarkDiv}>
             <a href="http://localhost:8000/bookmarks">
-              <FontAwesomeIcon icon={faBookmark} size="2x" color="gray" />
+              <FontAwesomeIcon icon={faBookmark} size="2x" color="#696f45" />
             </a>
           </div>
         </div>

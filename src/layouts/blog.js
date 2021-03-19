@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
@@ -28,27 +28,35 @@ const SecondCom = "Sed ut perspiciatis unde omnis iste"
 const ThirdCom = "ut perspiciatis"
 
 const BlogFeed = ({ pageContext }) => {
+  const [button, setButton] = useState(false)
+  const change = () => {
+    setButton(true)
+  }
   const { body, title, coverImage, next, prev, authorsName, tags } = pageContext
 
   return (
     <HeaderFooterLayout>
       <main className={styles.container}>
         <header className={!prev || !next ? styles.headerTwo : ""}>
-          {prev && (
-            <Link to={`/blogPosts/${prev.slug}`}>
-              <span className={styles.button}>Previous</span>
-            </Link>
-          )}
-          {next && (
-            <Link to={`/blogPosts/${next.slug}`}>
-              <span className={styles.button}>Next</span>
-            </Link>
-          )}
+          <div className={styles.prev}>
+            {prev && (
+              <Link to={`/blogPosts/${prev.slug}`}>
+                <div className={styles.button3}>Previous</div>
+              </Link>
+            )}
+          </div>
+          <div className={styles.next}>
+            {next && (
+              <Link to={`/blogPosts/${next.slug}`}>
+                <div className={styles.button4}>Next</div>
+              </Link>
+            )}
+          </div>
         </header>
         <div className={styles.wholeBlog}>
           <section className={styles.blog1}>
             <div className={styles.imageAndIcon}>
-              <Img fixed={coverImage.fixed} className={styles.image} />
+              <Img fluid={coverImage.fluid} className={styles.image} />
 
               <FontAwesomeIcon
                 icon={["far", "bookmark"]}
@@ -78,15 +86,20 @@ const BlogFeed = ({ pageContext }) => {
             <h3 className={styles.commentsTitle}>Comments:</h3>
             <div className={styles.buttonDiv}>
               <textarea
+                onClick={change}
                 placeholder="Add your comment here..."
                 maxLength="160"
               ></textarea>
             </div>
           </div>
-          <div className={styles.commentButtons}>
-            <button className={styles.button1}>CANCEL</button>
-            <button className={styles.button2}>COMMENT</button>
-          </div>
+          {button ? (
+            <div className={styles.commentButtons}>
+              <button className={styles.button1}>CANCEL</button>
+              <button className={styles.button2}>COMMENT</button>
+            </div>
+          ) : (
+            ""
+          )}
 
           <div className={styles.commentBody}>
             <CommentSection
