@@ -21,7 +21,7 @@ library.add(
 const BlogContainer = ({ tags }) => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulBlogFeed(limit: 20) {
+      allContentfulBlogFeed(limit:20){
         nodes {
           summary {
             internal {
@@ -35,7 +35,6 @@ const BlogContainer = ({ tags }) => {
           slug
           tags
           authorsName
-          updatedAt
           coverImage {
             fixed(width: 300, height: 250) {
               src
@@ -56,12 +55,16 @@ const BlogContainer = ({ tags }) => {
   //   const [check,setCheck] = useState(false);
   //  const loading = <h2>There is no such content</h2> ;
 
-  console.log("skipped if statement")
-
-  let filtered = (
-    <>
-      {data.allContentfulBlogFeed.nodes.map(node => {
+  
+  const [check,setCheck] = useState();
+    let arr = [];
+  let filtered = ( 
+        <>
+      {data.allContentfulBlogFeed.nodes.map(node => {  
+        arr.push(node.title);
+        if(arr.includes(node.title))  {
         return (
+          <>
           <div className={styles.container}>
             <div className={styles.post}>
               <Link to={`/blogPosts/${node.slug}`}>
@@ -91,7 +94,11 @@ const BlogContainer = ({ tags }) => {
               </Link>
             </div>
           </div>
-        )
+          </>
+        )}
+        else{
+          return true;
+        }
       })}
     </>
   )
@@ -100,8 +107,10 @@ const BlogContainer = ({ tags }) => {
     console.log("exist")
 
     filtered = data.allContentfulBlogFeed.nodes.map(node => {
-      if (node.tags.startsWith(tags)) {
+      if(node.tags.startsWith(tags)) {
+        console.log(tags)
         return (
+          <>
           <div className={styles.container}>
             <div className={styles.post}>
               <Link to={`/blogPosts/${node.slug}`}>
@@ -131,9 +140,13 @@ const BlogContainer = ({ tags }) => {
               </Link>
             </div>
           </div>
+          </>
         )
       }
-    })
+     
+    }) 
+       
+      
   }
   console.log("result type")
   console.log(filtered)
