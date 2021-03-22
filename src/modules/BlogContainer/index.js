@@ -60,10 +60,10 @@ const BlogContainer = ({ tags }) => {
 
   let filtered = (
     <>
-      <div>
-        {data.allContentfulBlogFeed.nodes.map(node => {
-          return (
-            <>
+      {data.allContentfulBlogFeed.nodes.map(node => {
+        return (
+          <div className={styles.container}>
+            <div className={styles.post}>
               <Link to={`/blogPosts/${node.slug}`}>
                 <div className={styles.imageAndIcon}>
                   <Img fixed={node.coverImage.fixed} className={styles.image} />
@@ -84,14 +84,15 @@ const BlogContainer = ({ tags }) => {
                 authorsName={node.authorsName}
                 text={node.summary.internal.content}
                 tags={node.tags}
+                className={styles.blogPostBody}
               />
               <Link to={`/blogPosts/${node.slug}`}>
                 <button className={styles.button}>Read more</button>
               </Link>
-            </>
-          )
-        })}
-      </div>
+            </div>
+          </div>
+        )
+      })}
     </>
   )
 
@@ -101,32 +102,35 @@ const BlogContainer = ({ tags }) => {
     filtered = data.allContentfulBlogFeed.nodes.map(node => {
       if (node.tags.startsWith(tags)) {
         return (
-          <>
-            <Link to={`/blogPosts/${node.slug}`}>
-              <div className={styles.imageAndIcon}>
-                <Img fixed={node.coverImage.fixed} className={styles.image} />
-                <FontAwesomeIcon
-                  icon={["far", "bookmark"]}
-                  size="2x"
-                  color="black"
-                  className={styles.bookmarkIcon}
-                />
+          <div className={styles.container}>
+            <div className={styles.post}>
+              <Link to={`/blogPosts/${node.slug}`}>
+                <div className={styles.imageAndIcon}>
+                  <Img fixed={node.coverImage.fixed} className={styles.image} />
+                  <FontAwesomeIcon
+                    icon={["far", "bookmark"]}
+                    size="2x"
+                    color="black"
+                    className={styles.bookmarkIcon}
+                  />
+                </div>
+              </Link>
+              <h2>{node.title}</h2>
+              <div className={styles.rating}>
+                <BlogRating />
               </div>
-            </Link>
-            <h2>{node.title}</h2>
-            <div className={styles.rating}>
-              <BlogRating />
+              <BlogPostBody
+                profileImage={<ProfileImage1 />}
+                authorsName={node.authorsName}
+                text={node.summary.internal.content}
+                tags={node.tags}
+                className={styles.blogPostBody}
+              />
+              <Link to={`/blogPosts/${node.slug}`}>
+                <button className={styles.button}>Read more</button>
+              </Link>
             </div>
-            <BlogPostBody
-              profileImage={<ProfileImage1 />}
-              authorsName={node.authorsName}
-              text={node.summary.internal.content}
-              tags={node.tags}
-            />
-            <Link to={`/blogPosts/${node.slug}`}>
-              <button className={styles.button}>Read more</button>
-            </Link>
-          </>
+          </div>
         )
       }
     })

@@ -1,24 +1,25 @@
-import React,{useState, useEffect} from 'react'
+import React, { useState, useEffect } from "react"
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faBookmark } from '@fortawesome/free-regular-svg-icons'
+import { faBookmark } from "@fortawesome/free-regular-svg-icons"
 //import {posts as nekiNiz} from '../../constants/const'
-import { library } from '@fortawesome/fontawesome-svg-core';
-import BlogContainer from '../../modules/BlogContainer'
+import { library } from "@fortawesome/fontawesome-svg-core"
+import BlogContainer from "../../modules/BlogContainer"
+import styles from "./style.module.css"
 
 library.add(
-    faBookmark
-    
-    // more icons go here
-  );
+  faBookmark
 
-  export default function App() {
-    const [searchTerm, setTerm] = useState("");
-   // const [searchResults, setSearchResults] = React.useState();
-    const handleChanges = event => {
-       setTerm(event.target.value);
-     };
+  // more icons go here
+)
 
-    /* useEffect(()=>{
+export default function App() {
+  const [searchTerm, setTerm] = useState("")
+  // const [searchResults, setSearchResults] = React.useState();
+  const handleChanges = event => {
+    setTerm(event.target.value)
+  }
+
+  /* useEffect(()=>{
        console.log("",searchTerm)
        let result = puniNiz.filter((el)=>el.tags.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()));
       console.log("ovo dole je resut filtriranja");
@@ -28,22 +29,22 @@ library.add(
 
      },[searchTerm]);
 */
-return (
-  <>
-  <div>
-    <input
-    type = "text"
-    placeholder = "Search"
-          const value = {searchTerm}
-           onChange= {handleChanges} 
-      />
+  return (
+    <>
+      <div>
+        <input
+          type="text"
+          placeholder="Search"
+          const
+          value={searchTerm}
+          onChange={handleChanges}
+          className={styles.filter}
+        />
       </div>
-      
-     <div>
-     <BlogContainer tags={searchTerm}/> </div>
-     </>
-     
-)
-      }
 
-
+      <div>
+        <BlogContainer tags={searchTerm} />{" "}
+      </div>
+    </>
+  )
+}
