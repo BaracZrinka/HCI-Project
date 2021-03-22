@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import ProfileContainer from '../ProfileContainer'
-import ProfileAbout from '../../components/ProfileAbout'
 import {navigate} from 'gatsby'
 import {myLocalStorage} from '../../helper'
 
@@ -16,8 +15,7 @@ const ProfileAll = () => {
   
     return (
       <main>
-        <ProfileAbout name = {user}/>
-        <ProfileContainer/>
+        <ProfileContainer name = {user}/>
       </main>
     )
   }

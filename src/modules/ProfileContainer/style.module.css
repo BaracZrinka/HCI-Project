@@ -103,5 +103,6 @@
   margin-left:20%;
   margin-right: 20%;
 }
-
-
+.show{
+  display:none;
+}
