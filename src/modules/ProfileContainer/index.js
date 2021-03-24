@@ -11,7 +11,7 @@ import ProfileAbout from "../../components/ProfileAbout"
 
 library.add(faTrashAlt)
 
-const ProfileContainer = ({ name }) => {
+const ProfileContainer = ({name}) => {
   const data = useStaticQuery(graphql`
     query {
       allContentfulBlogPost(limit: 8) {
@@ -45,10 +45,11 @@ const ProfileContainer = ({ name }) => {
 
   let [posts, setPosts] = useState(null)
   let [isLoaded, setLoaded] = useState(false)
-  let [upgrade, setUpgrade] = useState(false)
+  const [check, setCheck] = useState(false)
+  
   useEffect(() => {
     let allPosts = data.allContentfulBlogPost.nodes.map(post => {
-      post.isShown = true;
+      post.isShown = true
       return post
     })
 
@@ -56,14 +57,14 @@ const ProfileContainer = ({ name }) => {
     // console.log(data.allContentfulBlogPost.nodes);
     setPosts(allPosts)
     setLoaded(true)
-    setUpgrade(true)
+    
   }, [])
 
   const changeSlug = property => {
     // console.log(property);
     let newPosts = posts.map(post => {
       if (post.slug === property) {
-        post.isShown = false;
+        post.isShown = false
       }
       return post
     })
@@ -87,7 +88,9 @@ const ProfileContainer = ({ name }) => {
             }
             return (
               <>
-                <div className={isShown? styles.profilePost : styles.hide}>
+                <div
+                  className={post.isShown ? styles.profilePost : styles.hide}
+                >
                   <button key={post.slug} onClick={() => changeSlug(post.slug)}>
                     <FontAwesomeIcon
                       icon={["fas", "trash-alt"]}
@@ -115,15 +118,15 @@ const ProfileContainer = ({ name }) => {
                   </div>
                 </div>
               </>
-            
-          )} )}
+            )
+          })}
         </section>
       </>
     )
   }
   return (
     <>
-      <ProfileAbout total={count} name={name} />
+      <ProfileAbout total={count} name = {name}/>
       {firstVar}
     </>
   )

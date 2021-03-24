@@ -12,13 +12,7 @@ import { faEdit } from "@fortawesome/free-solid-svg-icons"
 /*<i class="far fa-bookmark"></i>*/
 
 const ProfileAbout = ({ name, total, count }) => {
-
-  /*if (account) {
-    console.log("if")
-    setFollowing(following + 1)
-  }*/
-
-  console.log("skipped if")
+  
   return (
     <section className={styles.form}>
       <div className={styles.firstDiv}>
