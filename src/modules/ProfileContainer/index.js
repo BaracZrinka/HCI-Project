@@ -1,4 +1,4 @@
-import React, { useState} from "react"
+import React, { useState, useEffect } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import styles from "./style.module.css"
@@ -11,8 +11,7 @@ import ProfileAbout from "../../components/ProfileAbout"
 
 library.add(faTrashAlt)
 
-const ProfileContainer = ({name}) => {
-
+const ProfileContainer = ({ name }) => {
   const data = useStaticQuery(graphql`
     query {
       allContentfulBlogPost(limit: 8) {
@@ -44,30 +43,54 @@ const ProfileContainer = ({name}) => {
     }
   `)
 
+ 
+  let [posts, setPosts] = useState(null);
+  let [isLoaded, setLoaded] = useState(false);
+  let [upgrade, setUpgrade] = useState(false);
+  useEffect(() =>{
+    let allPosts = data.allContentfulBlogPost.nodes.map(post =>{
+      post.isShown = true;
+      return post;
+    });
 
+    // console.log(posts);
+    // console.log(data.allContentfulBlogPost.nodes);
+    setPosts(allPosts);
+    setLoaded(true);
+    setUpgrade(true)
+  },[])
 
+  const changeSlug = (property) =>{ 
+    // console.log(property);
+    let newPosts = posts.map((post)=>{
+      if(post.slug === property){
+        post.isShown = false;
+      }
+      return post;
+    })
+    setPosts(newPosts);
+  }
+ 
+  let firstVar;
 
-
-console.log("ispisujem total");
-
-
-    let count = 0;
-  let firstVar = (
+  let count = 0;
+  if(isLoaded){
+  firstVar = (
     <>
-
       <hr className={styles.line}></hr>
       <div className={styles.buttonPosition}>
         <button className={styles.button1}>Add new post</button>
       </div>
       <section className={styles.container}>
-        {data.allContentfulBlogPost.nodes.map(node => {
-          if(node){
+        {posts.map(post => {
+          if (post) {
             count = count + 1;
           }
           return (
-            <>
-              <div className={styles.profilePost}>
-                <button>
+           post.isShown? <>
+              <div className = {styles.profilePost}>
+                <button key = {post.slug}
+                onClick = {() => changeSlug(post.slug)}>
                   <FontAwesomeIcon
                     icon={["fas", "trash-alt"]}
                     fill="white"
@@ -76,31 +99,33 @@ console.log("ispisujem total");
                     className={styles.trashIcon}
                   />
                 </button>
-                <Link to={`/posts/${node.slug}`}>
-                  <Img fluid={node.coverImage.fluid} className={styles.image} />
+                <Link to={`/posts/${post.slug}`}>
+                  <Img fluid={post.coverImage.fluid} className={styles.image} />
                 </Link>
                 <div className={styles.body}>
                   <div className={styles.title}>
-                    <h3>{node.title}</h3>
+                    <h3>{post.title}</h3>
                   </div>
                   <div className={styles.textContainer}>
                     <p className={styles.text}>
-                      {node.summary.internal.content}
+                      {post.summary.internal.content}
                     </p>
                   </div>
                 </div>
-              </div>
-            </>
+              </div> 
+            </>:null
           )
         })}
-         
-        
       </section>
     </>
   )
-  return <>
-  <ProfileAbout total = {count} name = {name}/>
-  {firstVar}</>
+  }
+  return (
+    <>
+      <ProfileAbout total={count} name={name} />
+      {firstVar}
+    </>
+  )
 }
 
 export default ProfileContainer

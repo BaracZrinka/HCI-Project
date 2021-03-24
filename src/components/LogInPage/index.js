@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { navigate } from "gatsby"
 import styles from "./style.module.css"
 import { myLocalStorage } from "../../helper"
-import { faChessBishop } from "@fortawesome/free-solid-svg-icons"
+//import { faChessBishop } from "@fortawesome/free-solid-svg-icons"
 const users = [
   {
     username: "zrinka",

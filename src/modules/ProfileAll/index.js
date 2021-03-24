@@ -2,10 +2,12 @@ import React, {useState} from 'react';
 import ProfileContainer from '../ProfileContainer'
 import {navigate} from 'gatsby'
 import {myLocalStorage} from '../../helper'
+//import ProfileAbout from '../../components/ProfileAbout';
+import BlogPostBody from '../../components/BlogPostBody';
 
 const ProfileAll = () => {
     const [user, setUser] = useState(myLocalStorage.getItem('loggedIn'))
-  
+
     if (!user) {
       setTimeout(() => navigate('/login'), 2000)
       return <p>
@@ -16,6 +18,8 @@ const ProfileAll = () => {
     return (
       <main>
         <ProfileContainer name = {user}/>
+        <BlogPostBody prop = {user}/>
+
       </main>
     )
   }

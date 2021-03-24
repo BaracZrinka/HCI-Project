@@ -57,12 +57,10 @@ const BlogContainer = ({ tags }) => {
 
   
   const [check,setCheck] = useState();
-    let arr = [];
   let filtered = ( 
         <>
       {data.allContentfulBlogFeed.nodes.map(node => {  
-        arr.push(node.title);
-        if(arr.includes(node.title))  {
+         
         return (
           <>
           <div className={styles.container}>
@@ -95,10 +93,7 @@ const BlogContainer = ({ tags }) => {
             </div>
           </div>
           </>
-        )}
-        else{
-          return true;
-        }
+        )
       })}
     </>
   )

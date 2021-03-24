@@ -2,13 +2,23 @@ import React, { useState } from "react"
 import styles from "./style.module.css"
 import ProfileNav from "../Images/ProfileNav"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBookmark } from "@fortawesome/free-solid-svg-icons"
+import {
+  faBookmark,
+  faLongArrowAltDown,
+} from "@fortawesome/free-solid-svg-icons"
 //import {faFileUpload } from '@fortawesome/free-solid-svg-icons'
 import { faEdit } from "@fortawesome/free-solid-svg-icons"
 
 /*<i class="far fa-bookmark"></i>*/
 
-const ProfileAbout = ({ name, total }) => {
+const ProfileAbout = ({ name, total, count }) => {
+
+  /*if (account) {
+    console.log("if")
+    setFollowing(following + 1)
+  }*/
+
+  console.log("skipped if")
   return (
     <section className={styles.form}>
       <div className={styles.firstDiv}>
@@ -18,7 +28,7 @@ const ProfileAbout = ({ name, total }) => {
         <div className={styles.statistics}>
           <div className={styles.counters}>
             <h4>{total}</h4>
-            <h4>0 </h4>
+            <h4>{count ? count : 0}</h4>
           </div>
           <div className={styles.labels}>
             <h4>posts</h4>
@@ -46,7 +56,7 @@ const ProfileAbout = ({ name, total }) => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. 
+            aliquip ex ea commodo consequat.
           </p>
         </div>
       </div>
