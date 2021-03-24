@@ -43,82 +43,83 @@ const ProfileContainer = ({ name }) => {
     }
   `)
 
- 
-  let [posts, setPosts] = useState(null);
-  let [isLoaded, setLoaded] = useState(false);
-  let [upgrade, setUpgrade] = useState(false);
-  useEffect(() =>{
-    let allPosts = data.allContentfulBlogPost.nodes.map(post =>{
+  let [posts, setPosts] = useState(null)
+  let [isLoaded, setLoaded] = useState(false)
+  let [upgrade, setUpgrade] = useState(false)
+  useEffect(() => {
+    let allPosts = data.allContentfulBlogPost.nodes.map(post => {
       post.isShown = true;
-      return post;
-    });
+      return post
+    })
 
     // console.log(posts);
     // console.log(data.allContentfulBlogPost.nodes);
-    setPosts(allPosts);
-    setLoaded(true);
+    setPosts(allPosts)
+    setLoaded(true)
     setUpgrade(true)
-  },[])
+  }, [])
 
-  const changeSlug = (property) =>{ 
+  const changeSlug = property => {
     // console.log(property);
-    let newPosts = posts.map((post)=>{
-      if(post.slug === property){
+    let newPosts = posts.map(post => {
+      if (post.slug === property) {
         post.isShown = false;
       }
-      return post;
+      return post
     })
-    setPosts(newPosts);
+    setPosts(newPosts)
   }
- 
-  let firstVar;
 
-  let count = 0;
-  if(isLoaded){
-  firstVar = (
-    <>
-      <hr className={styles.line}></hr>
-      <div className={styles.buttonPosition}>
-        <button className={styles.button1}>Add new post</button>
-      </div>
-      <section className={styles.container}>
-        {posts.map(post => {
-          if (post) {
-            count = count + 1;
-          }
-          return (
-           post.isShown? <>
-              <div className = {styles.profilePost}>
-                <button key = {post.slug}
-                onClick = {() => changeSlug(post.slug)}>
-                  <FontAwesomeIcon
-                    icon={["fas", "trash-alt"]}
-                    fill="white"
-                    size="2x"
-                    color="black"
-                    className={styles.trashIcon}
-                  />
-                </button>
-                <Link to={`/posts/${post.slug}`}>
-                  <Img fluid={post.coverImage.fluid} className={styles.image} />
-                </Link>
-                <div className={styles.body}>
-                  <div className={styles.title}>
-                    <h3>{post.title}</h3>
-                  </div>
-                  <div className={styles.textContainer}>
-                    <p className={styles.text}>
-                      {post.summary.internal.content}
-                    </p>
+  let firstVar
+
+  let count = 0
+  if (isLoaded) {
+    firstVar = (
+      <>
+        <hr className={styles.line}></hr>
+        <div className={styles.buttonPosition}>
+          <button className={styles.button1}>Add new post</button>
+        </div>
+        <section className={styles.container}>
+          {posts.map(post => {
+            if (post) {
+              count = count + 1
+            }
+            return (
+              <>
+                <div className={isShown? styles.profilePost : styles.hide}>
+                  <button key={post.slug} onClick={() => changeSlug(post.slug)}>
+                    <FontAwesomeIcon
+                      icon={["fas", "trash-alt"]}
+                      fill="white"
+                      size="2x"
+                      color="black"
+                      className={styles.trashIcon}
+                    />
+                  </button>
+                  <Link to={`/posts/${post.slug}`}>
+                    <Img
+                      fluid={post.coverImage.fluid}
+                      className={styles.image}
+                    />
+                  </Link>
+                  <div className={styles.body}>
+                    <div className={styles.title}>
+                      <h3>{post.title}</h3>
+                    </div>
+                    <div className={styles.textContainer}>
+                      <p className={styles.text}>
+                        {post.summary.internal.content}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div> 
-            </>:null
-          )
-        })}
-      </section>
-    </>
-  )
+              </>
+            
+          )} )}
+        </section>
+      </>
+    )
   }
   return (
     <>

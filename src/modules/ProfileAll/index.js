@@ -7,8 +7,8 @@ import BlogPostBody from '../../components/BlogPostBody';
 
 const ProfileAll = () => {
     const [user, setUser] = useState(myLocalStorage.getItem('loggedIn'))
-
-    if (!user) {
+    const [check, setCheck] = useState(false)
+        if (!user) {
       setTimeout(() => navigate('/login'), 2000)
       return <p>
         You cannot view this page without login! <br/>You will be redirected to login page shortly
@@ -18,7 +18,7 @@ const ProfileAll = () => {
     return (
       <main>
         <ProfileContainer name = {user}/>
-        <BlogPostBody prop = {user}/>
+        {check?<BlogPostBody prop = {user}/> : ''}
 
       </main>
     )
