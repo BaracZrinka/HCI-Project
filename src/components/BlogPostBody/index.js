@@ -1,15 +1,14 @@
 import React, {useState} from "react"
 import styles from "./style.module.css"
-import ProfileAbout from '../ProfileAbout'
 import {myLocalStorage} from '../../helper'
 
 const BlogPostBody = ({ profileImage, authorsName, text, tags,prop }) => {
-  console.log(authorsName)
-  console.log("ovo je prop")
-  console.log(prop)
+  console.log("author" + authorsName)
+  console.log("prop" + "" + prop)
+  
  
   const setStorage = (property) => {
-    console.log("usla sam u setStorage- property:"+""+property)
+    console.log("inside setStorage- property:"+""+property)
     myLocalStorage.setItem("owner", property)
   }
  
