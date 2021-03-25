@@ -1,9 +1,18 @@
-import React, { useState } from "react"
+import React, {useState} from "react"
 import styles from "./style.module.css"
+import ProfileAbout from '../ProfileAbout'
+//import {myLocalStorage} from '../../helper'
 
-const BlogPostBody = ({ profileImage, authorsName, text, tags }) => {
+const BlogPostBody = ({ profileImage, authorsName, text, tags,prop }) => {
   console.log(authorsName)
-
+  console.log("ovo je prop")
+  console.log(prop)
+ 
+  const setStorage = (property) => {
+    console.log("usla sam u setStorage- property:"+""+property)
+    localStorage.setItem("owner", property)
+  }
+ 
 
   let ret = (
     <>
@@ -11,7 +20,9 @@ const BlogPostBody = ({ profileImage, authorsName, text, tags }) => {
         <div className={styles.author}>
           <div className={styles.profileImage}>{profileImage}</div>
           <h4 className={styles.name}>{authorsName}</h4>
-          <button className={styles.follow}>Follow</button>
+          {prop!== null  && prop!== authorsName ?
+          <button className={styles.follow}>Follow</button>:''}
+          {prop === null? <button className={styles.follow} onClick = {() => setStorage(authorsName)}>Follow</button>: console.log("nece da salje")}
         </div>
         <div className={styles.text}>
           <div> {text} </div>

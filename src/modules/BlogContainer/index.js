@@ -18,7 +18,7 @@ library.add(
   // more icons go here
 )
 
-const BlogContainer = ({ tags }) => {
+const BlogContainer = ({ tags, prop }) => {
   const data = useStaticQuery(graphql`
     query {
       allContentfulBlogFeed(limit:20){
@@ -86,6 +86,7 @@ const BlogContainer = ({ tags }) => {
                 text={node.summary.internal.content}
                 tags={node.tags}
                 className={styles.blogPostBody}
+                prop = {prop}
               />
               <Link to={`/blogPosts/${node.slug}`}>
                 <button className={styles.button}>Read more</button>
@@ -116,6 +117,7 @@ const BlogContainer = ({ tags }) => {
                     size="2x"
                     color="black"
                     className={styles.bookmarkIcon}
+                    prop = {prop}
                   />
                 </div>
               </Link>
@@ -129,6 +131,7 @@ const BlogContainer = ({ tags }) => {
                 text={node.summary.internal.content}
                 tags={node.tags}
                 className={styles.blogPostBody}
+                prop = {prop}
               />
               <Link to={`/blogPosts/${node.slug}`}>
                 <button className={styles.button}>Read more</button>

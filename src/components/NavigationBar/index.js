@@ -3,8 +3,12 @@ import styles from "./style.module.css"
 //const navTabs = ['Home', 'Blogs', 'About', 'Log in', 'Your account']
 import { navs as navTabs } from "../../constants/const"
 import { Link } from "gatsby"
+import {myLocalStorage} from '../../helper'
 
-const loggedIn = () => !!localStorage.getItem("loggedIn")
+const loggedIn = () => !!myLocalStorage.getItem("loggedIn") 
+
+
+let keysToRemove = ["loggedIn", "owner"];
 
 const NavigationBar = ({ activeTab }) => (
   <nav className={styles.navigationBar}>
@@ -23,7 +27,8 @@ const NavigationBar = ({ activeTab }) => (
     <Link to={"/login"}>
       <div
         onClick={
-          loggedIn() ? () => localStorage.removeItem("loggedIn") : () => {}
+          loggedIn() ? () => keysToRemove.forEach(k => myLocalStorage.removeItem(k)) : () => {}
+          
         }
       >
         {loggedIn() ? "Logout" : "Login"}

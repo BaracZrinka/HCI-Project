@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import styles from "./style.module.css"
 import ProfileNav from "../Images/ProfileNav"
+import {myLocalStorage} from '../../helper'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faBookmark,
@@ -9,10 +10,25 @@ import {
 //import {faFileUpload } from '@fortawesome/free-solid-svg-icons'
 import { faEdit } from "@fortawesome/free-solid-svg-icons"
 
-/*<i class="far fa-bookmark"></i>*/
 
-const ProfileAbout = ({ name, total, count }) => {
-  
+const ProfileAbout = ({ name, total }) => {
+
+  let doExist = () => !!myLocalStorage.getItem('owner')
+
+  console.log("na profilu")
+  //console.log(myLocalStorage.getItem('owner').toLowerCase())
+  console.log(name)
+
+  let count = 0;
+
+  if(doExist()){
+    console.log("first if")
+    if(myLocalStorage.getItem('owner').toLowerCase() === name){
+      console.log("drugi if")
+    count = count + 1;}
+  }else{
+    console.log("skipped if")
+  }
   return (
     <section className={styles.form}>
       <div className={styles.firstDiv}>
@@ -22,7 +38,7 @@ const ProfileAbout = ({ name, total, count }) => {
         <div className={styles.statistics}>
           <div className={styles.counters}>
             <h4>{total}</h4>
-            <h4>{count ? count : 0}</h4>
+            <h4>{count}</h4>
           </div>
           <div className={styles.labels}>
             <h4>posts</h4>
