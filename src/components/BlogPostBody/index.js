@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import styles from "./style.module.css"
 import ProfileAbout from '../ProfileAbout'
-//import {myLocalStorage} from '../../helper'
+import {myLocalStorage} from '../../helper'
 
 const BlogPostBody = ({ profileImage, authorsName, text, tags,prop }) => {
   console.log(authorsName)
@@ -10,7 +10,7 @@ const BlogPostBody = ({ profileImage, authorsName, text, tags,prop }) => {
  
   const setStorage = (property) => {
     console.log("usla sam u setStorage- property:"+""+property)
-    localStorage.setItem("owner", property)
+    myLocalStorage.setItem("owner", property)
   }
  
 

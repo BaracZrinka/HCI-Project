@@ -27,7 +27,7 @@ const FirstCom =
 const SecondCom = "Sed ut perspiciatis unde omnis iste"
 const ThirdCom = "ut perspiciatis"
 
-const BlogFeed = ({ pageContext }) => {
+const BlogFeed = ({ pageContext}) => {
   const [button, setButton] = useState(false)
   const change = () => {
     setButton(true)
@@ -78,6 +78,7 @@ const BlogFeed = ({ pageContext }) => {
             profileImage={<ProfileImage1 />}
             authorsName={authorsName}
             tags={tags}
+            
           />
 
           <article>{renderRichText(body)}</article>
