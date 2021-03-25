@@ -18,10 +18,10 @@ library.add(
   // more icons go here
 )
 
-const BlogContainer = ({ tags, prop }) => {
+const BlogContainer = ({ tags }) => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulBlogFeed(limit:20){
+      allContentfulBlogFeed(limit: 20) {
         nodes {
           summary {
             internal {
@@ -35,6 +35,7 @@ const BlogContainer = ({ tags, prop }) => {
           slug
           tags
           authorsName
+          updatedAt
           coverImage {
             fluid(quality: 90, maxWidth: 1920) {
               src
@@ -53,14 +54,12 @@ const BlogContainer = ({ tags, prop }) => {
   //   const [check,setCheck] = useState(false);
   //  const loading = <h2>There is no such content</h2> ;
 
-  
-  const [check,setCheck] = useState();
-  let filtered = ( 
-        <>
-      {data.allContentfulBlogFeed.nodes.map(node => {  
-         
+  console.log("skipped if statement")
+
+  let filtered = (
+    <>
+      {data.allContentfulBlogFeed.nodes.map(node => {
         return (
-          <>
           <div className={styles.container}>
             <div className={styles.post}>
               <div className={styles.imageDiv}>
@@ -91,20 +90,8 @@ const BlogContainer = ({ tags, prop }) => {
 
                 
               </div>
-              <BlogPostBody
-                profileImage={<ProfileImage1 />}
-                authorsName={node.authorsName}
-                text={node.summary.internal.content}
-                tags={node.tags}
-                className={styles.blogPostBody}
-                prop = {prop}
-              />
-              <Link to={`/blogPosts/${node.slug}`}>
-                <button className={styles.button}>Read more</button>
-              </Link>
             </div>
           </div>
-          </>
         )
       })}
     </>
@@ -114,10 +101,8 @@ const BlogContainer = ({ tags, prop }) => {
     console.log("exist")
 
     filtered = data.allContentfulBlogFeed.nodes.map(node => {
-      if(node.tags.startsWith(tags)) {
-        console.log(tags)
+      if (node.tags.startsWith(tags)) {
         return (
-          <>
           <div className={styles.container}>
             <div className={styles.post}>
               <Link to={`/blogPosts/${node.slug}`}>
@@ -128,7 +113,6 @@ const BlogContainer = ({ tags, prop }) => {
                     size="2x"
                     color="black"
                     className={styles.bookmarkIcon}
-                    prop = {prop}
                   />
                 </div>
               </Link>
@@ -142,20 +126,15 @@ const BlogContainer = ({ tags, prop }) => {
                 text={node.summary.internal.content}
                 tags={node.tags}
                 className={styles.blogPostBody}
-                prop = {prop}
               />
               <Link to={`/blogPosts/${node.slug}`}>
                 <button className={styles.button}>Read more</button>
               </Link>
             </div>
           </div>
-          </>
         )
       }
-     
-    }) 
-       
-      
+    })
   }
   console.log("result type")
   console.log(filtered)
