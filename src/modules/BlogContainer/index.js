@@ -18,10 +18,10 @@ library.add(
   // more icons go here
 )
 
-const BlogContainer = ({ tags, prop }) => {
+const BlogContainer = ({ tags }) => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulBlogFeed(limit:20){
+      allContentfulBlogFeed(limit: 20) {
         nodes {
           summary {
             internal {
@@ -35,14 +35,13 @@ const BlogContainer = ({ tags, prop }) => {
           slug
           tags
           authorsName
+          updatedAt
           coverImage {
-            fixed(width: 300, height: 250) {
+            fluid(quality: 90, maxWidth: 1920) {
               src
               srcSet
               srcSetWebp
               srcWebp
-              width
-              height
               base64
               aspectRatio
             }
@@ -55,45 +54,44 @@ const BlogContainer = ({ tags, prop }) => {
   //   const [check,setCheck] = useState(false);
   //  const loading = <h2>There is no such content</h2> ;
 
-  
-  const [check,setCheck] = useState();
-  let filtered = ( 
-        <>
-      {data.allContentfulBlogFeed.nodes.map(node => {  
-         
+  console.log("skipped if statement")
+
+  let filtered = (
+    <>
+      {data.allContentfulBlogFeed.nodes.map(node => {
         return (
-          <>
           <div className={styles.container}>
             <div className={styles.post}>
-              <Link to={`/blogPosts/${node.slug}`}>
-                <div className={styles.imageAndIcon}>
-                  <Img fixed={node.coverImage.fixed} className={styles.image} />
-                  <FontAwesomeIcon
-                    icon={["far", "bookmark"]}
-                    size="2x"
-                    color="black"
-                    className={styles.bookmarkIcon}
-                  />
-                </div>
-              </Link>
-              <h2>{node.title}</h2>
-              <div className={styles.rating}>
-                <BlogRating />
+              <div className={styles.imageDiv}>
+                <Link to={`/blogPosts/${node.slug}`}>
+                  <Img fluid={node.coverImage.fluid} className={styles.image} />
+                </Link>
               </div>
-              <BlogPostBody
-                profileImage={<ProfileImage1 />}
-                authorsName={node.authorsName}
-                text={node.summary.internal.content}
-                tags={node.tags}
-                className={styles.blogPostBody}
-                prop = {prop}
-              />
-              <Link to={`/blogPosts/${node.slug}`}>
-                <button className={styles.button}>Read more</button>
-              </Link>
+              <div className={styles.body}>
+              <div className={styles.tags}> #{node.tags}</div>
+                <h2>{node.title}</h2>
+                
+                <div className={styles.rating}>
+                  <BlogRating />
+                </div>
+                <section className={styles.blog2}>
+                  <div className={styles.text}>
+                    <div> {node.summary.internal.content} </div>
+                    
+                  </div>
+                  <div className={styles.author}>
+                    <div className={styles.profileImage}>
+                      {<ProfileImage1 />}
+                    </div>
+                    <h4 className={styles.name}>{node.authorsName}</h4>
+                    <div className={styles.follow}>Follow</div>
+                  </div>
+                </section>
+
+                
+              </div>
             </div>
           </div>
-          </>
         )
       })}
     </>
@@ -103,21 +101,18 @@ const BlogContainer = ({ tags, prop }) => {
     console.log("exist")
 
     filtered = data.allContentfulBlogFeed.nodes.map(node => {
-      if(node.tags.startsWith(tags)) {
-        console.log(tags)
+      if (node.tags.startsWith(tags)) {
         return (
-          <>
           <div className={styles.container}>
             <div className={styles.post}>
               <Link to={`/blogPosts/${node.slug}`}>
                 <div className={styles.imageAndIcon}>
-                  <Img fixed={node.coverImage.fixed} className={styles.image} />
+                  <Img fluid={node.coverImage.fluid} className={styles.image} />
                   <FontAwesomeIcon
                     icon={["far", "bookmark"]}
                     size="2x"
                     color="black"
                     className={styles.bookmarkIcon}
-                    prop = {prop}
                   />
                 </div>
               </Link>
@@ -131,20 +126,15 @@ const BlogContainer = ({ tags, prop }) => {
                 text={node.summary.internal.content}
                 tags={node.tags}
                 className={styles.blogPostBody}
-                prop = {prop}
               />
               <Link to={`/blogPosts/${node.slug}`}>
                 <button className={styles.button}>Read more</button>
               </Link>
             </div>
           </div>
-          </>
         )
       }
-     
-    }) 
-       
-      
+    })
   }
   console.log("result type")
   console.log(filtered)
