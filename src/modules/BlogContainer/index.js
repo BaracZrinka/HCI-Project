@@ -37,13 +37,11 @@ const BlogContainer = ({ tags }) => {
           authorsName
           updatedAt
           coverImage {
-            fixed(width: 300, height: 250) {
+            fluid(quality: 90, maxWidth: 1920) {
               src
               srcSet
               srcSetWebp
               srcWebp
-              width
-              height
               base64
               aspectRatio
             }
@@ -64,31 +62,34 @@ const BlogContainer = ({ tags }) => {
         return (
           <div className={styles.container}>
             <div className={styles.post}>
-              <Link to={`/blogPosts/${node.slug}`}>
-                <div className={styles.imageAndIcon}>
-                  <Img fixed={node.coverImage.fixed} className={styles.image} />
-                  <FontAwesomeIcon
-                    icon={["far", "bookmark"]}
-                    size="2x"
-                    color="black"
-                    className={styles.bookmarkIcon}
-                  />
-                </div>
-              </Link>
-              <h2>{node.title}</h2>
-              <div className={styles.rating}>
-                <BlogRating />
+              <div className={styles.imageDiv}>
+                <Link to={`/blogPosts/${node.slug}`}>
+                  <Img fluid={node.coverImage.fluid} className={styles.image} />
+                </Link>
               </div>
-              <BlogPostBody
-                profileImage={<ProfileImage1 />}
-                authorsName={node.authorsName}
-                text={node.summary.internal.content}
-                tags={node.tags}
-                className={styles.blogPostBody}
-              />
-              <Link to={`/blogPosts/${node.slug}`}>
-                <button className={styles.button}>Read more</button>
-              </Link>
+              <div className={styles.body}>
+              <div className={styles.tags}> #{node.tags}</div>
+                <h2>{node.title}</h2>
+                
+                <div className={styles.rating}>
+                  <BlogRating />
+                </div>
+                <section className={styles.blog2}>
+                  <div className={styles.text}>
+                    <div> {node.summary.internal.content} </div>
+                    
+                  </div>
+                  <div className={styles.author}>
+                    <div className={styles.profileImage}>
+                      {<ProfileImage1 />}
+                    </div>
+                    <h4 className={styles.name}>{node.authorsName}</h4>
+                    <div className={styles.follow}>Follow</div>
+                  </div>
+                </section>
+
+                
+              </div>
             </div>
           </div>
         )
@@ -106,7 +107,7 @@ const BlogContainer = ({ tags }) => {
             <div className={styles.post}>
               <Link to={`/blogPosts/${node.slug}`}>
                 <div className={styles.imageAndIcon}>
-                  <Img fixed={node.coverImage.fixed} className={styles.image} />
+                  <Img fluid={node.coverImage.fluid} className={styles.image} />
                   <FontAwesomeIcon
                     icon={["far", "bookmark"]}
                     size="2x"

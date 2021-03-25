@@ -31,7 +31,7 @@ export default function App() {
 */
   return (
     <>
-      <div>
+      <div className={styles.container}>
         <input
           type="text"
           placeholder="Search"
