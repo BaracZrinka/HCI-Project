@@ -13,7 +13,7 @@ const BlogPostBody = ({ profileImage, authorsName, text, tags,prop }) => {
   }
  
 
-  let ret = (
+  let ret = ( 
     <>
       <section className={styles.blog2}>
         <div className={styles.author}>
@@ -21,7 +21,7 @@ const BlogPostBody = ({ profileImage, authorsName, text, tags,prop }) => {
           <h4 className={styles.name}>{authorsName}</h4>
           {prop!== null  && prop!== authorsName ?
           <button className={styles.follow}>Follow</button>:''}
-          {prop === null? <button className={styles.follow} onClick = {() => setStorage(authorsName)}>Follow</button>: console.log("nece da salje")}
+          {prop === null? <button className={styles.follow} onClick = {() => setStorage(authorsName)}>Follow</button>: console.log("skipped")}
         </div>
         <div className={styles.text}>
           <div> {text} </div>

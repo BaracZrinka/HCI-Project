@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBookmark } from "@fortawesome/free-regular-svg-icons"
 import styles from "./blog.module.css"
 import HeaderFooterLayout from "../layouts/headerFooter"
-import {myLocalStorage} from '../helper'
+import { myLocalStorage } from "../helper"
 import { library } from "@fortawesome/fontawesome-svg-core"
 
 library.add(
@@ -28,20 +28,15 @@ const FirstCom =
 const SecondCom = "Sed ut perspiciatis unde omnis iste"
 const ThirdCom = "ut perspiciatis"
 
-const BlogFeed = ({ pageContext}) => {
- 
-  let userAcc = myLocalStorage.getItem("owner") ;
-
-  
+const BlogFeed = ({ pageContext }) => {
+  let userAcc = myLocalStorage.getItem("owner")
 
   const [button, setButton] = useState(false)
   const change = () => {
     setButton(true)
   }
   const { body, title, coverImage, next, prev, authorsName, tags } = pageContext
- 
 
- 
   return (
     <HeaderFooterLayout>
       <main className={styles.container}>
@@ -86,9 +81,7 @@ const BlogFeed = ({ pageContext}) => {
             profileImage={<ProfileImage1 />}
             authorsName={authorsName}
             tags={tags}
-            prop = {userAcc}
-           
-            
+            prop={userAcc}
           />
 
           <article>{renderRichText(body)}</article>
@@ -105,7 +98,7 @@ const BlogFeed = ({ pageContext}) => {
           </div>
           {button ? (
             <div className={styles.commentButtons}>
-              <button className={styles.button1}>CANCEL</button>
+              <button className={styles.button1} onClick = {() =>setButton(false)}>CANCEL</button>
               <button className={styles.button2}>COMMENT</button>
             </div>
           ) : (
