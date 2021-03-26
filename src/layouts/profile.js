@@ -29,7 +29,6 @@ const SecondCom = "Sed ut perspiciatis unde omnis iste"
 const ThirdCom = "ut perspiciatis"
  
 const ProfilePost = ({ pageContext }) => {
-  let userAcc = myLocalStorage.getItem("owner")
 
   const { body, title, coverImage, next, prev, tags } = pageContext
  
@@ -37,6 +36,7 @@ const ProfilePost = ({ pageContext }) => {
   const change = () => {
     setButton(true)
   }
+ let userAcc=  myLocalStorage.getItem("loggedIn");
 
   
 
@@ -83,7 +83,7 @@ const ProfilePost = ({ pageContext }) => {
             </section>
             <BlogPostBody
               profileImage={<ProfileImage1 />}
-              authorsName={userAcc}
+              userAcc={userAcc}
               tags={tags}
             />
   

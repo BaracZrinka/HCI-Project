@@ -68,4 +68,7 @@
   font-weight: bold;
 
 }
+.name{
+  text-transform: capitalize;
+}
 
