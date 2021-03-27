@@ -3,7 +3,6 @@ import ProfileContainer from "../ProfileContainer"
 import { navigate } from "gatsby"
 import { myLocalStorage } from "../../helper"
 import BlogHeader from "../../components/BlogHeader"
-import BlogFeed from "../../layouts/blog"
 
 const ProfileAll = () => {
   const [user, setUser] = useState(myLocalStorage.getItem("loggedIn"))

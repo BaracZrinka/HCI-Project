@@ -13,7 +13,7 @@ import styles from "./blog.module.css"
 import HeaderFooterLayout from "../layouts/headerFooter"
 import { myLocalStorage } from "../helper"
 import { library } from "@fortawesome/fontawesome-svg-core"
-
+import { arrayOf } from "prop-types"
 library.add(
   faBookmark
   // more icons go here
@@ -29,13 +29,18 @@ const SecondCom = "Sed ut perspiciatis unde omnis iste"
 const ThirdCom = "ut perspiciatis"
 
 const BlogFeed = ({ pageContext }) => {
-  let userAcc = myLocalStorage.getItem("owner")
+  let userAcc = myLocalStorage.getItem("loggedIn")
 
   const [button, setButton] = useState(false)
   const change = () => {
     setButton(true)
   }
   const { body, title, coverImage, next, prev, authorsName, tags } = pageContext
+
+  let storageObj = []
+  const setArray = descr => {
+    myLocalStorage.setItem(title, descr)
+  }
 
   return (
     <HeaderFooterLayout>
@@ -66,6 +71,7 @@ const BlogFeed = ({ pageContext }) => {
                 size="2x"
                 color="black"
                 className={styles.bookmarkIcon}
+                onClick={() => setArray(title)}
               />
             </div>
             <div className={styles.head}>
@@ -98,7 +104,12 @@ const BlogFeed = ({ pageContext }) => {
           </div>
           {button ? (
             <div className={styles.commentButtons}>
-              <button className={styles.button1} onClick = {() =>setButton(false)}>CANCEL</button>
+              <button
+                className={styles.button1}
+                onClick={() => setButton(false)}
+              >
+                CANCEL
+              </button>
               <button className={styles.button2}>COMMENT</button>
             </div>
           ) : (

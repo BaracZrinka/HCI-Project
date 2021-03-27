@@ -45,7 +45,7 @@ const ProfileContainer = ({name}) => {
 
   let [posts, setPosts] = useState(null)
   let [isLoaded, setLoaded] = useState(false)
-  const [check, setCheck] = useState(false)
+
   
   useEffect(() => {
     let allPosts = data.allContentfulBlogPost.nodes.map(post => {
@@ -53,15 +53,13 @@ const ProfileContainer = ({name}) => {
       return post
     })
 
-    // console.log(posts);
-    // console.log(data.allContentfulBlogPost.nodes);
+   
     setPosts(allPosts)
     setLoaded(true)
     
   }, [])
 
   const changeSlug = property => {
-    // console.log(property);
     let newPosts = posts.map(post => {
       if (post.slug === property) {
         post.isShown = false
@@ -71,7 +69,7 @@ const ProfileContainer = ({name}) => {
     setPosts(newPosts)
   }
 
-  let firstVar
+  let firstVar;
 
   let count = 0
   if (isLoaded) {

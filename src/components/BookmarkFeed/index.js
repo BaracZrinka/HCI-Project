@@ -1,31 +1,117 @@
-import React from 'react'
-import styles from './style.module.css'
-import BookmarkPost from '../BookmarkPost'
-import BPost1 from '../Images/BPost1'
-import BPost2 from '../Images/BPost2'
-import BPost3 from '../Images/BPost3'
-import ProfileImage1 from '../Images/ProfileImage1'
-import ProfileImage2 from '../Images/ProfileImage2'
+import React, { useState, useEffect } from "react"
+import { useStaticQuery, graphql, Link } from "gatsby"
+import Img from "gatsby-image"
+import styles from "./style.module.css"
+import { myLocalStorage } from "../../helper"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons"
+import { library } from "@fortawesome/fontawesome-svg-core"
+
+library.add(faTrashAlt)
 
 
-const name1 = "_AuthorsName1"
-const name2 = "_AuthorsName2"
+const BookmarkFeed = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulBlogFeed(limit: 20) {
+        nodes {
+          summary {
+            internal {
+              content
+            }
+          }
+          body {
+            raw
+          }
+          title
+          slug
+          tags
+          authorsName
+          updatedAt
+          coverImage {
+            fluid(quality: 90, maxWidth: 1920) {
+              src
+              srcSet
+              srcSetWebp
+              srcWebp
+              base64
+              aspectRatio
+            }
+          }
+        }
+      }
+    }
+  `)
+  let [posts, setPosts] = useState(null)
+  let [isLoaded, setLoaded] = useState(false)
 
-const FirstText = 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?'
-const SecondText='Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?'
-const ThirdText = 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?'
+  useEffect(() => {
+    let allPosts = data.allContentfulBlogFeed.nodes.map(post => {
+      let check = () => !!myLocalStorage.getItem(post.title)
+      if (check()) post.isShown = true
+      return post
+    })
 
-const BookmarkFeed = () => (
-<section className={styles.bookmark}>
-    <div className={styles.post1}>
-    <BookmarkPost image={<BPost1 />} profileImage={<ProfileImage1/>}  authorsName = {name1} text={FirstText}/>
-    </div>
-    <div className={styles.post2}>
-    <BookmarkPost image={<BPost2 />} profileImage={<ProfileImage2/>}  authorsName = {name1} text={SecondText}/>
-    </div>
-    <div className={styles.post3}>
-    <BookmarkPost image={<BPost3 />} profileImage={<ProfileImage1/>}  authorsName = {name1} text={ThirdText}/>
-    </div>
-</section> 
-)
+    setPosts(allPosts)
+    setLoaded(true)
+  }, [])
+
+  const changeStorage = property => {
+    let newPosts = posts.map(some => {
+      if (some.title === property) {
+        myLocalStorage.removeItem(property)
+        some.isShown = false
+      }
+      return some
+    })
+
+    setPosts(newPosts)
+  }
+
+  let firstVar;
+
+  if (isLoaded) {
+    firstVar = (
+      <>
+        <hr className={styles.line}></hr>
+        <section className={styles.container}>
+          {posts.map(post => {
+            return post ? (
+              <div className={post.isShown ? styles.profilePost : styles.hide}>
+                <button
+                  key={post.slug}
+                  onClick={() => changeStorage(post.title)}
+                >
+                  <FontAwesomeIcon
+                    icon={["fas", "trash-alt"]}
+                    fill="white"
+                    size="2x"
+                    color="black"
+                    className={styles.trashIcon}
+                  />
+                </button>
+                <Link to={`/posts/${post.slug}`}>
+                  <Img fluid={post.coverImage.fluid} className={styles.image} />
+                </Link>
+                <div className={styles.body}>
+                  <div className={styles.title}>
+                    <h3>{post.title}</h3>
+                  </div>
+                  <div className={styles.textContainer}>
+                    <p className={styles.text}>
+                      {post.summary.internal.content}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              ""
+            )
+          })}
+        </section>
+      </>
+    )
+  }
+  return <>{firstVar}</>
+}
 export default BookmarkFeed
