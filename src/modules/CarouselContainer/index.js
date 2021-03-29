@@ -17,13 +17,11 @@ const CarouselContainer = () => {
           slug
           updatedAt
           coverImage {
-            fixed(width: 700, height: 300) {
+            fluid(quality: 90, maxWidth: 1920) {
               src
               srcSet
               srcSetWebp
               srcWebp
-              width
-              height
               base64
               aspectRatio
             }
@@ -36,7 +34,7 @@ const CarouselContainer = () => {
   return (
     <div className={styles.carouselContainer}>
       <div className={styles.decor}>
-        <h2 className={styles.hottest}>Hottest section</h2>
+        <h2 className={styles.hottest}>Hottest topics this week:</h2>
       </div>
       <Carousel
         autoPlay
@@ -45,12 +43,13 @@ const CarouselContainer = () => {
         dynamicHeight
         interval={5500}
         transitionTime={3500}
+        showStatus={false}
       >
         {data.allContentfulCarousel.nodes.map(node => {
           return (
             <Link to={`/hottestPosts/${node.slug}`}>
-              <div className={styles.carousel}>
-                <Img fixed={node.coverImage.fixed} className={styles.image} />
+              <div className={styles.carouselContetnt}>
+                <Img fluid={node.coverImage.fluid} className={styles.image} />
                 <div className={styles.title}>
                   <span className={styles.span}>{node.title}</span>
                 </div>
