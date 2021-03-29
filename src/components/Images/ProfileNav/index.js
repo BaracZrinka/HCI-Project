@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import styles from "./style.module.css"
 
-const ProfileNav = () => {
+const ProfileNav = ({prop}) => {
   const data = useStaticQuery(graphql`
     query {
       desktop: file(relativePath: { eq: "profilePicture.jpg" }) {
@@ -20,7 +20,7 @@ const ProfileNav = () => {
   `)
   return (
     <Img
-      className={styles.titleImage}
+      className={prop? styles.fluid : styles.titleImage}
       fluid={data.desktop.childImageSharp.fluid}
     ></Img>
   )

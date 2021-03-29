@@ -15,9 +15,6 @@ const ProfileAbout = ({ name, total }) => {
 
   let doExist = () => !!myLocalStorage.getItem('owner')
 
-  console.log("na profilu")
-  //console.log(myLocalStorage.getItem('owner').toLowerCase())
-  console.log(name)
 
   let count = 0;
 

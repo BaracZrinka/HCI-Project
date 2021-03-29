@@ -1,16 +1,13 @@
-import React, { useState } from "react"
+import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import styles from "./style.module.css"
 import ProfileImage1 from "../../components/Images/ProfileImage1"
-import BlogPostBody from "../../components/BlogPostBody"
 import BlogRating from "../../components/Images/BlogRating"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBookmark } from "@fortawesome/free-regular-svg-icons"
 
 import { library } from "@fortawesome/fontawesome-svg-core"
-//import { node } from 'prop-types'
-//import { faStripeS } from '@fortawesome/free-brands-svg-icons'
 
 library.add(
   faBookmark
@@ -84,7 +81,7 @@ const BlogContainer = ({ tags }) => {
                       {<ProfileImage1 />}
                     </div>
                     <h4 className={styles.name}>{node.authorsName}</h4>
-                    <div className={styles.follow}>Follow</div>
+                    
                   </div>
                 </section>
 
@@ -102,34 +99,37 @@ const BlogContainer = ({ tags }) => {
 
     filtered = data.allContentfulBlogFeed.nodes.map(node => {
       if (node.tags.startsWith(tags)) {
-        return (
+        return  (
           <div className={styles.container}>
             <div className={styles.post}>
-              <Link to={`/blogPosts/${node.slug}`}>
-                <div className={styles.imageAndIcon}>
+              <div className={styles.imageDiv}>
+                <Link to={`/blogPosts/${node.slug}`}>
                   <Img fluid={node.coverImage.fluid} className={styles.image} />
-                  <FontAwesomeIcon
-                    icon={["far", "bookmark"]}
-                    size="2x"
-                    color="black"
-                    className={styles.bookmarkIcon}
-                  />
-                </div>
-              </Link>
-              <h2>{node.title}</h2>
-              <div className={styles.rating}>
-                <BlogRating />
+                </Link>
               </div>
-              <BlogPostBody
-                profileImage={<ProfileImage1 />}
-                authorsName={node.authorsName}
-                text={node.summary.internal.content}
-                tags={node.tags}
-                className={styles.blogPostBody}
-              />
-              <Link to={`/blogPosts/${node.slug}`}>
-                <button className={styles.button}>Read more</button>
-              </Link>
+              <div className={styles.body}>
+              <div className={styles.tags}> #{node.tags}</div>
+                <h2>{node.title}</h2>
+                
+                <div className={styles.rating}>
+                  <BlogRating />
+                </div>
+                <section className={styles.blog2}>
+                  <div className={styles.text}>
+                    <div> {node.summary.internal.content} </div>
+                    
+                  </div>
+                  <div className={styles.author}>
+                    <div className={styles.profileImage}>
+                      {<ProfileImage1 />}
+                    </div>
+                    <h4 className={styles.name}>{node.authorsName}</h4>
+                    
+                  </div>
+                </section>
+
+                
+              </div>
             </div>
           </div>
         )
