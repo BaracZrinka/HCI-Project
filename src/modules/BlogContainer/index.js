@@ -65,27 +65,24 @@ const BlogContainer = ({ tags }) => {
                 </Link>
               </div>
               <div className={styles.body}>
-              <div className={styles.tags}> #{node.tags}</div>
-                <h2>{node.title}</h2>
-                
+                <div className={styles.tags}> #{node.tags}</div>
+                <Link to={`/blogPosts/${node.slug}`}>
+                  <h2>{node.title}</h2>
+                </Link>
                 <div className={styles.rating}>
                   <BlogRating />
                 </div>
                 <section className={styles.blog2}>
                   <div className={styles.text}>
                     <div> {node.summary.internal.content} </div>
-                    
                   </div>
                   <div className={styles.author}>
                     <div className={styles.profileImage}>
                       {<ProfileImage1 />}
                     </div>
                     <h4 className={styles.name}>{node.authorsName}</h4>
-                    
                   </div>
                 </section>
-
-                
               </div>
             </div>
           </div>
@@ -99,7 +96,7 @@ const BlogContainer = ({ tags }) => {
 
     filtered = data.allContentfulBlogFeed.nodes.map(node => {
       if (node.tags.startsWith(tags)) {
-        return  (
+        return (
           <div className={styles.container}>
             <div className={styles.post}>
               <div className={styles.imageDiv}>
@@ -108,27 +105,23 @@ const BlogContainer = ({ tags }) => {
                 </Link>
               </div>
               <div className={styles.body}>
-              <div className={styles.tags}> #{node.tags}</div>
+                <div className={styles.tags}> #{node.tags}</div>
                 <h2>{node.title}</h2>
-                
+
                 <div className={styles.rating}>
                   <BlogRating />
                 </div>
                 <section className={styles.blog2}>
                   <div className={styles.text}>
                     <div> {node.summary.internal.content} </div>
-                    
                   </div>
                   <div className={styles.author}>
                     <div className={styles.profileImage}>
                       {<ProfileImage1 />}
                     </div>
                     <h4 className={styles.name}>{node.authorsName}</h4>
-                    
                   </div>
                 </section>
-
-                
               </div>
             </div>
           </div>

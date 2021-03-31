@@ -12,7 +12,7 @@ library.add(
   // more icons go here
 )
 
-export default function App({name}) {
+export default function App({ name }) {
   const [searchTerm, setTerm] = useState("")
   // const [searchResults, setSearchResults] = React.useState();
   const handleChanges = event => {
@@ -34,7 +34,7 @@ export default function App({name}) {
       <div className={styles.container}>
         <input
           type="text"
-          placeholder="Search"
+          placeholder="Search..."
           const
           value={searchTerm}
           onChange={handleChanges}
@@ -43,7 +43,7 @@ export default function App({name}) {
       </div>
 
       <div>
-        <BlogContainer tags={searchTerm} prop = {name}/>{" "}
+        <BlogContainer tags={searchTerm} prop={name} />{" "}
       </div>
     </>
   )

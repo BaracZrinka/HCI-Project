@@ -11,7 +11,7 @@ import ProfileAbout from "../../components/ProfileAbout"
 
 library.add(faTrashAlt)
 
-const ProfileContainer = ({name}) => {
+const ProfileContainer = ({ name }) => {
   const data = useStaticQuery(graphql`
     query {
       allContentfulBlogPost(limit: 8) {
@@ -46,17 +46,14 @@ const ProfileContainer = ({name}) => {
   let [posts, setPosts] = useState(null)
   let [isLoaded, setLoaded] = useState(false)
 
-  
   useEffect(() => {
     let allPosts = data.allContentfulBlogPost.nodes.map(post => {
       post.isShown = true
       return post
     })
 
-   
     setPosts(allPosts)
     setLoaded(true)
-    
   }, [])
 
   const changeSlug = property => {
@@ -69,7 +66,7 @@ const ProfileContainer = ({name}) => {
     setPosts(newPosts)
   }
 
-  let firstVar;
+  let firstVar
 
   let count = 0
   if (isLoaded) {
@@ -89,7 +86,7 @@ const ProfileContainer = ({name}) => {
                 <div
                   className={post.isShown ? styles.profilePost : styles.hide}
                 >
-                  <button key={post.slug} onClick={() => changeSlug(post.slug)}>
+                  <div key={post.slug} onClick={() => changeSlug(post.slug)}>
                     <FontAwesomeIcon
                       icon={["fas", "trash-alt"]}
                       fill="white"
@@ -97,7 +94,7 @@ const ProfileContainer = ({name}) => {
                       color="black"
                       className={styles.trashIcon}
                     />
-                  </button>
+                  </div>
                   <Link to={`/posts/${post.slug}`}>
                     <Img
                       fluid={post.coverImage.fluid}
@@ -105,9 +102,11 @@ const ProfileContainer = ({name}) => {
                     />
                   </Link>
                   <div className={styles.body}>
-                    <div className={styles.title}>
-                      <h3>{post.title}</h3>
-                    </div>
+                    <Link to={`/posts/${post.slug}`}>
+                      <div className={styles.title}>
+                        <h3>{post.title}</h3>
+                      </div>
+                    </Link>
                     <div className={styles.textContainer}>
                       <p className={styles.text}>
                         {post.summary.internal.content}
@@ -124,7 +123,7 @@ const ProfileContainer = ({name}) => {
   }
   return (
     <>
-      <ProfileAbout total={count} name = {name}/>
+      <ProfileAbout total={count} name={name} />
       {firstVar}
     </>
   )

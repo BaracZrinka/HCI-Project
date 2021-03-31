@@ -17,10 +17,9 @@
 .name {
   cursor: pointer;
   padding-left: 3px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
 }
-
 .button2 {
   background-color: #9cc9f2;
   color: black;
@@ -32,7 +31,7 @@
   width: 70px;
   height: 35px;
 
-  font-size: 15px;
+  font-size: 16px;
   padding: 1% 1% 1% 1%;
   border-radius: 10px;
   border: none;
@@ -46,9 +45,12 @@
 .follow {
   display: flex;
   align-items: center;
-  padding-left: 10px;
-  font-size: 15px;
+  margin-left: 9px;
+  font-size: 16px;
   font-weight: 600;
   color: #0095f6;
   cursor: pointer;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  outline: none;
 }
