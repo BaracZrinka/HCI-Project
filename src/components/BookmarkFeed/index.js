@@ -9,7 +9,6 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 
 library.add(faTrashAlt)
 
-
 const BookmarkFeed = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -68,7 +67,7 @@ const BookmarkFeed = () => {
     setPosts(newPosts)
   }
 
-  let firstVar;
+  let firstVar
 
   if (isLoaded) {
     firstVar = (
@@ -78,10 +77,7 @@ const BookmarkFeed = () => {
           {posts.map(post => {
             return post ? (
               <div className={post.isShown ? styles.profilePost : styles.hide}>
-                <button
-                  key={post.slug}
-                  onClick={() => changeStorage(post.title)}
-                >
+                <div key={post.slug} onClick={() => changeStorage(post.title)}>
                   <FontAwesomeIcon
                     icon={["fas", "trash-alt"]}
                     fill="white"
@@ -89,14 +85,17 @@ const BookmarkFeed = () => {
                     color="black"
                     className={styles.trashIcon}
                   />
-                </button>
+                </div>
                 <Link to={`/posts/${post.slug}`}>
                   <Img fluid={post.coverImage.fluid} className={styles.image} />
                 </Link>
                 <div className={styles.body}>
                   <div className={styles.title}>
-                    <h3>{post.title}</h3>
+                    <Link to={`/posts/${post.slug}`}>
+                      <h3>{post.title}</h3>
+                    </Link>
                   </div>
+
                   <div className={styles.textContainer}>
                     <p className={styles.text}>
                       {post.summary.internal.content}
