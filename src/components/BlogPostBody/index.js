@@ -9,11 +9,7 @@ const BlogPostBody = ({ profileImage, authorsName, text, tags, userAcc }) => {
   }
   //console.log("authors name:\n"+ authorsName.toLowerCase());
   console.log("userAccount:\n" + userAcc)
-  let lower
-
-  if (authorsName) {
-    lower = authorsName.toLowerCase()
-  }
+  
   let ret = (
     <>
       <section className={styles.blog2}>
@@ -22,8 +18,8 @@ const BlogPostBody = ({ profileImage, authorsName, text, tags, userAcc }) => {
           <h4 className={styles.name}>
             {authorsName !== undefined ? authorsName : userAcc}
           </h4>
-          {lower ? (
-            userAcc && userAcc === lower ? (
+          {authorsName ? (
+            userAcc && userAcc === authorsName ? (
               ""
             ) : (
               <button className={styles.follow}>follow</button>

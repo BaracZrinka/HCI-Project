@@ -8,15 +8,16 @@ import ProfileImage2 from "../components/Images/ProfileImage2"
 import CommentSection from "../components/CommentSection"
 import BlogRating from "../components/Images/BlogRating"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBookmark } from "@fortawesome/free-regular-svg-icons"
+import { faBookmark as reg } from "@fortawesome/free-regular-svg-icons"
+import {faBookmark as sol} from "@fortawesome/free-solid-svg-icons"
 import styles from "./blog.module.css"
 import HeaderFooterLayout from "../layouts/headerFooter"
 import { myLocalStorage } from "../helper"
 import { library } from "@fortawesome/fontawesome-svg-core"
 library.add(
-  faBookmark
+  reg,sol
   // more icons go here
-)
+);
 
 const user1 = "_UserName1"
 const user2 = "_UserName2"
@@ -27,9 +28,13 @@ const FirstCom =
 const SecondCom = "Sed ut perspiciatis unde omnis iste"
 const ThirdCom = "ut perspiciatis"
 
+
+
+
+
 const BlogFeed = ({ pageContext }) => {
   let userAcc = myLocalStorage.getItem("loggedIn")
-
+const[check, setCheck] = useState(true)
   const [button, setButton] = useState(false)
   const change = () => {
     setButton(true)
@@ -38,8 +43,11 @@ const BlogFeed = ({ pageContext }) => {
 
   const setArray = descr => {
     myLocalStorage.setItem(title, descr)
+    setCheck(false)
+    console.log(check)
   }
 
+console.log(check)
   return (
     <HeaderFooterLayout>
       <main className={styles.container}>
@@ -63,14 +71,28 @@ const BlogFeed = ({ pageContext }) => {
           <section className={styles.blog1}>
             <div className={styles.imageAndIcon}>
               <Img fluid={coverImage.fluid} className={styles.image} />
-
-              <FontAwesomeIcon
+              {authorsName ? (
+            userAcc && userAcc === authorsName ? (
+              ""
+            ) : (
+              check?
+              (<FontAwesomeIcon
                 icon={["far", "bookmark"]}
                 size="2x"
                 color="black"
                 className={styles.bookmarkIcon}
                 onClick={() => setArray(title)}
-              />
+              />):(<FontAwesomeIcon
+              icon={["fas","bookmark"]}
+              size="2x"
+              color="black"
+              className={styles.bookmarkIcon}
+              onClick={() => setArray(title)}/>)
+              )
+          ) : (
+            ""
+          )}
+              
             </div>
             <div className={styles.head}>
               <div className={styles.h2}>

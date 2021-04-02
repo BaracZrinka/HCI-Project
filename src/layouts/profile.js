@@ -27,120 +27,113 @@ const FirstCom =
   "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium"
 const SecondCom = "Sed ut perspiciatis unde omnis iste"
 const ThirdCom = "ut perspiciatis"
- 
-const ProfilePost = ({ pageContext }) => {
 
+const ProfilePost = ({ pageContext }) => {
   const { body, title, coverImage, next, prev, tags } = pageContext
- 
+
   const [button, setButton] = useState(false)
   const change = () => {
     setButton(true)
   }
- let userAcc=  myLocalStorage.getItem("loggedIn");
+  let userAcc = myLocalStorage.getItem("loggedIn")
 
-  
-
- 
   return (
-      <HeaderFooterLayout>
-        <main className={styles.container}>
-          <header className={!prev || !next ? styles.headerTwo : ""}>
-            <div className={styles.prev}>
-              {prev && (
-                <Link to={`/profilePosts/${prev.slug}`}>
-                  <div className={styles.button3}>Previous</div>
-                </Link>
-              )}
-            </div>
-            <div className={styles.next}>
-              {next && (
-                <Link to={`/profilePosts/${next.slug}`}>
-                  <div className={styles.button4}>Next</div>
-                </Link>
-              )}
-            </div>
-          </header>
-          <div className={styles.wholeBlog}>
-            <section className={styles.blog1}>
-              <div className={styles.imageAndIcon}>
-                <Img fluid={coverImage.fluid} className={styles.image} />
-  
-                <FontAwesomeIcon
-                  icon={["far", "bookmark"]}
-                  size="2x"
-                  color="black"
-                  className={styles.bookmarkIcon}
-                />
-              </div>
-              <div className={styles.head}>
-                <div className={styles.h2}>
-                  <h2>{title}</h2>
-                </div>
-                <div className={styles.rating}>
-                  <BlogRating />
-                </div>
-              </div>
-            </section>
-            <BlogPostBody
-              profileImage={<ProfileImage1 />}
-              userAcc={userAcc}
-              tags={tags}
-            />
-  
-            <article>{renderRichText(body)}</article>
-  
-            <div className={styles.commentHead}>
-              <h3 className={styles.commentsTitle}>Comments:</h3>
-              <div className={styles.buttonDiv}>
-                <textarea
-                  onClick={change}
-                  placeholder="Add your comment here..."
-                  maxLength="160"
-                ></textarea>
-              </div>
-            </div>
-            {button ? (
-              <div className={styles.commentButtons}>
-                <button className={styles.button1} onClick = {() =>setButton(false)}>CANCEL</button>
-                <button className={styles.button2}>COMMENT</button>
-              </div>
-            ) : (
-              <></>
+    <HeaderFooterLayout>
+      <main className={styles.container}>
+        <header className={!prev || !next ? styles.headerTwo : ""}>
+          <div className={styles.prev}>
+            {prev && (
+              <Link to={`/profilePosts/${prev.slug}`}>
+                <div className={styles.button3}>Previous</div>
+              </Link>
             )}
-  
-            <div className={styles.commentBody}>
-              <CommentSection
-                profileImage={<ProfileImage1 />}
-                userName={user1}
-                comment={FirstCom}
-              />
-              <CommentSection
-                profileImage={<ProfileImage2 />}
-                userName={user2}
-                comment={SecondCom}
-              />
-              <CommentSection
-                profileImage={<ProfileImage1 />}
-                userName={user3}
-                comment={ThirdCom}
-              />
-              <div className={styles.readmore}>
-                <button className={styles.readMoreButton}>Read more</button>
+          </div>
+          <div className={styles.next}>
+            {next && (
+              <Link to={`/profilePosts/${next.slug}`}>
+                <div className={styles.button4}>Next</div>
+              </Link>
+            )}
+          </div>
+        </header>
+        <div className={styles.wholeBlog}>
+          <section className={styles.blog1}>
+            <div className={styles.imageAndIcon}>
+              <Img fluid={coverImage.fluid} className={styles.image} />
+            </div>
+            <div className={styles.head}>
+              <div className={styles.h2}>
+                <h2>{title}</h2>
               </div>
+              <div className={styles.rating}>
+                <BlogRating />
+              </div>
+            </div>
+          </section>
+          <BlogPostBody
+            profileImage={<ProfileImage1 />}
+            userAcc={userAcc}
+            tags={tags}
+          />
+
+          <article>{renderRichText(body)}</article>
+
+          <div className={styles.commentHead}>
+            <h3 className={styles.commentsTitle}>Comments:</h3>
+            <div className={styles.buttonDiv}>
+              <textarea
+                onClick={change}
+                placeholder="Add your comment here..."
+                maxLength="160"
+              ></textarea>
             </div>
           </div>
-        </main>
-  
-        <div className={styles.backButton}>
-          <div className={styles.back}>
-            <Link to="/profile">
-              <button className={styles.buttonBack}>Back to feed</button>
-            </Link>
+          {button ? (
+            <div className={styles.commentButtons}>
+              <button
+                className={styles.button1}
+                onClick={() => setButton(false)}
+              >
+                CANCEL
+              </button>
+              <button className={styles.button2}>COMMENT</button>
+            </div>
+          ) : (
+            <></>
+          )}
+
+          <div className={styles.commentBody}>
+            <CommentSection
+              profileImage={<ProfileImage1 />}
+              userName={user1}
+              comment={FirstCom}
+            />
+            <CommentSection
+              profileImage={<ProfileImage2 />}
+              userName={user2}
+              comment={SecondCom}
+            />
+            <CommentSection
+              profileImage={<ProfileImage1 />}
+              userName={user3}
+              comment={ThirdCom}
+            />
+            <div className={styles.readmore}>
+              <button className={styles.readMoreButton}>Read more</button>
+            </div>
           </div>
         </div>
-      </HeaderFooterLayout>
-    )
-  
+      </main>
+
+      <div className={styles.backButton}>
+        <div className={styles.back}>
+          <Link to="/profile">
+            <button className={styles.buttonBack}>Back to feed</button>
+          </Link>
+        </div>
+      </div>
+    </HeaderFooterLayout>
+  )
 }
- 
+
 export default ProfilePost
