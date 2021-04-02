@@ -1,30 +1,20 @@
-import React, { useState } from "react"
+import React from "react"
 import styles from "./style.module.css"
 import ProfileNav from "../Images/ProfileNav"
-import {myLocalStorage} from '../../helper'
+import { myLocalStorage } from "../../helper"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {
-  faBookmark,
-  faLongArrowAltDown,
-} from "@fortawesome/free-solid-svg-icons"
-//import {faFileUpload } from '@fortawesome/free-solid-svg-icons'
+import { faBookmark } from "@fortawesome/free-solid-svg-icons"
 import { faEdit } from "@fortawesome/free-solid-svg-icons"
 
-
 const ProfileAbout = ({ name, total }) => {
+  let doExist = () => !!myLocalStorage.getItem("owner")
 
-  let doExist = () => !!myLocalStorage.getItem('owner')
+  let count = 0
 
-
-  let count = 0;
-
-  if(doExist()){
-    console.log("first if")
-    if(myLocalStorage.getItem('owner').toLowerCase() === name){
-      console.log("drugi if")
-    count = count + 1;}
-  }else{
-    console.log("skipped if")
+  if (doExist()) {
+    if (myLocalStorage.getItem("owner").toLowerCase() === name) {
+      count = count + 1
+    }
   }
   return (
     <section className={styles.form}>

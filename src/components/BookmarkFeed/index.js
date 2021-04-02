@@ -54,7 +54,7 @@ const BookmarkFeed = () => {
 
     setPosts(allPosts)
     setLoaded(true)
-  }, [])
+  }, [data.allContentfulBlogFeed.nodes])
 
   const changeStorage = property => {
     let newPosts = posts.map(some => {

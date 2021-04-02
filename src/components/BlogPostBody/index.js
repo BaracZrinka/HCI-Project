@@ -11,9 +11,11 @@ const BlogPostBody = ({
   userAcc
 }) => {
   const setStorage = property => {
-    console.log("inside setStorage- property:" + "" + property)
+    //console.log("inside setStorage- property:" + "" + property)
     myLocalStorage.setItem("owner", property)
   }
+  console.log("authors name:\n"+ authorsName);
+  console.log("userAccount:\n"+userAcc);
 
  /* let lower = authorsName.toLowerCase()*/
 

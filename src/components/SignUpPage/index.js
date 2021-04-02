@@ -6,8 +6,8 @@ import { myLocalStorage } from "../../helper"
 const SignUpPage = () => {
   const [username, setUserName] = useState()
   const [password, setPassword] = useState()
-  const [email, setEmail] = useState()
-  const [profession, setProfession] = useState()
+  const [email, setEmail] = useState("")
+  const [profession, setProfession] = useState("")
   const [error, setError] = useState(false)
   const [loading, setLoading] = useState(false)
 
@@ -15,7 +15,7 @@ const SignUpPage = () => {
     setError(false)
     setLoading(true)
     setTimeout(() => {
-      const loginSuccessful = !!(username != "" && password != "")
+      const loginSuccessful = !!(username !== "" && password !== "")
       setLoading(false)
       if (loginSuccessful) {
         myLocalStorage.setItem("loggedIn", username)
@@ -37,7 +37,7 @@ const SignUpPage = () => {
         <h2 className={styles.title}>Sign up</h2>
         <section className={styles.field}>
           <label htmlFor="email">E-mail</label>
-          <input name="email" onChange={e => setEmail(e.target.value)} />
+          <input name="email" onChange={e => setEmail(e.target.value)}>{email}</input>
         </section>
 
         <section className={styles.field}>
@@ -58,8 +58,7 @@ const SignUpPage = () => {
           <label htmlFor="profession">Profession</label>
           <input
             name="profession"
-            onChange={e => setProfession(e.target.value)}
-          />
+            onChange={e => setProfession(e.target.value)}>{profession}</input>
         </section>
 
         <p
