@@ -5,11 +5,11 @@ import { myLocalStorage } from "../../helper"
 //import { faChessBishop } from "@fortawesome/free-solid-svg-icons"
 const users = [
   {
-    username: "zrinka",
+    username: "Zrinka",
     password: "123",
   },
   {
-    username: "petra",
+    username: "Petra",
     password: "123",
   },
 ]

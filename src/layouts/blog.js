@@ -85,7 +85,7 @@ const BlogFeed = ({ pageContext }) => {
             profileImage={<ProfileImage1 />}
             authorsName={authorsName}
             tags={tags}
-            prop={userAcc}
+            userAcc={userAcc}
           />
 
           <article>{renderRichText(body)}</article>

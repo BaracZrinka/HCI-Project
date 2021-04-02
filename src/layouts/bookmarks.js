@@ -30,7 +30,7 @@ const ThirdCom = "ut perspiciatis"
  
 const BookmarkPost = ({ pageContext }) => {
 
-  const { body, title, coverImage, next, prev, tags } = pageContext
+  const { body, title, coverImage, next, prev, tags, authorsName} = pageContext
  
   const [button, setButton] = useState(false)
   const change = () => {
@@ -85,6 +85,7 @@ const BookmarkPost = ({ pageContext }) => {
               profileImage={<ProfileImage1 />}
               userAcc={userAcc}
               tags={tags}
+              authorsName = {authorsName}
             />
   
             <article>{renderRichText(body)}</article>
