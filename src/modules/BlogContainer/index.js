@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 import styles from "./style.module.css"
 import ProfileImage1 from "../../components/Images/ProfileImage1"
 import BlogRating from "../../components/Images/BlogRating"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBookmark } from "@fortawesome/free-regular-svg-icons"
 
 import { library } from "@fortawesome/fontawesome-svg-core"
@@ -51,7 +51,7 @@ const BlogContainer = ({ tags }) => {
   //   const [check,setCheck] = useState(false);
   //  const loading = <h2>There is no such content</h2> ;
 
-  console.log("skipped if statement")
+
 
   let filtered = (
     <>
@@ -92,7 +92,7 @@ const BlogContainer = ({ tags }) => {
   )
 
   if (tags) {
-    console.log("exist")
+    //console.log("exist")
 
     filtered = data.allContentfulBlogFeed.nodes.map(node => {
       if (node.tags.startsWith(tags)) {
@@ -129,8 +129,7 @@ const BlogContainer = ({ tags }) => {
       }
     })
   }
-  console.log("result type")
-  console.log(filtered)
+ 
 
   return <>{filtered}</>
 }

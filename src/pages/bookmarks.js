@@ -1,9 +1,7 @@
 import React from 'react'
-import SEO from "../components/seo"
 import HeaderFooterLayout from '../layouts/headerFooter'
 import BookmarkFeed from '../components/BookmarkFeed'
 import BookmarkHeader from '../components/BookmarkHeader'
-import { Link } from "gatsby"
 
 const bookmarks = () => (
     <HeaderFooterLayout>
@@ -12,4 +10,4 @@ const bookmarks = () => (
     </HeaderFooterLayout>
 )
 
-export default bookmarks
+export default bookmarks 

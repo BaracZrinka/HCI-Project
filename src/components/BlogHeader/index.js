@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react"
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { useState} from "react"
 import { faBookmark } from "@fortawesome/free-regular-svg-icons"
-//import {posts as nekiNiz} from '../../constants/const'
 import { library } from "@fortawesome/fontawesome-svg-core"
 import BlogContainer from "../../modules/BlogContainer"
 import styles from "./style.module.css"
@@ -19,16 +17,7 @@ export default function App({ name }) {
     setTerm(event.target.value)
   }
 
-  /* useEffect(()=>{
-       console.log("",searchTerm)
-       let result = puniNiz.filter((el)=>el.tags.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()));
-      console.log("ovo dole je resut filtriranja");
-      console.log(result);
-       setSearchResults(result);
 
-
-     },[searchTerm]);
-*/
   return (
     <>
       <div className={styles.container}>

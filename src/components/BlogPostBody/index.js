@@ -2,40 +2,31 @@ import React from "react"
 import styles from "./style.module.css"
 import { myLocalStorage } from "../../helper"
 
-const BlogPostBody = ({
-  profileImage,
-  authorsName,
-  text,
-  tags,
-  prop,
-  userAcc
-}) => {
+const BlogPostBody = ({ profileImage, authorsName, text, tags, userAcc }) => {
   const setStorage = property => {
-    console.log("inside setStorage- property:" + "" + property)
+    //console.log("inside setStorage- property:" + "" + property)
     myLocalStorage.setItem("owner", property)
   }
-
-  let lower = authorsName.toLowerCase()
-
+  //console.log("authors name:\n"+ authorsName.toLowerCase());
+  console.log("userAccount:\n" + userAcc)
+  
   let ret = (
     <>
       <section className={styles.blog2}>
         <div className={styles.author}>
           <div className={styles.profileImage}>{profileImage}</div>
-          <h4 className={styles.name}>{userAcc ? userAcc : authorsName}</h4>
-          {prop !== null && prop !== lower ? (
-            <button className={styles.follow}>Follow</button>
+          <h4 className={styles.name}>
+            {authorsName !== undefined ? authorsName : userAcc}
+          </h4>
+          {authorsName ? (
+            userAcc && userAcc === authorsName ? (
+              ""
+            ) : (
+              <button className={styles.follow}>follow</button>
+            )
           ) : (
             ""
           )}
-          {prop === null ? (
-            <button
-              className={styles.follow}
-              onClick={() => setStorage(authorsName)}
-            >
-              Follow
-            </button>
-          ) : <></>}
         </div>
         <div className={styles.text}>
           <div> {text} </div>

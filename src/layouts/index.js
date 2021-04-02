@@ -3,7 +3,7 @@ import { renderRichText } from "gatsby-source-contentful/rich-text"
 import Img from 'gatsby-image'
 import {Link} from 'gatsby'
  
-import styles from './profile.module.css'
+import styles from './blog.module.css'
 import HeaderFooterLayout from '../layouts/headerFooter'
  
 const HottestSectionPost = ({ pageContext }) => {

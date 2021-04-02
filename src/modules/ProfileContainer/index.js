@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import styles from "./style.module.css"
-//import {ueeHistory, useParams} from "react-router-dom"
+//import {useHistory, useParams} from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons"
 import { library } from "@fortawesome/fontawesome-svg-core"
@@ -54,7 +54,7 @@ const ProfileContainer = ({ name }) => {
 
     setPosts(allPosts)
     setLoaded(true)
-  }, [])
+  }, [data.allContentfulBlogPost.nodes])
 
   const changeSlug = property => {
     let newPosts = posts.map(post => {
@@ -95,7 +95,7 @@ const ProfileContainer = ({ name }) => {
                       className={styles.trashIcon}
                     />
                   </div>
-                  <Link to={`/posts/${post.slug}`}>
+                  <Link to={`/profilePosts/${post.slug}`}>
                     <Img
                       fluid={post.coverImage.fluid}
                       className={styles.image}

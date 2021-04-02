@@ -1,13 +1,13 @@
-import React, { useState } from "react"
+import React from "react"
 import ProfileContainer from "../ProfileContainer"
 import { navigate } from "gatsby"
 import { myLocalStorage } from "../../helper"
 import BlogHeader from "../../components/BlogHeader"
 
 const ProfileAll = () => {
-  const [user, setUser] = useState(myLocalStorage.getItem("loggedIn"))
+  const user = myLocalStorage.getItem("loggedIn")
   const url = typeof window !== "undefined" ? window.location.pathname : ""
-  console.log("path" + url)
+ // console.log("path" + url)
 
   if (url === "/profile") {
     if (!user) {

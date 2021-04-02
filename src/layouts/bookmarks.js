@@ -28,8 +28,8 @@ const FirstCom =
 const SecondCom = "Sed ut perspiciatis unde omnis iste"
 const ThirdCom = "ut perspiciatis"
 
-const ProfilePost = ({ pageContext }) => {
-  const { body, title, coverImage, next, prev, tags } = pageContext
+const BookmarkPost = ({ pageContext }) => {
+  const { body, title, coverImage, next, prev, tags, authorsName } = pageContext
 
   const [button, setButton] = useState(false)
   const change = () => {
@@ -43,14 +43,14 @@ const ProfilePost = ({ pageContext }) => {
         <header className={!prev || !next ? styles.headerTwo : ""}>
           <div className={styles.prev}>
             {prev && (
-              <Link to={`/profilePosts/${prev.slug}`}>
+              <Link to={`/bookmarkPosts/${prev.slug}`}>
                 <div className={styles.button3}>Previous</div>
               </Link>
             )}
           </div>
           <div className={styles.next}>
             {next && (
-              <Link to={`/profilePosts/${next.slug}`}>
+              <Link to={`/bookmarkPosts/${next.slug}`}>
                 <div className={styles.button4}>Next</div>
               </Link>
             )}
@@ -74,6 +74,7 @@ const ProfilePost = ({ pageContext }) => {
             profileImage={<ProfileImage1 />}
             userAcc={userAcc}
             tags={tags}
+            authorsName={authorsName}
           />
 
           <article>{renderRichText(body)}</article>
@@ -127,7 +128,7 @@ const ProfilePost = ({ pageContext }) => {
 
       <div className={styles.backButton}>
         <div className={styles.back}>
-          <Link to="/profile">
+          <Link to="/bookmarks">
             <button className={styles.buttonBack}>Back to feed</button>
           </Link>
         </div>
@@ -136,4 +137,4 @@ const ProfilePost = ({ pageContext }) => {
   )
 }
 
-export default ProfilePost
+export default BookmarkPost
