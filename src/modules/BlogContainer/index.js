@@ -51,7 +51,7 @@ const BlogContainer = ({ tags }) => {
   //   const [check,setCheck] = useState(false);
   //  const loading = <h2>There is no such content</h2> ;
 
-  console.log("skipped if statement")
+
 
   let filtered = (
     <>

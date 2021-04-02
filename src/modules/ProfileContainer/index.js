@@ -95,14 +95,14 @@ const ProfileContainer = ({ name }) => {
                       className={styles.trashIcon}
                     />
                   </div>
-                  <Link to={`/posts/${post.slug}`}>
+                  <Link to={`/profilePosts/${post.slug}`}>
                     <Img
                       fluid={post.coverImage.fluid}
                       className={styles.image}
                     />
                   </Link>
                   <div className={styles.body}>
-                    <Link to={`/posts/${post.slug}`}>
+                    <Link to={`/profilePosts/${post.slug}`}>
                       <div className={styles.title}>
                         <h3>{post.title}</h3>
                       </div>

@@ -13,7 +13,6 @@ import styles from "./blog.module.css"
 import HeaderFooterLayout from "../layouts/headerFooter"
 import { myLocalStorage } from "../helper"
 import { library } from "@fortawesome/fontawesome-svg-core"
-import { arrayOf } from "prop-types"
 library.add(
   faBookmark
   // more icons go here
@@ -37,7 +36,6 @@ const BlogFeed = ({ pageContext }) => {
   }
   const { body, title, coverImage, next, prev, authorsName, tags } = pageContext
 
-  let storageObj = []
   const setArray = descr => {
     myLocalStorage.setItem(title, descr)
   }

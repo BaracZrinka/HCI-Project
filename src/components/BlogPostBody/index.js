@@ -15,7 +15,7 @@ const BlogPostBody = ({
     myLocalStorage.setItem("owner", property)
   }
 
-  let lower = authorsName.toLowerCase()
+ /* let lower = authorsName.toLowerCase()*/
 
   let ret = (
     <>
@@ -23,7 +23,7 @@ const BlogPostBody = ({
         <div className={styles.author}>
           <div className={styles.profileImage}>{profileImage}</div>
           <h4 className={styles.name}>{userAcc ? userAcc : authorsName}</h4>
-          {prop !== null && prop !== lower ? (
+          {prop !== null && prop !== userAcc ? (
             <button className={styles.follow}>Follow</button>
           ) : (
             ""

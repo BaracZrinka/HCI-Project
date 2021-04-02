@@ -90,7 +90,7 @@ const BookmarkFeed = () => {
                     className={styles.trashIcon}
                   />
                 </button>
-                <Link to={`/posts/${post.slug}`}>
+                <Link to={`/bookmarkPosts/${post.slug}`}>
                   <Img fluid={post.coverImage.fluid} className={styles.image} />
                 </Link>
                 <div className={styles.body}>
