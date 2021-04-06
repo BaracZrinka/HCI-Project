@@ -48,7 +48,6 @@ exports.createPages = async ({ graphql, actions }) => {
         title
         slug
         tags
-        authorsName
         coverImage {
           fluid(quality: 90, maxWidth: 1920){
             src

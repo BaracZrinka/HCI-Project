@@ -1,12 +1,9 @@
-.navigationBar{
-  
-}
 .navigationBar div {
   display: inline-block;
   padding: 14px 15px;
   list-style: none;
   width: fit-content;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 22px;
   text-transform: uppercase;
 }
@@ -15,8 +12,8 @@
   cursor: pointer;
   transform: scale(1.1);
 }
-
 .navigationBar .active,
 .navigationBar .active:hover {
   border-bottom: 2px solid gray;
+  transform: scale(1.1);
 }

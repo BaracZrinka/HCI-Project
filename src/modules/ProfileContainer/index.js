@@ -102,11 +102,12 @@ const ProfileContainer = ({ name }) => {
                     />
                   </Link>
                   <div className={styles.body}>
-                    <Link to={`/profilePosts/${post.slug}`}>
-                      <div className={styles.title}>
+                    <div className={styles.title}>
+                      <Link to={`/profilePosts/${post.slug}`}>
                         <h3>{post.title}</h3>
-                      </div>
-                    </Link>
+                      </Link>
+                    </div>
+
                     <div className={styles.textContainer}>
                       <p className={styles.text}>
                         {post.summary.internal.content}
