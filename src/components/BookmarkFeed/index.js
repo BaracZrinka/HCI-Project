@@ -73,6 +73,8 @@ const BookmarkFeed = () => {
   if (isLoaded) {
     firstVar = (
       <>
+      <h1 className={styles.h1}>Bookmarks</h1>
+      <div className={styles.h2}>Saved posts are only visible to you</div>
         <hr className={styles.line}></hr>
         <section className={styles.container}>
           {posts.map(post => {

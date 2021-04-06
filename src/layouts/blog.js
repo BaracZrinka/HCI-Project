@@ -44,10 +44,8 @@ const[check, setCheck] = useState(true)
   const setArray = descr => {
     myLocalStorage.setItem(title, descr)
     setCheck(false)
-    console.log(check)
+    
   }
-
-console.log(check)
   return (
     <HeaderFooterLayout>
       <main className={styles.container}>

@@ -133,7 +133,20 @@
   .line{
     margin-left:20%;
     margin-right: 20%;
+    margin-bottom:5%;
+    margin-top:10%;
   }
   .show{
     display:none;
+  }
+  .h2{
+    font-size: medium;
+    margin-top:6%;
+    position:absolute;
+    left:40%;
+  }
+  .h1{
+    position:absolute;
+    left:43%;
+    
   }

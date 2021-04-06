@@ -37,26 +37,30 @@ exports.createPages = async ({ graphql, actions }) => {
     }
     allContentfulCarousel {
       nodes {
+        summary {
+          internal {
+            content
+          }
+        }
         body {
           raw
         }
         title
         slug
+        tags
+        authorsName
         coverImage {
-          fixed(width: 300) {
+          fluid(quality: 90, maxWidth: 1920){
             src
             srcSet
             srcSetWebp
             srcWebp
-            width
-            height
             base64
             aspectRatio
           }
         }
       }
     }
-  
     allContentfulBlogFeed(limit:20) {
     nodes {
       summary {
@@ -87,6 +91,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
 }`)
  
+console.log(raw)
   const res = raw.data.allContentfulBlogPost.nodes
  
   res.forEach((e, index, array) => actions.createPage({
