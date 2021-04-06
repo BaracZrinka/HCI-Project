@@ -103,7 +103,7 @@ const ProfileContainer = ({ name }) => {
                   </Link>
                   <div className={styles.body}>
                     <div className={styles.title}>
-                      <Link to={`/posts/${post.slug}`}>
+                      <Link to={`/profilePosts/${post.slug}`}>
                         <h3>{post.title}</h3>
                       </Link>
                     </div>
