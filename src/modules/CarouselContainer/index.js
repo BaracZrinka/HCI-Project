@@ -34,7 +34,7 @@ const CarouselContainer = () => {
   return (
     <div className={styles.carouselContainer}>
       <div className={styles.decor}>
-        <h2 className={styles.hottest}>Hottest topics this week:</h2>
+        <div className={styles.hottest}>Explore hot topics this week</div>
       </div>
       <Carousel
         autoPlay
@@ -51,7 +51,7 @@ const CarouselContainer = () => {
               <div className={styles.carouselContetnt}>
                 <Img fluid={node.coverImage.fluid} className={styles.image} />
                 <div className={styles.title}>
-                  <span className={styles.span}>{node.title}</span>
+                  <div className={styles.span}>{node.title}</div>
                 </div>
               </div>
             </Link>

@@ -12,7 +12,8 @@
 }
 .hottest {
   font-size: 34px;
-  font-family: "Great Vibes";
+  letter-spacing: 1.5px;
+  text-shadow: 1px 1px 1px grey;
   position: relative;
 }
 .image {
@@ -31,9 +32,9 @@
 }
 
 .span {
-  font-weight: 750;
+  
   text-shadow: white 2px 2px 2px;
-  font-size: 35px;
+  font-size: 32px;
   width: fit-content;
-  font-family: "Great Vibes";
+  letter-spacing: 1.5px;
 }

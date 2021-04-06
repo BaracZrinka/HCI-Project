@@ -10,7 +10,7 @@
 .navigationHeader {
   grid-column-start: 2;
   grid-column-end: 3;
-  height: 60px;
+  height: 80px;
   display: grid;
   grid-template-columns: 20% 70% 10%;
   grid-template-rows: 1fr;
