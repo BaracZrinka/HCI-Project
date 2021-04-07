@@ -35,7 +35,7 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     }
-    allContentfulCarousel {
+    allContentfulCarousel(limit: 6) {
       nodes {
         body {
           raw
@@ -43,8 +43,9 @@ exports.createPages = async ({ graphql, actions }) => {
         title
         slug
         tags
+        authorsName
         coverImage {
-          fluid(quality: 90, maxWidth: 1920){
+          fluid(quality: 90, maxWidth: 1920) {
             src
             srcSet
             srcSetWebp
