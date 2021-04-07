@@ -34,7 +34,7 @@ const ThirdCom = "ut perspiciatis"
 
 const BlogFeed = ({ pageContext }) => {
   let userAcc = myLocalStorage.getItem("loggedIn")
-const[check, setCheck] = useState(true)
+const[check, setCheck] = useState()
   const [button, setButton] = useState(false)
   const change = () => {
     setButton(true)
@@ -42,10 +42,16 @@ const[check, setCheck] = useState(true)
   const { body, title, coverImage, next, prev, authorsName, tags } = pageContext
 
   const setArray = descr => {
-    myLocalStorage.setItem(title, descr)
-    setCheck(false)
-    
+    myLocalStorage.setItem(title, descr);
+    setCheck(true)
   }
+ 
+    
+  const removeArray = property => {  
+    myLocalStorage.removeItem(property)
+   setCheck(false)
+  }
+
   return (
     <HeaderFooterLayout>
       <main className={styles.container}>
@@ -73,15 +79,15 @@ const[check, setCheck] = useState(true)
             userAcc && userAcc === authorsName ? (
               ""
             ) : (
-              check?
+              !!(myLocalStorage.getItem(title))?
               (<FontAwesomeIcon
-                icon={["far", "bookmark"]}
+                icon={["fas", "bookmark"]}
                 size="2x"
                 color="black"
                 className={styles.bookmarkIcon}
-                onClick={() => setArray(title)}
+                onClick={() => removeArray(title)}
               />):(<FontAwesomeIcon
-              icon={["fas","bookmark"]}
+              icon={["far","bookmark"]}
               size="2x"
               color="black"
               className={styles.bookmarkIcon}

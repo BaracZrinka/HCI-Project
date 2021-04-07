@@ -35,21 +35,17 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     }
-    allContentfulCarousel {
+    allContentfulCarousel(limit: 6) {
       nodes {
-        summary {
-          internal {
-            content
-          }
-        }
         body {
           raw
         }
         title
         slug
         tags
+        authorsName
         coverImage {
-          fluid(quality: 90, maxWidth: 1920){
+          fluid(quality: 90, maxWidth: 1920) {
             src
             srcSet
             srcSetWebp
@@ -60,6 +56,7 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     }
+  
     allContentfulBlogFeed(limit:20) {
     nodes {
       summary {
@@ -90,7 +87,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
 }`)
  
-console.log(raw)
   const res = raw.data.allContentfulBlogPost.nodes
  
   res.forEach((e, index, array) => actions.createPage({
