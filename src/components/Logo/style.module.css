@@ -9,3 +9,10 @@
   align-items: center;
   padding-right: 50px;
 }
+.logoText {
+  display: grid;
+  grid-column-start: 2;
+  font-size: 40px;
+  font-weight: bolder;
+  color: #696f45;
+}

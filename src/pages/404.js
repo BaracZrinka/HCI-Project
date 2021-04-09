@@ -1,13 +1,12 @@
 import React from "react"
-
-
+//import SEO from "../components/seo"
+import Page404 from "../components/Page404"
+import HeaderFooterLayout from "../layouts/headerFooter"
 
 const NotFoundPage = () => (
-  <div>
-    <h1>ayy... nothing here!</h1>
-    <p>You just hit a route that doesn&#39;t exist...
-    the sadness.</p>
-  </div>
+  <HeaderFooterLayout>
+    <Page404 />
+  </HeaderFooterLayout>
 )
 
 export default NotFoundPage
