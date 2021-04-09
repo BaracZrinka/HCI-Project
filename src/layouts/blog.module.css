@@ -138,6 +138,7 @@ header .button4 {
   padding: 1%;
   border-radius: 10px;
   border: none;
+  outline: none;
 
   box-shadow: 2px 2px 2px grey;
   font-family: "Roboto", sans-serif;
@@ -160,6 +161,7 @@ header .button4 {
   padding: 1%;
   border-radius: 10px;
   border: none;
+  outline: none;
 
   box-shadow: 2px 2px 2px grey;
   font-family: "Roboto", sans-serif;
