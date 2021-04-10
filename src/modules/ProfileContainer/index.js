@@ -74,7 +74,7 @@ const ProfileContainer = ({ name }) => {
       <>
         <hr className={styles.line}></hr>
         <div className={styles.buttonPosition}>
-          <button className={styles.button1}>Add new post</button>
+          <a href= "http://localhost:8000/addNew"><button className={styles.button1}>Add new post</button></a>
         </div>
         <section className={styles.container}>
           {posts.map(post => {
