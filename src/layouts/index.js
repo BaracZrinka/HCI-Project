@@ -7,7 +7,7 @@ import ProfileImage1 from "../components/Images/ProfileImage1"
 import ProfileImage2 from "../components/Images/ProfileImage2"
 import CommentSection from "../components/CommentSection"
 import BlogRating from "../components/Images/BlogRating"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBookmark as reg } from "@fortawesome/free-regular-svg-icons"
 import { faBookmark as sol } from "@fortawesome/free-solid-svg-icons"
 import styles from "./blog.module.css"
@@ -31,7 +31,6 @@ const ThirdCom = "ut perspiciatis"
 
 const HottestSectionPost = ({ pageContext }) => {
   let userAcc = myLocalStorage.getItem("loggedIn")
-  const [check, setCheck] = useState()
   const [button, setButton] = useState(false)
   const change = () => {
     setButton(true)

@@ -34,7 +34,6 @@ const ThirdCom = "ut perspiciatis"
 
 const BlogFeed = ({ pageContext }) => {
   let userAcc = myLocalStorage.getItem("loggedIn")
-const[check, setCheck] = useState()
   const [button, setButton] = useState(false)
   const change = () => {
     setButton(true)
@@ -43,13 +42,13 @@ const[check, setCheck] = useState()
 
   const setArray = descr => {
     myLocalStorage.setItem(title, descr);
-    setCheck(true)
+    //setCheck(true)
   }
  
     
   const removeArray = property => {  
     myLocalStorage.removeItem(property)
-   setCheck(false)
+  // setCheck(false)
   }
 
   return (
