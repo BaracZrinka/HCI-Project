@@ -1,11 +1,15 @@
 .banner {
   height: 90vh;
-  perspective: 1px;
+
+  background-image: url("../../images/banner.jpg");
+
+  /* Parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.titleImage {
-  height: 90vh;
-  width: 100%;
-}
+
 .title {
   width: fit-content;
   height: fit-content;
@@ -13,21 +17,21 @@
   flex-flow: column;
 
   position: absolute;
-  top: 48%;
+  top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 
   text-align: center;
-  box-shadow: inset 2000px 0 0 rgba(255, 255, 255, 0.6);
+  box-shadow: inset 2000px 0 0 rgba(255, 255, 255, 0.7);
   border-radius: 20px;
   background: transparent;
   padding: 4%;
 }
 
-.titleImage h1 {
+.title h1 {
   color: #5c613e;
   font-size: 50px;
-  font-weight: lighter;
+  
   text-shadow: 0 0 15px white;
   text-align: left;
   margin: 0;
@@ -38,7 +42,6 @@
   text-shadow: 0 0 6px rgb(255, 255, 255);
   text-align: left;
   padding-right: 30%;
-
 }
 
 .button1 {
@@ -96,4 +99,10 @@
   left: 50%;
   transform: translateX(-50%) translateY(-30%);
   display: flex;
+}
+
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
 }
