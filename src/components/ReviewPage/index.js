@@ -72,24 +72,24 @@ const ReviewPage = () => {
   const toReadMore = property => {
     if (property) {
       setMore(true)
+
       let newPosts = posts.map(post => {
         if (post.title === property) {
           post.isShown = true
-          post.icon = true
         }
         return post
       })
+
       setPosts(newPosts)
     }
   }
 
-  const changeMore = prop => {
+  const toReadLess = prop => {
     if (prop) {
       setMore(false)
       let newPosts = posts.map(post => {
         if (post.title === prop) {
           post.isShown = false
-          post.icon = false
         }
         return post
       })
@@ -100,37 +100,33 @@ const ReviewPage = () => {
   let site
   if (isLoaded) {
     site = (
-      <>
+      <div className={styles.container}>
         {posts.map(post => {
           return (
             <div className={styles.wholeSite}>
-              <div className={styles.profilePost}>
-                {more && post.icon? (
-                  <div key={post.title} onClick={() => changeMore(post.title)}>
-                    <FontAwesomeIcon
-                      icon={["fas", "times"]}
-                      fill="white"
-                      size="2x"
-                      color="black"
-                      className={styles.timesIcon}
-                    />
-                  </div>
-                ) : (
-                  <div key={post.title} onClick={() => toReadMore(post.title)}>
-                    <FontAwesomeIcon
-                      icon={["fas", "plus"]}
-                      fill="white"
-                      size="2x"
-                      color="black"
-                      className={styles.plusIcon}
-                    />
-                  </div>
-                )}
-                <Img fluid={post.coverImage.fluid} className={styles.image} />
+              {more && post.isShown ? (
+                <div key={post.title} onClick={() => toReadLess(post.title)}>
+                  <FontAwesomeIcon
+                    icon={["fas", "times"]}
+                    fill="white"
+                    size="2x"
+                    color="black"
+                    className={styles.timesIcon}
+                  />
+                </div>
+              ) : (
+                ""
+              )}
+              <div className={more ? "" : styles.bump}>
+                <div key={post.title} onClick={() => toReadMore(post.title)}>
+                  <Img fluid={post.coverImage.fluid} className={styles.image} />
+                  <div className={styles.title}>{post.title}</div>
+                </div>
               </div>
               <div className={styles.rating}>
                 <BlogRating />
               </div>
+
               {post.isShown ? (
                 <>
                   <div className={styles.ingredients}>
@@ -188,7 +184,7 @@ const ReviewPage = () => {
             </div>
           )
         })}
-      </>
+      </div>
     )
   }
   return <>{site}</>
