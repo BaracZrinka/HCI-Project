@@ -1,71 +1,109 @@
 .container {
   display: grid;
-  grid-template-columns: 20% 60% 20%;
-  grid-template-areas: ". about .";
+  grid-template-columns: 10% 80% 10%;
+  grid-template-rows: 87% 13%;
+  grid-template-areas: ". about ." "join join join";
+  margin-top: 13%;
+  margin-bottom: 30%;
 }
 .blob {
   z-index: -1;
-  transform: translate3d(-35em, 5em, 0em);
+  transform: translate3d(-35em, 14em, 0em);
 }
 .about {
   grid-area: about;
   display: grid;
-  grid-template-columns: 8% 34% 16% 34% 8%;
-  grid-template-rows: 20% 30% 30% 20%;
+  grid-template-columns: 47% 6% 47%;
+  grid-template-rows: 44% 7% 44% 5%;
   grid-template-areas:
-    ". header . . ."
-    ". text1 text1 . ."
-    ". . text2 text2 . "
-    ".  button button . .";
+    "text1 image1 image1"
+    ". . ."
+    "image2 image2 text2";
 
   justify-items: center;
   align-items: center;
-  font-family: Ringside Regular A, Ringside Regular B, Rubik, Lato,
-    Lucida Grande, Lucida Sans Unicode, Tahoma, Sans-Serif;
   font-style: normal;
 }
 .about h2 {
-  display: grid;
-  grid-area: header;
-  padding-top: 10%;
-  justify-self: start;
-  font-size: 2em;
+  font-size: 1.8em;
+  letter-spacing: 1.5px;
+  line-height: 1.4;
+}
+.imageDiv1 {
+  grid-area: image1;
+  width: 100%;
+  height: 80vh;
+}
+.imageDiv2 {
+  grid-area: image2;
+  width: 100%;
+  height: 80vh;
 }
 .about .text1 {
   grid-area: text1;
-  padding-bottom: 3%;
-  font-size: 1.1em;
+  font-size: 1.3em;
+  line-height: 1.75;
   padding-right: 10%;
 }
 .about .text2 {
   grid-area: text2;
-  padding-right: 10%;
-  font-size: 1.1em;
+  font-size: 1.3em;
+  line-height: 1.75;
+  padding-left: 10%;
 }
-.button {
-  width: 200px;
-  height: 65px;
-  background-color: #696f45;
-
-  color: white;
-  font-size: 1.2em;
+.links {
   font-weight: bold;
+  margin-top: 20px;
+  text-align: right;
+}
+.links:hover {
+  text-decoration: underline;
+}
+.joinSection {
+  grid-area: join;
+  display: flex;
 
-  border-radius: 20px;
-  border: none;
-  padding: 10px;
-  box-shadow: 0px 0px 5px 0 gray;
-  cursor: pointer;
-  margin: 50px 30px;
-  outline: 0;
+  margin-top: 7%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 7%;
+
+  height: 40vh;
+  background-image: url("../../images/joinUs.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 01;
+}
+.question {
+  font-size: 36px;
+  letter-spacing: 1.3px;
+  line-height: 1.4;
+  color: white;
+  text-shadow: 0 0 15px black;
 }
 .buttonDiv {
-  grid-area: button;
   display: flex;
-  justify-content: center;
-  justify-self: center;
+  align-content: center;
+  align-self: center;
 }
-.container button:hover {
+.button {
+  display: flex;
+  align-items: center;
+  background-color: #696f45;
+  color: white;
+  width: max-content;
+  font-size: 28px;
+
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 0px 5px 0 gray;
+  padding: 20px;
+  cursor: pointer;
+  outline: 0;
+}
+.button:hover {
   background-color: #28a535;
   color: white;
   box-shadow: none;

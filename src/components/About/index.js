@@ -1,21 +1,50 @@
 import React from "react"
 import styles from "./style.module.css"
+import AboutImg1 from "../Images/AboutImg1"
+import AboutImg2 from "../Images/AboutImg2"
 
 const About = () => (
   <div className={styles.container}>
     <div className={styles.about}>
-      <h2>About us</h2>
       <div className={styles.text1}>
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        <h2>Ever wondered what's in your cosmetics? We have.</h2>
+        "Our goal is to educate, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
         commodo consequat."
+        <div className={styles.links}>
+          <a href="http://localhost:8000/review">
+            Read more about ingredients &#8594;
+          </a>
+        </div>
       </div>
+
+      <div className={styles.imageDiv1}>
+        <AboutImg1 className={styles.image1}></AboutImg1>
+      </div>
+
+      <div className={styles.imageDiv2}>
+        <AboutImg2 className={styles.image2}></AboutImg2>
+      </div>
+
       <div className={styles.text2}>
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat."
+        <h2>Sustainable, eco-friendly lifestyle made easy</h2>
+        "We want to make reduce, reuse, recycle effortless, consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat."
+        <div className={styles.links}>
+          <a href="http://localhost:8000/blog">
+            Read more about sustainability &#8594;
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div className={styles.joinSection}>
+      <div className={styles.question}>
+        Like what you hear? Agree or disagree? Join BeBIO and share your
+        thoughts!
       </div>
       <div className={styles.buttonDiv}>
         <a href="http://localhost:8000/signup">
