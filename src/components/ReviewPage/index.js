@@ -29,7 +29,7 @@ const ThirdCom = "ut perspiciatis"
 const ReviewPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulReviewPage(limit: 8) {
+      allContentfulReviewPage(limit: 9) {
         nodes {
           ingredients {
             raw
@@ -129,11 +129,12 @@ const ReviewPage = () => {
 
               {post.isShown ? (
                 <>
+                  <div className={styles.ingredientsTitle}>Ingredients:</div>
                   <div className={styles.ingredients}>
                     {renderRichText(post.ingredients)}
                   </div>
                   <div className={styles.reviewHead}>
-                    <h3 className={styles.commentsTitle}>Comments:</h3>
+                    <h3 className={styles.commentsTitle}>Reviews</h3>
                     <div className={styles.buttonDiv}>
                       <textarea
                         onClick={change}
@@ -150,7 +151,7 @@ const ReviewPage = () => {
                       >
                         CANCEL
                       </button>
-                      <button className={styles.button2}>COMMENT</button>
+                      <button className={styles.button2}>POST</button>
                     </div>
                   ) : (
                     ""
