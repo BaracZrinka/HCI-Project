@@ -1,81 +1,99 @@
 .banner {
-  height: 85vh;
+  height: 90vh;
   perspective: 1px;
 }
 .titleImage {
-  height: 85vh;
+  height: 90vh;
   width: 100%;
 }
 .title {
   width: fit-content;
   height: fit-content;
   display: flex;
-
   flex-flow: column;
-  background: transparent;
+
   position: absolute;
-  top: 50%;
+  top: 48%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  text-align: center;
 
-  box-shadow: inset 2000px 0 0 rgba(255, 255, 255, 0.5);
+  text-align: center;
+  box-shadow: inset 2000px 0 0 rgba(255, 255, 255, 0.6);
   border-radius: 20px;
+  background: transparent;
+  padding: 4%;
 }
 
 .titleImage h1 {
   color: #5c613e;
-  font-size: 100px;
+  font-size: 50px;
+  font-weight: lighter;
   text-shadow: 0 0 15px white;
-  margin-bottom: 40px;
+  text-align: left;
+  margin: 0;
 }
 
 .description {
   font-size: 32px;
   text-shadow: 0 0 6px rgb(255, 255, 255);
-  padding: 45px 12px;
-  margin: 0;
-  margin-left: 5%;
-  margin-right: 5%;
-  border-top: 4px solid #fff;
+  text-align: left;
+  padding-right: 30%;
+
 }
 
 .button1 {
-  background-color: #ffffff80;
-  color: black;
-  text-decoration: underline;
-  font-weight: 600;
+  background-color: #696f45;
+  color: white;
 
-  height: fit-content;
-  width: fit-content;
+  height: 50px;
+  width: max-content;
   font-size: 20px;
   cursor: pointer;
+  margin-right: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
 
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
-  padding: 10%;
+  outline: none;
   text-align: center;
 }
 .button2 {
-  background-color: #b885a98e;
+  background-color: rgba(255, 255, 255, 0.5);
   color: black;
-  text-decoration: underline;
-  font-weight: 600;
 
-  height: fit-content;
-  width: fit-content;
+  height: 50px;
+  width: max-content;
   font-size: 20px;
   cursor: pointer;
+  padding-left: 15px;
+  padding-right: 15px;
 
-  border-radius: 20px;
-  border: none;
-  padding: 10%;
+  border-radius: 10px;
+  border-color: #696f45;
+  border-width: 3px;
+  outline: none;
   text-align: center;
+}
+.button1:hover {
+  background-color: #28a535;
+  color: white;
+  box-shadow: none;
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.05);
+}
+.button2:hover {
+  box-shadow: none;
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.05);
+}
+.buttonDiv {
+  display: flex;
 }
 .section {
   position: absolute;
-  right: 5%;
-  bottom: 10%;
-  display: grid;
-  grid-row-gap: 15px;
+  top: 86%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-30%);
+  display: flex;
 }

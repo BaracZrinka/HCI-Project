@@ -24,14 +24,27 @@ const Banner = () => {
         backgroundColor={`#040e18`}
       >
         <div className={styles.title}>
-          <h1>BeBIO</h1>
+          <h1>
+            Sustainable, <br></br>eco-friendly<br></br>lifestyle
+          </h1>
           <div className={styles.description}>
-            Start exploring the world of healthy living
+            is possible and easy with a community that<br></br> shares and
+            cares!
           </div>
         </div>
         <section className={styles.section}>
-          <button className={styles.button1}>Hottest posts</button>
-          <button className={styles.button2}>Newest posts</button>
+          <div className={styles.buttonDiv}>
+            <a href="http://localhost:8000/signup">
+              <button className={styles.button1}>Join our community</button>
+            </a>
+          </div>
+          <div className={styles.buttonDiv}>
+            <a href="http://localhost:8000/blog">
+              <button className={styles.button2}>
+                Explore without an account
+              </button>
+            </a>
+          </div>
         </section>
       </BackgroundImage>
     </div>
