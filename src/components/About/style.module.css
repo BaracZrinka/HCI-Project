@@ -3,8 +3,8 @@
   grid-template-columns: 10% 80% 10%;
   grid-template-rows: 87% 13%;
   grid-template-areas: ". about ." "join join join";
-  margin-top: 13%;
-  margin-bottom: 30%;
+  margin-top: 170px;
+  margin-bottom: 470px;
 }
 .blob {
   z-index: -1;
