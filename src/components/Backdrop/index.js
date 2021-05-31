@@ -54,7 +54,7 @@ const Backdrop = props => {
   const [button, setButton] = useState(false)
 
   const change = () => {
-    setButton(true)
+    setButton(true);
     console.log("changed");
   }
 
@@ -67,7 +67,7 @@ const Backdrop = props => {
   let spinner = (
     <div className={styles.wholeSite}>
       <div className={styles.index}>
-        <div key={props.post.title} onClick={() => props.closeBackdrop}>
+        <div key={props.post.title} onClick={() => props.closeBackdrop()}>
           <FontAwesomeIcon
             icon={["fas", "times"]}
             fill="white"
@@ -101,13 +101,13 @@ const Backdrop = props => {
       </div>
       {button ? (
         <div className={styles.commentButtons}>
-          <button className={styles.button1} onClick={setButton(false)}>
+          <button className={styles.button1} onClick={()=>setButton(false)}>
             CANCEL
           </button>
           <button className={styles.button2}>POST</button>
         </div>
       ) : (
-        ""
+        null
       )}
       <div className={styles.commentBody}>
         <CommentSection
@@ -135,11 +135,8 @@ const Backdrop = props => {
     spinner = <Spinner />
   }
   return <>
-      <div className={styles.backdrop} onClick={props.closeBackdrop}>
+      <div className={styles.backdrop} onClick={props.closeBackdrop}></div>
         <div className={styles.modal}>{spinner}</div>
-      </div>
-      
-    
   </>
 }
 

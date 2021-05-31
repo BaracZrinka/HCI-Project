@@ -2,6 +2,12 @@
   display: grid;
   grid-template-columns: 20% 60% 20%;
 }
+.NoContent{
+  min-height: 35vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .post {
   grid-column: 2/3;
   display: flex;

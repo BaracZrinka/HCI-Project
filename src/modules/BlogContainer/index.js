@@ -2,7 +2,6 @@ import React, {useState} from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import styles from "./style.module.css"
-import ProfileImage1 from "../../components/Images/ProfileImage1"
 import BlogRating from "../../components/Images/BlogRating"
 //import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBookmark } from "@fortawesome/free-regular-svg-icons"
@@ -48,7 +47,6 @@ const BlogContainer = ({ tags }) => {
     }
   `)
   let [check, setCheck]= useState(false)
-  let loading = <div>no</div>
 
   let filtered = (
     <>
@@ -121,11 +119,9 @@ const BlogContainer = ({ tags }) => {
           </div>
         )
       }
-     
     })
   }
-console.log("jhdoild\n" + filtered)
-  return <>{filtered!=={}? filtered : "n"}</>
+  return <>{filtered!=={}? filtered : null}</>
 }
 
 export default BlogContainer
