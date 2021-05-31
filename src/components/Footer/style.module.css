@@ -3,19 +3,16 @@
   box-shadow: 0px 0px 8px 0 gray;
   padding: 15px;
   color: #444444;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bolder;
-  height: 170px;
+  height: 250px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.navigation {
-  margin: 1%;
-  color: #444444;
-}
+
 .contact {
   margin: 0%;
 }

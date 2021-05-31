@@ -12,6 +12,8 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 import ProfileImage1 from "../Images/ProfileImage1"
 import ProfileImage2 from "../Images/ProfileImage2"
 import CommentSection from "../CommentSection"
+import Backdrop from '../UI/Backdrop/Backdrop';
+
 library.add(
   faPlus,
   faTimes
@@ -52,6 +54,8 @@ const ReviewPage = () => {
 
   let [posts, setPosts] = useState(null)
   let [isLoaded, setLoaded] = useState(false)
+  const [showModal, setShowModal] = useState(false);
+  const [modalPost, setModalPost] = useState(null);
 
   useEffect(() => {
     let allPosts = data.allContentfulReviewPage.nodes.map(post => {
@@ -97,15 +101,20 @@ const ReviewPage = () => {
     }
   }
 
+  const closeBackdrop = () => {
+    setShowModal(false)
+  }
+
   let site
   if (isLoaded) {
     site = (
       <div className={styles.container}>
         {posts.map(post => {
+
           return (
             <div className={styles.wholeSite}>
               <div className={more ? "" : styles.bump}>
-                <div key={post.title} onClick={() => toReadMore(post.title)}>
+                <div key={post.title} onClick={() => {setShowModal(true); setModalPost(post);toReadMore(post.title)}}>
                   <Img fluid={post.coverImage.fluid} className={styles.image} />
                   <div className={styles.title}>{post.title}</div>
                 </div>
@@ -207,6 +216,8 @@ const ReviewPage = () => {
       </div>
     )
   }
-  return <>{site}</>
+  return <>{site}
+  {showModal?< Backdrop post={modalPost} closeBackdrop={closeBackdrop}/>:null}
+  </>
 }
 export default ReviewPage

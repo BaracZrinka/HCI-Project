@@ -63,21 +63,19 @@ const BlogContainer = ({ tags }) => {
               </div>
               <div className={styles.body}>
                 <div className={styles.tags}> #{node.tags}</div>
-                <Link to={`/blogPosts/${node.slug}`}>
-                  <h2>{node.title}</h2>
-                </Link>
-                <div className={styles.rating}>
-                  <BlogRating />
-                </div>
+                <h2>{node.title}</h2>
+
                 <section className={styles.blog2}>
                   <div className={styles.text}>
                     <div> {node.summary.internal.content} </div>
                   </div>
-                  <div className={styles.author}>
-                    <div className={styles.profileImage}>
-                      {<ProfileImage1 />}
+                  <div className={styles.ratingandname}>
+                    <div className={styles.rating}>
+                      <BlogRating />
                     </div>
-                    <h4 className={styles.name}>{node.authorsName}</h4>
+                    <div className={styles.author}>
+                      <h4 className={styles.name}>{node.authorsName}</h4>
+                    </div>
                   </div>
                 </section>
               </div>
@@ -105,18 +103,17 @@ const BlogContainer = ({ tags }) => {
               <div className={styles.body}>
                 <div className={styles.tags}> #{node.tags}</div>
                 <h2>{node.title}</h2>
-                <div className={styles.rating}>
-                  <BlogRating />
-                </div>
                 <section className={styles.blog2}>
                   <div className={styles.text}>
                     <div> {node.summary.internal.content} </div>
                   </div>
-                  <div className={styles.author}>
-                    <div className={styles.profileImage}>
-                      {<ProfileImage1 />}
+                  <div className={styles.ratingandname}>
+                    <div className={styles.rating}>
+                      <BlogRating />
                     </div>
-                    <h4 className={styles.name}>{node.authorsName}</h4>
+                    <div className={styles.author}>
+                      <h4 className={styles.name}>{node.authorsName}</h4>
+                    </div>
                   </div>
                 </section>
               </div>

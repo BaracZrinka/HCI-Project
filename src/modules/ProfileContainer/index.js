@@ -73,8 +73,12 @@ const ProfileContainer = ({ name }) => {
     firstVar = (
       <>
         <hr className={styles.line}></hr>
-        <div className={styles.buttonPosition}>
-          <a href= "http://localhost:8000/addNew"><button className={styles.button1}>Add new post</button></a>
+        <div className={styles.con}>
+          <div className={styles.buttonPosition}>
+            <a href="http://localhost:8000/addNew">
+              <button className={styles.button1}>Add new post</button>
+            </a>
+          </div>
         </div>
         <section className={styles.container}>
           {posts.map(post => {
@@ -104,7 +108,7 @@ const ProfileContainer = ({ name }) => {
                   <div className={styles.body}>
                     <div className={styles.title}>
                       <Link to={`/profilePosts/${post.slug}`}>
-                        <h3>{post.title}</h3>
+                        <h2>{post.title}</h2>
                       </Link>
                     </div>
 
