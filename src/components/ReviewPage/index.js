@@ -104,19 +104,6 @@ const ReviewPage = () => {
         {posts.map(post => {
           return (
             <div className={styles.wholeSite}>
-              {more && post.isShown ? (
-                <div key={post.title} onClick={() => toReadLess(post.title)}>
-                  <FontAwesomeIcon
-                    icon={["fas", "times"]}
-                    fill="white"
-                    size="2x"
-                    color="black"
-                    className={styles.timesIcon}
-                  />
-                </div>
-              ) : (
-                ""
-              )}
               <div className={more ? "" : styles.bump}>
                 <div key={post.title} onClick={() => toReadMore(post.title)}>
                   <Img fluid={post.coverImage.fluid} className={styles.image} />
@@ -126,59 +113,91 @@ const ReviewPage = () => {
               <div className={styles.rating}>
                 <BlogRating />
               </div>
-
               {post.isShown ? (
-                <>
-                  <div className={styles.ingredientsTitle}>Ingredients:</div>
-                  <div className={styles.ingredients}>
-                    {renderRichText(post.ingredients)}
-                  </div>
-                  <div className={styles.reviewHead}>
-                    <h3 className={styles.commentsTitle}>Reviews</h3>
-                    <div className={styles.buttonDiv}>
-                      <textarea
-                        onClick={change}
-                        placeholder="Add your review here..."
-                        maxLength="160"
-                      ></textarea>
-                    </div>
-                  </div>
-                  {button ? (
-                    <div className={styles.commentButtons}>
-                      <button
-                        className={styles.button1}
-                        onClick={() => setButton(false)}
+                <div className={styles.index}>
+                  <>
+                    {more && post.isShown ? (
+                      <div
+                        key={post.title}
+                        onClick={() => toReadLess(post.title)}
                       >
-                        CANCEL
-                      </button>
-                      <button className={styles.button2}>POST</button>
+                        <FontAwesomeIcon
+                          icon={["fas", "times"]}
+                          fill="white"
+                          size="2x"
+                          color="black"
+                          className={styles.timesIcon}
+                        />
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                    <div className={more ? "" : styles.bump}>
+                      <div
+                        key={post.title}
+                        onClick={() => toReadMore(post.title)}
+                      >
+                        <Img
+                          fluid={post.coverImage.fluid}
+                          className={styles.image}
+                        />
+                        <div className={styles.title}>{post.title}</div>
+                      </div>
                     </div>
-                  ) : (
-                    ""
-                  )}
-                  <div className={styles.commentBody}>
-                    <CommentSection
-                      profileImage={<ProfileImage1 />}
-                      userName={user1}
-                      comment={FirstCom}
-                    />
-                    <CommentSection
-                      profileImage={<ProfileImage2 />}
-                      userName={user2}
-                      comment={SecondCom}
-                    />
-                    <CommentSection
-                      profileImage={<ProfileImage1 />}
-                      userName={user3}
-                      comment={ThirdCom}
-                    />
-                    <div className={styles.readmore}>
-                      <button className={styles.readMoreButton}>
-                        Read more
-                      </button>
+                    <div className={styles.rating}>
+                      <BlogRating />
                     </div>
-                  </div>
-                </>
+                    <div className={styles.ingredientsTitle}>Ingredients:</div>
+                    <div className={styles.ingredients}>
+                      {renderRichText(post.ingredients)}
+                    </div>
+                    <div className={styles.reviewHead}>
+                      <h3 className={styles.commentsTitle}>Reviews</h3>
+                      <div className={styles.buttonDiv}>
+                        <textarea
+                          onClick={change}
+                          placeholder="Add your review here..."
+                          maxLength="160"
+                        ></textarea>
+                      </div>
+                    </div>
+                    {button ? (
+                      <div className={styles.commentButtons}>
+                        <button
+                          className={styles.button1}
+                          onClick={() => setButton(false)}
+                        >
+                          CANCEL
+                        </button>
+                        <button className={styles.button2}>POST</button>
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                    <div className={styles.commentBody}>
+                      <CommentSection
+                        profileImage={<ProfileImage1 />}
+                        userName={user1}
+                        comment={FirstCom}
+                      />
+                      <CommentSection
+                        profileImage={<ProfileImage2 />}
+                        userName={user2}
+                        comment={SecondCom}
+                      />
+                      <CommentSection
+                        profileImage={<ProfileImage1 />}
+                        userName={user3}
+                        comment={ThirdCom}
+                      />
+                      <div className={styles.readmore}>
+                        <button className={styles.readMoreButton}>
+                          Read more
+                        </button>
+                      </div>
+                    </div>
+                  </>{" "}
+                </div>
               ) : (
                 ""
               )}

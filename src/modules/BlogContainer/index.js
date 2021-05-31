@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import styles from "./style.module.css"
@@ -47,6 +47,9 @@ const BlogContainer = ({ tags }) => {
       }
     }
   `)
+  let [check, setCheck]= useState(false)
+  let loading = <div>no</div>
+
   let filtered = (
     <>
       {data.allContentfulBlogFeed.nodes.map(node => {
@@ -85,6 +88,7 @@ const BlogContainer = ({ tags }) => {
     </>
   )
 
+ 
   if (tags) {
     //console.log("exist")
 
@@ -101,7 +105,6 @@ const BlogContainer = ({ tags }) => {
               <div className={styles.body}>
                 <div className={styles.tags}> #{node.tags}</div>
                 <h2>{node.title}</h2>
-
                 <div className={styles.rating}>
                   <BlogRating />
                 </div>
@@ -121,11 +124,11 @@ const BlogContainer = ({ tags }) => {
           </div>
         )
       }
+     
     })
   }
- 
-
-  return <>{filtered}</>
+console.log("jhdoild\n" + filtered)
+  return <>{filtered!=={}? filtered : "n"}</>
 }
 
 export default BlogContainer

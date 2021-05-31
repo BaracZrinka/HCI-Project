@@ -11,7 +11,9 @@
     max-height: fit-content;
   }
   .wholeSite{
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     position: relative;
     margin-bottom: 40px;
     padding-bottom: 4%;
@@ -139,4 +141,13 @@
   font-weight: bold;
   margin-bottom: 15px;
   cursor: pointer;
+}
+.index{
+  position:absolute;
+  z-index: 1;
+  background-color: red;
+}
+.blur{
+  color: lime;
+  opacity: 0.2;
 }
