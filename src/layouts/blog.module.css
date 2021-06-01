@@ -183,7 +183,7 @@ header .button4 {
   display: flex;
   flex-grow: 1;
 }
-textarea {
+.textarea1 {
   background-color: white;
 
   color: lightslategray;

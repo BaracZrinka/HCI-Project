@@ -39,6 +39,7 @@ const AddNewFeed = () => {
     }
   }
   return (
+    <div className = {styles.container}>
     <div className={styles.wholeBlog}>
       <div className={styles.add}>Add new post</div>
       <div className={styles.text}>
@@ -46,72 +47,79 @@ const AddNewFeed = () => {
           onClick={change}
           placeholder="Insert title"
           maxLength="160"
+          className={styles.textarea2}
         ></textarea>
       </div>
       <div className={styles.pictureDiv}>
-        <div>Cover Image</div>
+        
         <button className={styles.insert} onClick={change}>
-          Insert file
+          Insert cover image file
         </button>
       </div>
 
-      <div className={styles.summary}>
+      <div className={styles.text}>
         <textarea
           onClick={change}
           placeholder="Insert summary"
           maxLength="160"
+          className={styles.textarea2}
         ></textarea>
       </div>
-      <div className={styles.body}>
+      <div className={styles.text}>
         <textarea
           onClick={change}
           placeholder="Insert total caption"
           maxLength="160"
+          className={styles.textarea2}
         ></textarea>
       </div>
-      <div className={styles.author}>
+      <div className={styles.text}>
         <textarea
           onClick={change}
           placeholder="Insert author's name"
           maxLength="160"
+          className={styles.textarea2}
         ></textarea>
       </div>
-      <div className={styles.tags}>
+      <div className={styles.text}>
         <textarea
           onClick={change}
           placeholder="Insert post's tags"
           maxLength="160"
+          className={styles.textarea2}
         ></textarea>
       </div>
-      <div className={styles.slug}>
+      <div className={styles.text}>
         <textarea
           onClick={change}
           placeholder="Insert unique tag for a web path"
           maxLength="160"
+          className={styles.textarea2}
         ></textarea>
       </div>
       <div className={styles.date}>
-        <div className={styles.divText}>Choose time of creation</div>
+        <div className={styles.coverImg}>Choose time of creation</div>
         <button
-          className={styles.chooseDate}
+          className={styles.insert}
           onClick={() => change("calendar")}
         >
-          Modificate date
+          Modify date
         </button>
       </div>
       {check ? calendar : ""}
       {button ? (
-        <div className={styles.commentButtons}>
+        <div className={styles.submitButtons}>
           <button className={styles.button1} onClick={() => setButton(false)}>
-            REMOVE
+            Cancel
           </button>
           <button className={styles.button2} onClick={() => isValid()}>
-            SUBMIT
+            Submit
           </button>
         </div>
       ) : (
         ""
       )}
+    </div>
     </div>
   )
 }
