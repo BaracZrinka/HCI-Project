@@ -71,14 +71,13 @@ const BookmarkFeed = () => {
 
   if (isLoaded) {
     firstVar = (
-      <>
+      <div className={styles.main}>
         <section className={styles.bookmarkHeader}>
           <div className={styles.heading}>Bookmarks</div>
           <div className={styles.search}>
             <input
               type="text"
               placeholder="Search..."
-              const
               
               className={styles.filter}
             />
@@ -120,7 +119,7 @@ const BookmarkFeed = () => {
             )
           })}
         </section>
-      </>
+      </div>
     )
   }
   return <>{firstVar}</>
