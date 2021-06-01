@@ -7,6 +7,11 @@ import {myLocalStorage} from '../../helper'
 const loggedIn = () => !!myLocalStorage.getItem("loggedIn") 
 
 
+const profile = "Profile";
+const login = "Login";
+const logout = "Logout";
+
+
 let keysToRemove = ["loggedIn", "owner"];
 
 const NavigationBar = ({ activeTab }) => (
@@ -19,12 +24,13 @@ const NavigationBar = ({ activeTab }) => (
 
     {loggedIn() && (
       <Link to={"/profile"}>
-        <div>Profile</div>
+        <div className = {profile === activeTab? styles.active : ""}>{profile}</div>
       </Link>
     )}
 
     <Link to={"/login"}>
       <div
+      className = {login===activeTab? styles.active : ""}
         onClick={
           loggedIn() ? () => keysToRemove.forEach(k => myLocalStorage.removeItem(k)) : () => {}
           

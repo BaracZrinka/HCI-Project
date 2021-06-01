@@ -125,12 +125,8 @@ const ProfilePost = ({ pageContext }) => {
         </div>
       </main>
 
-      <div className={styles.backButton}>
-        <div className={styles.back}>
-          <Link to="/profile">
-            <button className={styles.buttonBack}>Back to feed</button>
-          </Link>
-        </div>
+      <div className={styles.links}>
+        <a href="/profile">&#8592; Go back to profile feed</a>
       </div>
     </HeaderFooterLayout>
   )

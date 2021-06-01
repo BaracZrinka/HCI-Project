@@ -9,12 +9,12 @@
   grid-template-columns: 50% 50%;
   margin-top: 5%;
 }
-header .prev{
+header .prev {
   display: flex;
   position: relative;
   min-height: 60px;
 }
-header .next{
+header .next {
   display: flex;
   position: relative;
   min-height: 60px;
@@ -29,17 +29,17 @@ header .button3 {
 
   cursor: pointer;
   width: 130px;
-  height: 50px;
+  padding: 20px;
+  margin-top: 20px;
 
-  font-size: 15px;
+  font-size: 18px;
   border-radius: 10px;
   border: none;
 
-  box-shadow: 2px 2px 2px grey;
-  font-family: "Roboto", sans-serif;
+  box-shadow: 0px 0px 8px 0 lightgray;
 
-  /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
   font-weight: bold;
+  transition: transform 0.2s;
 }
 header .button4 {
   position: absolute;
@@ -53,22 +53,30 @@ header .button4 {
 
   cursor: pointer;
   width: 130px;
-  height: 50px;
+  padding: 20px;
+  margin-top: 20px;
 
-  font-size: 15px;
+  font-size: 18px;
   border-radius: 10px;
   border: none;
 
-  box-shadow: 2px 2px 2px grey;
-  font-family: "Roboto", sans-serif;
+  box-shadow: 0px 0px 8px 0 lightgray;
 
-  /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
   font-weight: bold;
+  transition: transform 0.2s;
+}
+.button3:hover{
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.05);
+}
+.button4:hover{
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.05);
 }
 .wholeBlog {
   grid-column: 2/3;
-  margin-top: 30px;
-  margin-bottom: 40px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   border-radius: 20px;
   box-shadow: 0px 0px 8px 0 lightgray;
 }
@@ -79,8 +87,6 @@ header .button4 {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   height: 450px;
- /* width: 600px;
-  display: block;*/
 }
 .bookmarkIcon {
   position: absolute;
@@ -105,7 +111,7 @@ header .button4 {
   grid-column: 2/3;
   justify-self: center;
   align-self: center;
- font-size:x-large;
+  font-size: x-large;
 }
 .rating {
   grid-column: 3/4;
@@ -114,14 +120,14 @@ header .button4 {
   cursor: pointer;
 }
 .wholeBlog article {
-  margin: 5%;
+  margin: 50px;
   font-size: 18px;
   line-height: 1.75;
 }
 .commentButtons {
   display: flex;
   justify-content: flex-end;
-  margin-right: 5%;
+  margin-right: 50px;
 }
 .button1 {
   background-color: white;
@@ -129,22 +135,17 @@ header .button4 {
   text-align: center;
 
   margin-bottom: 10px;
-  margin-right: 5px;
+  margin-right: 10px;
+  padding: 15px;
   cursor: pointer;
-  width: 130px;
-  height: 40px;
-
-  font-size: 15px;
-  padding: 1%;
+  font-size: 18px;
   border-radius: 10px;
   border: none;
-  outline: none;
 
-  box-shadow: 2px 2px 2px grey;
-  font-family: "Roboto", sans-serif;
-
-  /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
+  box-shadow: 0px 0px 8px 0 lightgray;
   font-weight: bold;
+  outline: none;
+  transition: transform 0.2s;
 }
 .button2 {
   background-color: #696f45;
@@ -155,28 +156,28 @@ header .button4 {
   margin-right: 4px;
   cursor: pointer;
   width: 130px;
-  height: 40px;
-
-  font-size: 15px;
-  padding: 1%;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 18px;
   border-radius: 10px;
   border: none;
-  outline: none;
 
-  box-shadow: 2px 2px 2px grey;
-  font-family: "Roboto", sans-serif;
-
-  /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
+  box-shadow: 0px 0px 8px 0 lightgray;
   font-weight: bold;
+  outline: none;
+  transition: transform 0.2s;
 }
-
-.commentBody {
-  margin-left: 5%;
-  margin-right: 5%;
+.button1:hover{
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.05);
+}
+.button2:hover{
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.05);
 }
 .commentsTitle {
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 .buttonDiv {
   display: flex;
@@ -186,7 +187,7 @@ textarea {
   background-color: white;
 
   color: lightslategray;
-  padding: 1% 7%;
+  padding: 1% 50px;
   text-align: left;
   text-decoration: none;
 
@@ -196,8 +197,8 @@ textarea {
   font-size: 15px;
   cursor: auto;
 
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 50px;
+  margin-right: 50px;
   margin-bottom: 2%;
 
   border-color: gray;
@@ -211,43 +212,38 @@ textarea {
   background-color: white;
 
   border-radius: 20px;
-  border: none;
   padding: 10px;
-  box-shadow: 3px 3px grey;
-  /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
+
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 50px;
   cursor: pointer;
+
+  font-size: 16px;
+  border: none;
+  box-shadow: 0px 0px 8px 0 lightgray;
 }
 .readmore {
   display: flex;
   justify-content: center;
+  transition: transform 0.2s;
 }
-
+.readmore:hover{
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.05);
+}
 .backButton {
   display: flex;
   flex-flow: column;
   align-items: center;
 }
-.buttonBack {
-  width: 200px;
-  height: 65px;
-  background-color: #696f45;
-
-  color: white;
-  font-size: 1.2em;
+.links {
   font-weight: bold;
-
-  border-radius: 20px;
-  border: none;
-  padding: 10px;
-  box-shadow: 0px 0px 5px 0 gray;
-  cursor: pointer;
-  margin: 30px 30px;
-  outline: 0;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 70px;
+  margin-left: 20%;
+  text-align: left;
 }
-.buttonBack:hover {
-  box-shadow: none;
-  transition: all 0.5s ease-in-out;
-  transform: scale(1.05);
+.links:hover {
+  text-decoration: underline;
 }
