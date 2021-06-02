@@ -54,8 +54,8 @@ const Backdrop = props => {
   const [button, setButton] = useState(false)
 
   const change = () => {
-    setButton(true);
-    console.log("changed");
+    setButton(true)
+    console.log("changed")
   }
 
   useEffect(() => {
@@ -101,14 +101,12 @@ const Backdrop = props => {
       </div>
       {button ? (
         <div className={styles.commentButtons}>
-          <button className={styles.button1} onClick={()=>setButton(false)}>
+          <button className={styles.button1} onClick={() => setButton(false)}>
             CANCEL
           </button>
           <button className={styles.button2}>POST</button>
         </div>
-      ) : (
-        null
-      )}
+      ) : null}
       <div className={styles.commentBody}>
         <CommentSection
           profileImage={<ProfileImage1 />}
@@ -134,10 +132,12 @@ const Backdrop = props => {
   if (showSpinner) {
     spinner = <Spinner />
   }
-  return <>
+  return (
+    <>
       <div className={styles.backdrop} onClick={props.closeBackdrop}></div>
-        <div className={styles.modal}>{spinner}</div>
-  </>
+      <div className={styles.modal}>{spinner}</div>
+    </>
+  )
 }
 
 export default Backdrop

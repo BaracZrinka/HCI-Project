@@ -85,6 +85,7 @@ const ProfilePost = ({ pageContext }) => {
                 onClick={change}
                 placeholder="Add your comment here..."
                 maxLength="160"
+                className={styles.textarea1}
               ></textarea>
             </div>
           </div>

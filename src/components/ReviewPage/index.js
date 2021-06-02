@@ -5,9 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import BlogRating from "../Images/BlogRating"
 
-
 import Backdrop from "../Backdrop"
-
 
 const ReviewPage = () => {
   const data = useStaticQuery(graphql`
@@ -48,7 +46,6 @@ const ReviewPage = () => {
     setLoaded(true)
   }, [data.allContentfulReviewPage.nodes])
 
-
   const closeBackdrop = () => {
     setShowModal(false)
   }
@@ -59,7 +56,7 @@ const ReviewPage = () => {
       <div className={styles.container}>
         {posts.map(post => {
           return (
-            <div className={styles.wholeSite}>
+            <div className={styles.reviewPost}>
               <div className={styles.bump}>
                 <div
                   key={post.title}
@@ -85,7 +82,7 @@ const ReviewPage = () => {
     <>
       {site}
       {showModal ? (
-        <Backdrop post={modalPost} closeBackdrop={closeBackdrop}/>
+        <Backdrop post={modalPost} closeBackdrop={closeBackdrop} />
       ) : null}
     </>
   )
