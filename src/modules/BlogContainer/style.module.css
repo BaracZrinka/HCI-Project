@@ -69,3 +69,18 @@
 .rating {
   align-self: center;
 }
+.check{
+  font-size: 50px;
+  min-height: 40vh;
+}
+.links {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 70px;
+  margin-left: 20%;
+  text-align: left;
+}
+.links:hover {
+  text-decoration: underline;
+}
