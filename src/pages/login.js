@@ -4,7 +4,7 @@ import LogInPage from '../components/LogInPage'
 
 
 const login = () => (
-    <HeaderFooterLayout activeTab = "Log in">
+    <HeaderFooterLayout activeTab = "Login">
     <LogInPage/>
     </HeaderFooterLayout>
 )

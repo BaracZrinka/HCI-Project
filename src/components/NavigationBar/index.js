@@ -36,7 +36,7 @@ const NavigationBar = ({ activeTab }) => (
           
         }
       >
-        {loggedIn() ? "Logout" : "Login"}
+        {loggedIn() ? "Logout" : login}
       </div>
     </Link>
   </nav>

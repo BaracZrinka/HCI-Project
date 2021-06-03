@@ -37,7 +37,9 @@ const SignUpPage = () => {
         <h2 className={styles.title}>Sign up</h2>
         <section className={styles.field}>
           <label htmlFor="email">E-mail</label>
-          <input name="email" onChange={e => setEmail(e.target.value)}>{email}</input>
+          <input name="email" onChange={e => setEmail(e.target.value)}>
+            
+          </input>
         </section>
 
         <section className={styles.field}>
@@ -58,7 +60,8 @@ const SignUpPage = () => {
           <label htmlFor="profession">Profession</label>
           <input
             name="profession"
-            onChange={e => setProfession(e.target.value)}>{profession}</input>
+            onChange={e => setProfession(e.target.value)}
+          />
         </section>
 
         <p
