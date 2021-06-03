@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styles from "./style.module.css"
 import { myLocalStorage } from "../../helper"
 
@@ -7,9 +7,8 @@ const BlogPostBody = ({ profileImage, authorsName, text, tags, userAcc }) => {
     //console.log("inside setStorage- property:" + "" + property)
     myLocalStorage.setItem("owner", property)
   }
-  //console.log("authors name:\n"+ authorsName.toLowerCase());
-  console.log("userAccount:\n" + userAcc)
   
+  let follower = 0;
   let ret = (
     <>
       <section className={styles.blog2}>
@@ -22,7 +21,7 @@ const BlogPostBody = ({ profileImage, authorsName, text, tags, userAcc }) => {
             userAcc && userAcc === authorsName ? (
               ""
             ) : (
-              <button className={styles.follow}>follow</button>
+              <button onClick = {()=>myLocalStorage.setItem("follower", follower + 1)}className={styles.follow}>follow</button>
             )
           ) : (
             ""

@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import ProfileAbout from "../../components/ProfileAbout"
+import { myLocalStorage } from "../../helper"
 
 
 library.add(faTrashAlt)
@@ -67,6 +68,7 @@ const ProfileContainer = ({ name }) => {
     setPosts(newPosts)
     setIncrememt(increment + 1)
   }
+
 
   let firstVar
 

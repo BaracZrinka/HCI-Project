@@ -7,9 +7,15 @@ import {myLocalStorage} from '../../helper'
 const loggedIn = () => !!myLocalStorage.getItem("loggedIn") 
 
 
+if(!loggedIn())
+{
+  myLocalStorage.removeItem("follower");
+}
+
+
 const profile = "Profile";
 const login = "Login";
-const logout = "Logout";
+
 
 
 let keysToRemove = ["loggedIn", "owner"];
@@ -37,8 +43,11 @@ const NavigationBar = ({ activeTab }) => (
         }
       >
         {loggedIn() ? "Logout" : login}
+        
+
       </div>
     </Link>
   </nav>
 )
 export default NavigationBar
+
