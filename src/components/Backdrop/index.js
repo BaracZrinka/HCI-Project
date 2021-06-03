@@ -54,8 +54,8 @@ const Backdrop = props => {
   const [button, setButton] = useState(false)
 
   const change = () => {
-    setButton(true);
-    console.log("changed");
+    setButton(true)
+    console.log("changed")
   }
 
   useEffect(() => {
@@ -77,18 +77,22 @@ const Backdrop = props => {
           />
         </div>
 
-        <div>
+        <div className={styles.leftDiv}>
           <Img fluid={props.post.coverImage.fluid} className={styles.image} />
+        </div>
+
+        <div className={styles.rightDiv}>
           <div className={styles.title}>{props.post.title}</div>
+          <div className={styles.rating}>
+            <BlogRating />
+          </div>
+          <div className={styles.ingredientsTitle}>Ingredients:</div>
+          <div className={styles.ingredients}>
+            {renderRichText(props.post.ingredients)}
+          </div>
         </div>
       </div>
-      <div className={styles.rating}>
-        <BlogRating />
-      </div>
-      <div className={styles.ingredientsTitle}>Ingredients:</div>
-      <div className={styles.ingredients}>
-        {renderRichText(props.post.ingredients)}
-      </div>
+
       <div className={styles.reviewHead}>
         <h3 className={styles.commentsTitle}>Reviews</h3>
         <div className={styles.buttonDiv}>
@@ -96,19 +100,18 @@ const Backdrop = props => {
             onClick={change}
             placeholder="Add your review here..."
             maxLength="160"
+            className={styles.textarea3}
           ></textarea>
         </div>
       </div>
       {button ? (
         <div className={styles.commentButtons}>
-          <button className={styles.button1} onClick={()=>setButton(false)}>
+          <button className={styles.button1} onClick={() => setButton(false)}>
             CANCEL
           </button>
-          <button className={styles.button2}>POST</button>
+          <button className={styles.button2}>SUBMIT</button>
         </div>
-      ) : (
-        null
-      )}
+      ) : null}
       <div className={styles.commentBody}>
         <CommentSection
           profileImage={<ProfileImage1 />}
@@ -134,10 +137,12 @@ const Backdrop = props => {
   if (showSpinner) {
     spinner = <Spinner />
   }
-  return <>
+  return (
+    <>
       <div className={styles.backdrop} onClick={props.closeBackdrop}></div>
-        <div className={styles.modal}>{spinner}</div>
-  </>
+      <div className={styles.modal}>{spinner}</div>
+    </>
+  )
 }
 
 export default Backdrop

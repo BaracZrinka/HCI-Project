@@ -1,3 +1,6 @@
+.main{
+  min-height: 75vh;
+}
 .bookmarkHeader {
   display: grid;
   grid-template-columns: 20% 60% 20%;
@@ -7,10 +10,9 @@
   grid-column: 2/3;
   display: flex;
   justify-content: center;
-  margin-top: 30px;
-  font-size: 30px;
-  letter-spacing: 2px;
-  text-shadow: 1px 1px 1px grey;
+  margin-top: 40px;
+  font-size: 36px;
+  font-weight: bold;
 }
 .search {
   grid-column: 2/3;
@@ -40,21 +42,22 @@
 }
 
 .container {
-  column-count: 2;
-  column-width: auto;
+  display: flex;
+  flex-wrap: wrap;
   column-gap: 40px;
-  row-gap: 40px;
 
-  margin-top: 5%;
+  margin-top: 1%;
   margin-left: 20%;
   margin-right: 20%;
-  margin-bottom: 5%;
+  margin-bottom: 70px;
 }
+
 .profilePost {
+  width: 47%;
   display: inline-block;
   position: relative;
   margin-bottom: 40px;
-  padding-bottom: 4%;
+  padding-bottom: 30px;
   border-radius: 20px;
   box-shadow: 0px 0px 8px 0 lightgray;
   transition: transform 0.2s;
@@ -66,7 +69,8 @@
   display: none;
 }
 .profilePost:hover {
-  transform: scale(1.05);
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.03);
 }
 .image {
   border-top-left-radius: 20px;
@@ -90,48 +94,33 @@
   transform: scale(1.2);
 }
 .title {
-  font-size: 20px;
-  margin-left: 9%;
-  margin-right: 9%;
+  font-size: 18px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 .textContainer {
-  margin-left: 9%;
-  margin-right: 9%;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 .text {
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 1.6;
 }
-/*.text:after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    content: "";
-    background: linear-gradient(to top,
-       rgba(255,255,255, 1) 20%, 
-       rgba(255,255,255, 0) 80%
-    );
-    pointer-events: none; /* so the text is still selectable 
-  }*/
-
 .buttonPosition {
   display: flex;
   justify-content: center;
   transition: transform 0.2s;
 }
 .button1 {
-  width: 200px;
-  height: 65px;
+  width: max-content;
   background-color: #696f45;
   color: white;
-  font-size: 1.2em;
-  font-weight: bold;
+  font-size: 28px;
 
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
-  padding: 10px;
-  box-shadow: 0px 0px 5px 0 gray;
+  padding: 20px;
+  box-shadow: 0px 0px 8px 0 lightgray;
   cursor: pointer;
   margin: 40px 30px;
   outline: 0;
@@ -145,7 +134,31 @@
 .line {
   margin-left: 20%;
   margin-right: 20%;
+  margin-bottom: 58px;
 }
 .show {
   display: none;
+}
+.search {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.filter {
+  grid-column: 2/3;
+  display: flex;
+  justify-self: center;
+
+  text-align: start;
+  font-size: 18px;
+  color: #444444;
+
+  padding: 8px 30px;
+  box-shadow: 0px 0px 8px 0 lightgray;
+
+  outline: 0;
+  border: none;
+  border-radius: 10px;
+  cursor: text;
 }

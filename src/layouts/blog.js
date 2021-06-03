@@ -9,15 +9,16 @@ import CommentSection from "../components/CommentSection"
 import BlogRating from "../components/Images/BlogRating"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBookmark as reg } from "@fortawesome/free-regular-svg-icons"
-import {faBookmark as sol} from "@fortawesome/free-solid-svg-icons"
+import { faBookmark as sol } from "@fortawesome/free-solid-svg-icons"
 import styles from "./blog.module.css"
 import HeaderFooterLayout from "../layouts/headerFooter"
 import { myLocalStorage } from "../helper"
 import { library } from "@fortawesome/fontawesome-svg-core"
 library.add(
-  reg,sol
+  reg,
+  sol
   // more icons go here
-);
+)
 
 const user1 = "_UserName1"
 const user2 = "_UserName2"
@@ -28,10 +29,6 @@ const FirstCom =
 const SecondCom = "Sed ut perspiciatis unde omnis iste"
 const ThirdCom = "ut perspiciatis"
 
-
-
-
-
 const BlogFeed = ({ pageContext }) => {
   let userAcc = myLocalStorage.getItem("loggedIn")
   const [button, setButton] = useState(false)
@@ -41,14 +38,13 @@ const BlogFeed = ({ pageContext }) => {
   const { body, title, coverImage, next, prev, authorsName, tags } = pageContext
 
   const setArray = descr => {
-    myLocalStorage.setItem(title, descr);
+    myLocalStorage.setItem(title, descr)
     //setCheck(true)
   }
- 
-    
-  const removeArray = property => {  
+
+  const removeArray = property => {
     myLocalStorage.removeItem(property)
-  // setCheck(false)
+    // setCheck(false)
   }
 
   return (
@@ -75,27 +71,28 @@ const BlogFeed = ({ pageContext }) => {
             <div className={styles.imageAndIcon}>
               <Img fluid={coverImage.fluid} className={styles.image} />
               {authorsName ? (
-            userAcc && userAcc === authorsName ? (
-              ""
-            ) : (
-              !!(myLocalStorage.getItem(title))?
-              (<FontAwesomeIcon
-                icon={["fas", "bookmark"]}
-                size="2x"
-                color="black"
-                className={styles.bookmarkIcon}
-                onClick={() => removeArray(title)}
-              />):(<FontAwesomeIcon
-              icon={["far","bookmark"]}
-              size="2x"
-              color="black"
-              className={styles.bookmarkIcon}
-              onClick={() => setArray(title)}/>)
-              )
-          ) : (
-            ""
-          )}
-              
+                userAcc && userAcc === authorsName ? (
+                  ""
+                ) : !!myLocalStorage.getItem(title) ? (
+                  <FontAwesomeIcon
+                    icon={["fas", "bookmark"]}
+                    size="2x"
+                    color="black"
+                    className={styles.bookmarkIcon}
+                    onClick={() => removeArray(title)}
+                  />
+                ) : (
+                  <FontAwesomeIcon
+                    icon={["far", "bookmark"]}
+                    size="2x"
+                    color="black"
+                    className={styles.bookmarkIcon}
+                    onClick={() => setArray(title)}
+                  />
+                )
+              ) : (
+                ""
+              )}
             </div>
             <div className={styles.head}>
               <div className={styles.h2}>
@@ -122,6 +119,7 @@ const BlogFeed = ({ pageContext }) => {
                 onClick={change}
                 placeholder="Add your comment here..."
                 maxLength="160"
+                className={styles.textarea1}
               ></textarea>
             </div>
           </div>
@@ -162,13 +160,11 @@ const BlogFeed = ({ pageContext }) => {
         </div>
       </main>
 
-      <div className={styles.backButton}>
-        <div className={styles.back}>
-          <Link to="/blog">
-            <button className={styles.buttonBack}>Back to feed</button>
-          </Link>
+      <div className={styles.links}>
+          <a href="http://localhost:8000/blog">
+          &#8592; Go back to blog feed
+          </a>
         </div>
-      </div>
     </HeaderFooterLayout>
   )
 }
