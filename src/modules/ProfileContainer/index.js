@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import ProfileAbout from "../../components/ProfileAbout"
-//import { cleanValue } from "react-select/src/utils"
+
 
 library.add(faTrashAlt)
 
@@ -45,6 +45,7 @@ const ProfileContainer = ({ name }) => {
 
   let [posts, setPosts] = useState(null)
   let [isLoaded, setLoaded] = useState(false)
+  let [increment, setIncrememt] = useState(0)
 
   useEffect(() => {
     let allPosts = data.allContentfulBlogPost.nodes.map(post => {
@@ -64,11 +65,13 @@ const ProfileContainer = ({ name }) => {
       return post
     })
     setPosts(newPosts)
+    setIncrememt(increment + 1)
   }
 
   let firstVar
 
   let count = 0
+
   if (isLoaded) {
     firstVar = (
       <>
@@ -126,6 +129,9 @@ const ProfileContainer = ({ name }) => {
       </>
     )
   }
+
+  count = count - increment
+
   return (
     <>
       <ProfileAbout total={count} name={name} />
