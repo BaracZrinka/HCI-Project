@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import styles from "./style.module.css"
@@ -46,7 +46,6 @@ const BlogContainer = ({ tags }) => {
       }
     }
   `)
-  let [check, setCheck]= useState(false)
 
   let filtered = (
     <>
@@ -84,12 +83,13 @@ const BlogContainer = ({ tags }) => {
     </>
   )
 
- 
   if (tags) {
     //console.log("exist")
+    let check = 0
 
     filtered = data.allContentfulBlogFeed.nodes.map(node => {
       if (node.tags.startsWith(tags)) {
+        check = 1
         return (
           <div className={styles.container}>
             <div className={styles.post}>
@@ -120,8 +120,22 @@ const BlogContainer = ({ tags }) => {
         )
       }
     })
+    if (check == 0) {
+      filtered = (
+        <>
+          <div className={styles.check}>
+            <div>There's no such a content</div>
+            <div className={styles.links}>
+              <a href="http://localhost:8000/blog">
+                &#8592; Go back to blog feed
+              </a>
+            </div>
+          </div>
+        </>
+      )
+    }
   }
-  return <>{filtered!=={}? filtered : null}</>
+  return <>{filtered}</>
 }
 
 export default BlogContainer
