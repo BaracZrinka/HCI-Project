@@ -32,6 +32,7 @@ const ThirdCom = "ut perspiciatis"
 const BlogFeed = ({ pageContext }) => {
   let userAcc = myLocalStorage.getItem("loggedIn")
   const [button, setButton] = useState(false)
+  const [check, setCheck] = useState(null);
   const change = () => {
     setButton(true)
   }
@@ -39,12 +40,12 @@ const BlogFeed = ({ pageContext }) => {
 
   const setArray = descr => {
     myLocalStorage.setItem(title, descr)
-    //setCheck(true)
+    setCheck(true)
   }
 
   const removeArray = property => {
     myLocalStorage.removeItem(property)
-    // setCheck(false)
+    setCheck(false)
   }
 
   return (
@@ -161,10 +162,8 @@ const BlogFeed = ({ pageContext }) => {
       </main>
 
       <div className={styles.links}>
-          <a href="http://localhost:8000/blog">
-          &#8592; Go back to blog feed
-          </a>
-        </div>
+        <a href="http://localhost:8000/blog">&#8592; Go back to blog feed</a>
+      </div>
     </HeaderFooterLayout>
   )
 }

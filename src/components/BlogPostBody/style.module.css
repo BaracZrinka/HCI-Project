@@ -54,3 +54,6 @@
   border: none;
   outline: none;
 }
+.follow:hover{
+  text-decoration: underline;
+}

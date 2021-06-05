@@ -7,15 +7,10 @@ import { faBookmark } from "@fortawesome/free-solid-svg-icons"
 import { faEdit } from "@fortawesome/free-solid-svg-icons"
 
 const ProfileAbout = ({ name, total }) => {
-  let doExist = () => !!myLocalStorage.getItem("owner")
+  
+  const followers = myLocalStorage.getItem("follower");
 
-  let count = 0
 
-  if (doExist()) {
-    if (myLocalStorage.getItem("owner").toLowerCase() === name) {
-      count = count + 1
-    }
-  }
   return (
     <section className={styles.form}>
       <div className={styles.firstDiv}>
@@ -25,7 +20,7 @@ const ProfileAbout = ({ name, total }) => {
         <div className={styles.statistics}>
           <div className={styles.counters}>
             <h4>{total}</h4>
-            <h4>{count}</h4>
+            <h4>{followers == null ? 0 : followers}</h4>
           </div>
           <div className={styles.labels}>
             <h4>posts</h4>
