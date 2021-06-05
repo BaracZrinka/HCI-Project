@@ -3,9 +3,9 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import styles from "./style.module.css"
 import BlogRating from "../../components/Images/BlogRating"
-//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBookmark } from "@fortawesome/free-regular-svg-icons"
-
+import { faSearch } from "@fortawesome/free-solid-svg-icons"
 import { library } from "@fortawesome/fontawesome-svg-core"
 
 library.add(
@@ -124,7 +124,25 @@ const BlogContainer = ({ tags }) => {
       filtered = (
         <>
           <div className={styles.check}>
-            <div>There's no such a content</div>
+            <div className={styles.searchIcon}>
+              <FontAwesomeIcon
+                icon={faSearch}
+                size="5x"
+                color="#444444"
+                opacity="0.3"
+              />
+            </div>
+            <div className={styles.noResults}>
+              No results found for "to sta je upisano"
+            </div>
+            <div className={styles.searchTipsDiv}>
+              <div className={styles.searchTipsHeading}>Search tips:</div>
+              <div className={styles.searchTips}>
+                &bull; Check your search for typos<br></br>
+                &bull; Try a different keyword<br></br>
+                &bull; Use more generic search terms
+              </div>
+            </div>
             <div className={styles.links}>
               <a href="http://localhost:8000/blog">
                 &#8592; Go back to blog feed
