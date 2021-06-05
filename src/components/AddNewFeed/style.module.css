@@ -3,14 +3,28 @@
   margin-right: 20%;
   margin-top: 50px;
 }
-
 .add {
+  display: flex;
+  justify-content: center;
   font-size: 36px;
+  font-weight: bold;
   margin-bottom: 50px;
 }
-.coverImg {
+.pictureDiv {
+  margin-bottom: 30px;
+}
+.date {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.modifyDescription {
   font-size: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
+}
+.textareaDescription {
+  font-size: 20px;
+  margin-bottom: 5px;
 }
 .text {
   display: flex;
@@ -27,6 +41,7 @@
 
   display: flex;
   flex-grow: 1;
+  height: max-content;
 
   font-size: 15px;
   cursor: auto;
@@ -37,13 +52,15 @@
   outline: none;
   resize: none;
 }
+.textarea2:focus {
+  box-shadow: 0px 0px 8px 0 #28a535;
+  border-color: #28a535;
+}
 .insert {
   background-color: #696f45;
   color: white;
   text-align: center;
 
-  margin-bottom: 30px;
-  margin-right: 10px;
   padding: 12px;
   cursor: pointer;
   font-size: 18px;
@@ -54,10 +71,10 @@
   outline: none;
   transition: transform 0.2s;
 }
-.text {
-  display: flex;
-  flex-grow: 1;
+.insert:hover {
+  background-color: #28a535;
 }
+
 .button1 {
   display: flex;
   align-items: center;
@@ -106,6 +123,6 @@
 .submitButtons {
   display: flex;
   justify-content: flex-end;
-  margin-top:50px;
-  margin-bottom:50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
