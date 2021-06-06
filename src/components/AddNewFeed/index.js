@@ -54,6 +54,7 @@ const AddNewFeed = () => {
             className={styles.textarea2}
           ></textarea>
         </div>
+        <div className={styles.charNumber}>Maximum 160 characters</div>
         <div className={styles.pictureDiv}>
           <button className={styles.insert} onClick={change}>
             <FontAwesomeIcon icon={faImage} size="1x" color="#11111" />
@@ -70,6 +71,7 @@ const AddNewFeed = () => {
             className={styles.textarea2}
           ></textarea>
         </div>
+        <div className={styles.charNumber}>Maximum 5000 characters</div>
         <div className={styles.textareaDescription}>Body</div>
         <div className={styles.text}>
           <textarea
@@ -80,6 +82,7 @@ const AddNewFeed = () => {
             className={styles.textarea2}
           ></textarea>
         </div>
+        <div className={styles.charNumber}>Maximum 70000 characters</div>
         <div className={styles.textareaDescription}>Author's name</div>
         <div className={styles.text}>
           <textarea
@@ -89,6 +92,7 @@ const AddNewFeed = () => {
             className={styles.textarea2}
           ></textarea>
         </div>
+        <div className={styles.charNumber}>Maximum 160 characters</div>
         <div className={styles.textareaDescription}>Tags</div>
         <div className={styles.text}>
           <textarea
@@ -98,6 +102,7 @@ const AddNewFeed = () => {
             className={styles.textarea2}
           ></textarea>
         </div>
+        <div className={styles.charNumber}>Maximum 160 characters</div>
         <div className={styles.textareaDescription}>Unique tag</div>
         <div className={styles.text}>
           <textarea
@@ -107,6 +112,7 @@ const AddNewFeed = () => {
             className={styles.textarea2}
           ></textarea>
         </div>
+        <div className={styles.charNumber}>Maximum 160 characters</div>
         <div className={styles.date}>
           <div className={styles.modifyDescription}>
             Choose time of creation:&nbsp;&nbsp;

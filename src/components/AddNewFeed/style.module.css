@@ -30,7 +30,6 @@
 .text {
   display: flex;
   flex-grow: 1;
-  margin-bottom: 30px;
 }
 .textarea2 {
   background-color: white;
@@ -56,6 +55,13 @@
 .textarea2:focus {
   box-shadow: 0px 0px 8px 0 #28a535;
   border-color: #28a535;
+}
+.charNumber {
+  display: flex;
+  justify-content: flex-end;
+  color: gray;
+  margin-top: 5px;
+  margin-bottom: 30px;
 }
 .insert {
   background-color: #696f45;
