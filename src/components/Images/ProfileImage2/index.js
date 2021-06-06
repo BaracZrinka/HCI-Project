@@ -8,7 +8,7 @@ const ProfileImage2 = () => {
     query {
       myImage: file(relativePath: { eq: "male.png" }) {
         childImageSharp {
-          fixed(width: 45) {
+          fixed(width: 50) {
             ...GatsbyImageSharpFixed
           }
         }

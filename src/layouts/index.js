@@ -37,7 +37,7 @@ const HottestSectionPost = ({ pageContext }) => {
   }
   const { body, title, coverImage, next, prev, authorsName, tags } = pageContext
 
- /* const setArray = descr => {
+  /* const setArray = descr => {
     console.log("hottest"+descr)
     myLocalStorage.setItem(title, descr);
     setCheck(true)
@@ -97,6 +97,7 @@ const HottestSectionPost = ({ pageContext }) => {
                 onClick={change}
                 placeholder="Add your comment here..."
                 maxLength="160"
+                className={styles.textarea1}
               ></textarea>
             </div>
           </div>
@@ -137,12 +138,8 @@ const HottestSectionPost = ({ pageContext }) => {
         </div>
       </main>
 
-      <div className={styles.backButton}>
-        <div className={styles.back}>
-          <Link to="/">
-            <button className={styles.buttonBack}>Back to home page</button>
-          </Link>
-        </div>
+      <div className={styles.links}>
+        <a href="http://localhost:8000">&#8592; Go back to homepage</a>
       </div>
     </HeaderFooterLayout>
   )

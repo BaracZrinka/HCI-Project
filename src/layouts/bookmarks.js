@@ -86,6 +86,7 @@ const BookmarkPost = ({ pageContext }) => {
                 onClick={change}
                 placeholder="Add your comment here..."
                 maxLength="160"
+                className={styles.textarea1}
               ></textarea>
             </div>
           </div>
@@ -126,12 +127,8 @@ const BookmarkPost = ({ pageContext }) => {
         </div>
       </main>
 
-      <div className={styles.backButton}>
-        <div className={styles.back}>
-          <Link to="/bookmarks">
-            <button className={styles.buttonBack}>Back to feed</button>
-          </Link>
-        </div>
+      <div className={styles.links}>
+        <a href="http://localhost:8000/bookmarks">&#8592; Go back to bookmarks</a>
       </div>
     </HeaderFooterLayout>
   )

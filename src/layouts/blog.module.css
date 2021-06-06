@@ -227,7 +227,7 @@ header .button4 {
   justify-content: center;
   transition: transform 0.2s;
 }
-.readmore:hover{
+.readMoreButton:hover{
   transition: all 0.5s ease-in-out;
   transform: scale(1.05);
 }
