@@ -3,7 +3,7 @@ import HeaderFooterLayout from '../layouts/headerFooter'
 import ReviewPage from "../components/ReviewPage"
 
 const review = () => (
-    <HeaderFooterLayout activeTab = "Review">
+    <HeaderFooterLayout activeTab = "Reviews">
     <ReviewPage/>
     </HeaderFooterLayout>
 )

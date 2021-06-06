@@ -82,9 +82,10 @@
 }
 .question {
   font-size: 32px;
-  letter-spacing: 1.4px;
+  letter-spacing: 1.3px;
   line-height: 1.4;
   color: white;
+  font-weight: bold;
   text-shadow: 0 0 15px black;
 }
 .buttonDiv {

@@ -2,7 +2,7 @@
 export const navs = [
     {tab: 'Home', to: '/'},
     {tab: 'Blog', to: '/blog'},
-    {tab : 'Review', to: '/review'}
+    {tab : 'Reviews', to: '/review'}
 ]
 
 /*export const posts = [

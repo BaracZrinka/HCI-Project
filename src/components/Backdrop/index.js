@@ -10,7 +10,6 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 import ProfileImage1 from "../Images/ProfileImage1"
 import ProfileImage2 from "../Images/ProfileImage2"
 import CommentSection from "../CommentSection"
-import Spinner from "../Spinner"
 import styles from "./style.module.css"
 library.add(
   faPlus,
@@ -50,7 +49,7 @@ const Backdrop = props => {
     }
   `)
 
-  const [showSpinner, setShowSpinner] = useState(true)
+
   const [button, setButton] = useState(false)
 
   const change = () => {
@@ -58,11 +57,7 @@ const Backdrop = props => {
     console.log("changed")
   }
 
-  useEffect(() => {
-    setTimeout(() => {
-      setShowSpinner(false)
-    }, 500)
-  }, [])
+
 
   let spinner = (
     <div className={styles.wholeSite}>
@@ -134,9 +129,7 @@ const Backdrop = props => {
       </div>
     </div>
   )
-  if (showSpinner) {
-    spinner = <Spinner />
-  }
+
   return (
     <>
       <div className={styles.backdrop} onClick={props.closeBackdrop}></div>

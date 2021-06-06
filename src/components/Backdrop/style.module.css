@@ -22,7 +22,7 @@
   align-items: flex-start;
   justify-content: center;
   overflow-y: scroll;
-  border-radius: 20px;
+
   box-shadow: 0px 0px 8px 0 lightgray;
 }
 .wholeSite {
@@ -32,18 +32,17 @@
   position: relative;
 
   padding-bottom: 50px;
-  border-radius: 20px;
   box-shadow: 0px 0px 8px 0 lightgray;
 
   -webkit-column-break-inside: avoid;
   backface-visibility: hidden;
 }
-.index{
+.index {
   display: flex;
 }
-.rightDiv{
-  padding-left:30px;
-  padding-right:50px;
+.rightDiv {
+  padding-left: 30px;
+  padding-right: 50px;
 }
 .title {
   font-size: 27px;
@@ -66,22 +65,20 @@
   transform: scale(1.2);
 }
 .image {
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
   z-index: -1;
   height: 320px;
   width: 250px;
 }
 .ingredientsTitle {
   font-weight: bolder;
-
   font-size: 19px;
   margin-bottom: 0%;
+  margin-top: 20px;
 }
 .commentsTitle {
   margin-left: 50px;
   margin-right: 50px;
-  margin-top:50px;
+  margin-top: 50px;
 }
 .buttonDiv {
   display: flex;
@@ -180,7 +177,7 @@
   justify-content: center;
   transition: transform 0.2s;
 }
-.readmore:hover {
+.readMoreButton:hover {
   transition: all 0.5s ease-in-out;
   transform: scale(1.05);
 }

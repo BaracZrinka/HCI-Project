@@ -1,4 +1,4 @@
-import React, { useState} from "react"
+import React, { useState } from "react"
 import { faBookmark } from "@fortawesome/free-regular-svg-icons"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import BlogContainer from "../../modules/BlogContainer"
@@ -17,13 +17,12 @@ export default function App({ name }) {
     setTerm(event.target.value)
   }
 
-
   return (
     <>
       <div className={styles.container}>
         <input
           type="text"
-          placeholder="Search..."
+          placeholder="Search by tag..."
           const
           value={searchTerm}
           onChange={handleChanges}
