@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import styles from "./style.module.css"
@@ -120,7 +120,7 @@ const BlogContainer = ({ tags }) => {
         )
       }
     })
-    if (check == 0) {
+    if (check === 0) {
       filtered = (
         <>
           <div className={styles.check}>

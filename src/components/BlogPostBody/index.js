@@ -1,12 +1,12 @@
-import React, { useState } from "react"
+import React from "react"
 import styles from "./style.module.css"
 import { myLocalStorage } from "../../helper"
 
 const BlogPostBody = ({ profileImage, authorsName, text, tags, userAcc }) => {
-  const setStorage = property => {
-    //console.log("inside setStorage- property:" + "" + property)
-    myLocalStorage.setItem("owner", property)
-  }
+  // const setStorage = property => {
+  //   //console.log("inside setStorage- property:" + "" + property)
+  //   myLocalStorage.setItem("owner", property)
+  // }
   
   let follower = 0;
   let ret = (

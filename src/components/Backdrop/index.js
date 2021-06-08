@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import Img from "gatsby-image"
-import { useStaticQuery, graphql } from "gatsby"
 import BlogRating from "../Images/BlogRating"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlus } from "@fortawesome/free-solid-svg-icons"
@@ -26,38 +25,12 @@ const SecondCom = "Sed ut perspiciatis unde omnis iste"
 const ThirdCom = "ut perspiciatis"
 
 const Backdrop = props => {
-  const data = useStaticQuery(graphql`
-    query {
-      allContentfulReviewPage(limit: 9) {
-        nodes {
-          ingredients {
-            raw
-          }
-          title
-          coverImage {
-            fluid(quality: 90, maxWidth: 1920) {
-              src
-              srcSet
-              srcSetWebp
-              srcWebp
-              base64
-              aspectRatio
-            }
-          }
-        }
-      }
-    }
-  `)
-
-
   const [button, setButton] = useState(false)
 
   const change = () => {
     setButton(true)
     console.log("changed")
   }
-
-
 
   let spinner = (
     <div className={styles.wholeSite}>
