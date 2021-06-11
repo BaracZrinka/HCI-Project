@@ -8,7 +8,7 @@ import { myLocalStorage } from "../../helper"
 import { FiMenu } from "react-icons/fi"
 import { IoClose } from "react-icons/io5"
 import { Link } from "gatsby"
-import { colors } from "react-select/src/theme"
+//import { colors } from "react-select/src/theme"
 
 const NavigationHeader = ({ activeTab }) => {
   const navTabs = [

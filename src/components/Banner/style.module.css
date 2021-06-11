@@ -103,3 +103,27 @@
     background-attachment: scroll;
   }
 }
+@media only screen and (max-width: 930px) {
+  .banner {
+    height: 70vh;
+  }
+  .title {
+    top: 45%;
+  }
+  .title h1 {
+    font-size: 32px;
+  }
+  .description {
+    font-size: 22px;
+  }
+  .section {
+    flex-direction: column;
+    align-items: center;
+    top: 68%;
+  }
+  .button1,
+  .button2 {
+    font-size: 18px;
+    padding: 10px;
+  }
+}
