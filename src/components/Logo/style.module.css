@@ -16,3 +16,8 @@
   font-weight: bolder;
   color: #696f45;
 }
+@media only screen and (max-width: 600px) {
+  .logoText {
+    display: none;
+  }
+}

@@ -36,3 +36,56 @@
 .logo {
   display: flex;
 }
+.hamburger {
+  display: none;
+  border: transparent;
+  background-color: transparent;
+}
+.links {
+  list-style: none;
+  text-transform: uppercase;
+  background-color: white;
+  padding: 0px;
+  padding-bottom: 10px;
+  height: max-content;
+  width: 100%;
+  font-size: 18px;
+  position: absolute;
+  left: 0%;
+  top: 80px;
+  animation: animateToggle 0.2s ease-in-out;
+  margin-top: 0px;
+}
+@keyframes animateToggle {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.links > * {
+  padding-top: 10px;
+}
+.top {
+  font-size: 50px;
+}
+
+@media only screen and (max-width: 930px) {
+  .hamburger {
+    display: inline-block;
+    opacity: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .navigation {
+    display: none;
+  }
+  .logo {
+    margin-left: -45px;
+  }
+  .profileNav {
+    margin-right: -45px;
+  }
+}
