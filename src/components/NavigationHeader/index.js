@@ -8,16 +8,23 @@ import { myLocalStorage } from "../../helper"
 import { FiMenu } from "react-icons/fi"
 import { IoClose } from "react-icons/io5"
 import { Link } from "gatsby"
+import { navs as navTabs } from "../../constants/const"
+
 //import { colors } from "react-select/src/theme"
 
 const NavigationHeader = ({ activeTab }) => {
-  const navTabs = [
-    { tab: "Home", to: "/" },
-    { tab: "Blog", to: "/blog" },
-    { tab: "Reviews", to: "/review" },
-    { tab: "Contact", to: "/contact" },
-    { tab: "Login", to: "/login" },
-  ]
+  const loggedIn = () => !!myLocalStorage.getItem("loggedIn")
+
+  if (!loggedIn()) {
+    myLocalStorage.removeItem("follower")
+  }
+
+  const profile = "Profile"
+  const login = "Login"
+
+  let keysToRemove = ["loggedIn", "owner"]
+
+  const [user, setUser] = useState(!!myLocalStorage.getItem("loggedIn"))
 
   const [hamburgerNav, setHamburgerNav] = useState(false)
   const [check, setCheck] = useState(true)
@@ -40,12 +47,36 @@ const NavigationHeader = ({ activeTab }) => {
             {check === false ? null : (
               <ul className={styles.links}>
                 {navTabs.map(({ tab, to }) => (
-                  <li>
-                    <Link to={to}>
-                      <span>{tab}</span>
-                    </Link>
-                  </li>
+                  <Link to={to}>
+                    <li className={tab === activeTab ? styles.active : ""}>
+                      {tab}
+                    </li>
+                  </Link>
                 ))}
+
+                {loggedIn() && (
+                  <Link to={"/profile"}>
+                    <li className={profile === activeTab ? styles.active : ""}>
+                      {profile}
+                    </li>
+                  </Link>
+                )}
+
+                <Link to={"/login"}>
+                  <li
+                    className={login === activeTab ? styles.active : ""}
+                    onClick={
+                      loggedIn()
+                        ? () =>
+                            keysToRemove.forEach(k =>
+                              myLocalStorage.removeItem(k)
+                            )
+                        : () => {}
+                    }
+                  >
+                    {loggedIn() ? "Logout" : login}
+                  </li>
+                </Link>
               </ul>
             )}
           </>
@@ -59,12 +90,34 @@ const NavigationHeader = ({ activeTab }) => {
         {check === false ? null : (
           <ul className={styles.links}>
             {navTabs.map(({ tab, to }) => (
-              <li>
-                <Link to={to}>
-                  <span>{tab}</span>
-                </Link>
-              </li>
+              <Link to={to}>
+                <li className={tab === activeTab ? styles.active : ""}>
+                  {tab}
+                </li>
+              </Link>
             ))}
+
+            {loggedIn() && (
+              <Link to={"/profile"}>
+                <li className={profile === activeTab ? styles.active : ""}>
+                  {profile}
+                </li>
+              </Link>
+            )}
+
+            <Link to={"/login"}>
+              <li
+                className={login === activeTab ? styles.active : ""}
+                onClick={
+                  loggedIn()
+                    ? () =>
+                        keysToRemove.forEach(k => myLocalStorage.removeItem(k))
+                    : () => {}
+                }
+              >
+                {loggedIn() ? "Logout" : login}
+              </li>
+            </Link>
           </ul>
         )}
       </>

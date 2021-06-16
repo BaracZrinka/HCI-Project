@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBookmark } from "@fortawesome/free-regular-svg-icons"
 import { faSearch } from "@fortawesome/free-solid-svg-icons"
 import { library } from "@fortawesome/fontawesome-svg-core"
+import { GenIcon } from "react-icons"
 
 library.add(
   faBookmark
@@ -60,8 +61,11 @@ const BlogContainer = ({ tags }) => {
               </div>
               <div className={styles.body}>
                 <div className={styles.tags}> #{node.tags}</div>
-                <h2>{node.title}</h2>
-
+                <div>
+                <Link to={`/blogPosts/${node.slug}`}>
+                  <h2>{node.title}</h2>
+                </Link>
+                </div>
                 <section className={styles.blog2}>
                   <div className={styles.text}>
                     <div> {node.summary.internal.content} </div>
@@ -100,7 +104,10 @@ const BlogContainer = ({ tags }) => {
               </div>
               <div className={styles.body}>
                 <div className={styles.tags}> #{node.tags}</div>
-                <h2>{node.title}</h2>
+                <div>
+                <Link to={`/blogPosts/${node.slug}`}>
+                  <h2>{node.title}</h2>
+                </Link></div>
                 <section className={styles.blog2}>
                   <div className={styles.text}>
                     <div> {node.summary.internal.content} </div>
@@ -133,7 +140,7 @@ const BlogContainer = ({ tags }) => {
               />
             </div>
             <div className={styles.noResults}>
-              No results found for "to sta je upisano"
+              No results found for "{tags}"
             </div>
             <div className={styles.searchTipsDiv}>
               <div className={styles.searchTipsHeading}>Search tips:</div>
