@@ -133,3 +133,25 @@
   margin-top: 50px;
   margin-bottom: 50px;
 }
+@media only screen and (max-width: 930px) {
+  .add {
+    font-size: 22px;
+  }
+  .textareaDescription {
+    font-size: 18px;
+  }
+  .modifyDescription {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .charNumber {
+    font-size: 13px;
+  }
+}
