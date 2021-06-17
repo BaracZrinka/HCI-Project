@@ -98,11 +98,6 @@
   display: flex;
 }
 
-@media only screen and (max-device-width: 1366px) {
-  .parallax {
-    background-attachment: scroll;
-  }
-}
 @media only screen and (max-width: 930px) {
   .banner {
     height: 70vh;
@@ -117,13 +112,22 @@
     font-size: 22px;
   }
   .section {
-    flex-direction: column;
-    align-items: center;
     top: 68%;
   }
   .button1,
   .button2 {
+    height: auto;
     font-size: 18px;
     padding: 10px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .section {
+    flex-direction: column;
+    align-items: center;
+    top: 68%;
+  }
+  .title {
+    margin-right: 10px;
   }
 }
