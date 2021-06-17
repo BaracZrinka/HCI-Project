@@ -21,3 +21,9 @@
   border-radius: 10px;
   cursor: text;
 }
+@media only screen and (max-width: 930px) {
+  .filter {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
