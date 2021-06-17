@@ -13,9 +13,12 @@ const ContactPage = ({ activeTab }) => (
     <div className={styles.question}>Have some questions?</div>
 
     <div className={styles.contactInfo}>
-      <div className={styles.link1}>contactUs@gmail.com</div> &nbsp;|&nbsp;
-      Support:&nbsp;<div className={styles.link2}>+385 96 772 555</div>&nbsp;
-      |&nbsp;&nbsp;
+      <div className={styles.link1}>contactUs@gmail.com</div>{" "}
+      <div className={styles.line}> &nbsp;|&nbsp;</div>
+      <div className={styles.support}>
+        Support:&nbsp;<div className={styles.link2}>+385 96 772 555</div>
+      </div>
+      <div className={styles.line}> &nbsp;|&nbsp;</div>
       <nav className={styles.SocialLinks}>
         <a href="https://hr-hr.facebook.com/" className={styles.facebook}>
           <FontAwesomeIcon icon={faFacebook} size="2x" />

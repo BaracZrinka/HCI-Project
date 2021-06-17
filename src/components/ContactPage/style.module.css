@@ -116,3 +116,49 @@
   transition: all 0.5s ease-in-out;
   transform: scale(1.05);
 }
+@media only screen and (max-width: 1100px) {
+  .blob {
+    transform: translate3d(-48em, 14em, 0em);
+  }
+}
+@media only screen and (max-width: 930px) {
+  .body {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .question {
+    font-size: 22px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .blob {
+    display: none;
+  }
+  .body {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .question {
+    margin-top: 50px;
+  }
+  .contactInfo {
+    flex-direction: column;
+  }
+  .support {
+    display: flex;
+  }
+  .line {
+    display: none;
+  }
+  .envelopeContainer {
+    display: none;
+  }
+  .forms {
+    width: 100%;
+    padding-left: 0%;
+  }
+  .button {
+    font-size: 18px;
+    padding: 10px;
+  }
+}
