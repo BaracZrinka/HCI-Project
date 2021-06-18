@@ -19,12 +19,12 @@ const ProfileAbout = ({ name, total }) => {
         </div>
         <div className={styles.statistics}>
           <div className={styles.counters}>
-            <h4>{total}</h4>
-            <h4>{followers == null ? 0 : followers}</h4>
+            <h4 className={styles.num1}>{total}</h4>
+            <h4 className={styles.num2}>{followers == null ? 0 : followers}</h4>
           </div>
           <div className={styles.labels}>
-            <h4>posts</h4>
-            <h4>followers</h4>
+            <h4 className={styles.postsLabel}>posts</h4>
+            <h4 className={styles.followersLabel}>followers</h4>
           </div>
         </div>
       </div>
