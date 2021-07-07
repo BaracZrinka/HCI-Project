@@ -7,9 +7,7 @@ import { faBookmark } from "@fortawesome/free-solid-svg-icons"
 import { faEdit } from "@fortawesome/free-solid-svg-icons"
 
 const ProfileAbout = ({ name, total }) => {
-  
-  const followers = myLocalStorage.getItem("follower");
-
+  const followers = myLocalStorage.getItem("follower")
 
   return (
     <section className={styles.form}>
@@ -18,14 +16,11 @@ const ProfileAbout = ({ name, total }) => {
           <ProfileNav />
         </div>
         <div className={styles.statistics}>
-          <div className={styles.counters}>
-            <h4 className={styles.num1}>{total}</h4>
-            <h4 className={styles.num2}>{followers == null ? 0 : followers}</h4>
-          </div>
-          <div className={styles.labels}>
-            <h4 className={styles.postsLabel}>posts</h4>
-            <h4 className={styles.followersLabel}>followers</h4>
-          </div>
+          <h4 className={styles.num1}>{total}</h4>
+          <h4 className={styles.num2}>{followers == null ? 0 : followers}</h4>
+
+          <h4 className={styles.postsLabel}>posts</h4>
+          <h4 className={styles.followersLabel}>followers</h4>
         </div>
       </div>
 
