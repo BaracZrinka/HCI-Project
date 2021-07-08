@@ -115,6 +115,9 @@ a {
   .num2 {
     font-size: 18px;
   }
+  .secondDiv{
+    margin-left: 20px;
+  }
 }
 @media only screen and (max-width: 600px) {
   .form {
@@ -164,5 +167,8 @@ a {
       "num2"
       "label2";
     margin-top: 20px;
+  }
+  .secondDiv{
+    margin-left: 10px;
   }
 }
