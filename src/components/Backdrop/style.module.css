@@ -181,3 +181,62 @@
   transition: all 0.5s ease-in-out;
   transform: scale(1.05);
 }
+@media only screen and (max-width: 930px) {
+  .modal {
+    width: 80vw;
+    left: 10%;
+  }
+  .image {
+    height: 300px;
+    width: 230px;
+  }
+  .title {
+    font-size: 22px;
+  }
+  .button2,
+  .button1 {
+    font-size: 18px;
+    padding: 10px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .modal {
+    width: 100vw;
+    left: 0%;
+  }
+  .index {
+    flex-direction: column;
+  }
+  .image {
+    height: 300px;
+    width: auto;
+  }
+  .timesIcon {
+    right: 20px;
+  }
+  .title {
+    margin-top: 20px;
+  }
+  .rightDiv {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .textarea3 {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .commentsTitle {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .commentButtons {
+    margin-right: 10px;
+  }
+  .readMoreButton {
+    margin-bottom: 0px;
+  }
+  .commentBody {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
