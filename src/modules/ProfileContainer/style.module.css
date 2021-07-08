@@ -111,6 +111,17 @@
     margin-left: 10%;
     margin-right: 10%;
   }
+  .profilePost {
+    padding-bottom: 10px;
+  }
+  .title {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .textContainer {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
   .button1 {
     font-size: 18px;
     padding: 10px;
