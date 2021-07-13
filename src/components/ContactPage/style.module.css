@@ -12,6 +12,9 @@
   margin-top: 76px;
   margin-bottom: 20px;
 }
+.support{
+  display: flex;
+}
 .contactInfo {
   display: flex;
   justify-content: center;
@@ -143,9 +146,6 @@
   }
   .contactInfo {
     flex-direction: column;
-  }
-  .support {
-    display: flex;
   }
   .line {
     display: none;
