@@ -24,6 +24,7 @@
 .reviewPost:hover {
   transition: all 0.5s ease-in-out;
   transform: scale(1.03);
+  cursor: pointer;
 }
 .bump {
   width: 100%;

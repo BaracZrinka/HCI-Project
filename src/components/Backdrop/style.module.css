@@ -75,6 +75,9 @@
   margin-bottom: 0%;
   margin-top: 20px;
 }
+.ingredients{
+  text-align: justify;
+}
 .commentsTitle {
   margin-left: 50px;
   margin-right: 50px;

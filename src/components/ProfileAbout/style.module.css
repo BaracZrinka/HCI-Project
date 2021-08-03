@@ -103,6 +103,7 @@ a {
   margin-top: 40px;
   font-size: 16px;
   line-height: 1.75;
+  text-align: justify;
 }
 
 @media only screen and (max-width: 930px) {

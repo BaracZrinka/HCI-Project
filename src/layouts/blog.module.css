@@ -123,6 +123,7 @@ header .button4 {
   margin: 50px;
   font-size: 18px;
   line-height: 1.75;
+  text-align: justify;
 }
 .commentButtons {
   display: flex;
