@@ -6,7 +6,7 @@ import styles from "./style.module.css"
 const ProfileImage2 = () => {
   const data = useStaticQuery(graphql`
     query {
-      myImage: file(relativePath: { eq: "male.png" }) {
+      myImage: file(relativePath: { eq: "commentPic2.png" }) {
         childImageSharp {
           fixed(width: 50) {
             ...GatsbyImageSharpFixed

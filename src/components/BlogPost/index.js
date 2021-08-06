@@ -2,8 +2,9 @@ import React from 'react'
 import styles from './style.module.css'
 import BlogRating from '../Images/BlogRating'
 import BlogPostBody from '../BlogPostBody'
-import ProfileImage1 from '../Images/ProfileImage1'
-import ProfileImage2 from '../Images/ProfileImage2'
+import ProfileImage1 from '../Images/commentPic1'
+import ProfileImage2 from '../Images/commentPic2'
+import ProfileImage3 from '../Images/commentPic3'
 import CommentSection from '../CommentSection'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faBookmark } from '@fortawesome/free-regular-svg-icons'
@@ -70,7 +71,7 @@ const BlogPost = ({image, title}) => (
     <div className = {styles.commentBody}>
         <CommentSection profileImage = {<ProfileImage1/>} userName = {user1} comment = {FirstCom}/>
         <CommentSection profileImage = {<ProfileImage2/>} userName = {user2} comment = {SecondCom}/>
-        <CommentSection profileImage = {<ProfileImage1/>} userName = {user3} comment = {ThirdCom}/>
+        <CommentSection profileImage = {<ProfileImage3/>} userName = {user3} comment = {ThirdCom}/>
     <div className={styles.readmore}>
         <button className = {styles.readMoreButton}>Read more</button>
     </div>

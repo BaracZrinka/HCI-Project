@@ -1,12 +1,12 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import styles from './style.module.css'
+import styles from "./style.module.css"
 
-const ProfileImage1 = () => {
+const ProfileImage3 = () => {
   const data = useStaticQuery(graphql`
     query {
-      myImage: file(relativePath: { eq: "commentPic1.png" }) {
+      myImage: file(relativePath: { eq: "commentPic3.png" }) {
         childImageSharp {
           fixed(width: 50) {
             ...GatsbyImageSharpFixed
@@ -20,4 +20,4 @@ const ProfileImage1 = () => {
   )
 }
 
-export default ProfileImage1
+export default ProfileImage3

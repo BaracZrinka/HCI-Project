@@ -3,8 +3,10 @@ import { renderRichText } from "gatsby-source-contentful/rich-text"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
 import BlogPostBody from "../../src/components/BlogPostBody"
+import ProfileNav from "../components/Images/ProfileNav"
 import ProfileImage1 from "../components/Images/ProfileImage1"
 import ProfileImage2 from "../components/Images/ProfileImage2"
+import ProfileImage3 from "../components/Images/ProfileImage3"
 import CommentSection from "../components/CommentSection"
 import BlogRating from "../components/Images/BlogRating"
 //import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -71,7 +73,7 @@ const ProfilePost = ({ pageContext }) => {
             </div>
           </section>
           <BlogPostBody
-            profileImage={<ProfileImage1 />}
+            profileImage={<ProfileNav />}
             userAcc={userAcc}
             tags={tags}
           />
@@ -115,7 +117,7 @@ const ProfilePost = ({ pageContext }) => {
               comment={SecondCom}
             />
             <CommentSection
-              profileImage={<ProfileImage1 />}
+              profileImage={<ProfileImage3 />}
               userName={user3}
               comment={ThirdCom}
             />

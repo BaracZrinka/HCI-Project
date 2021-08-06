@@ -7,7 +7,7 @@ import styles from "./style.module.css"
 const ProfileNav = ({prop}) => {
   const data = useStaticQuery(graphql`
     query {
-      desktop: file(relativePath: { eq: "profilePicture.jpg" }) {
+      desktop: file(relativePath: { eq: "profilePic.png" }) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 800) {
             ...GatsbyImageSharpFluid_withWebp

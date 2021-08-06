@@ -8,6 +8,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import ProfileImage1 from "../Images/ProfileImage1"
 import ProfileImage2 from "../Images/ProfileImage2"
+import ProfileImage3 from "../Images/ProfileImage3"
 import CommentSection from "../CommentSection"
 import styles from "./style.module.css"
 library.add(
@@ -92,7 +93,7 @@ const Backdrop = props => {
           comment={SecondCom}
         />
         <CommentSection
-          profileImage={<ProfileImage1 />}
+          profileImage={<ProfileImage3 />}
           userName={user3}
           comment={ThirdCom}
         />

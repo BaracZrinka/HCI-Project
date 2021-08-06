@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Navigation from "../Navigation"
 import Logo from "../Logo"
-import ProfileImage1 from "../Images/ProfileImage1"
+import PILoggedOut from "../Images/PILoggedOut"
 import ProfileNav from "../Images/ProfileNav"
 import styles from "./style.module.css"
 import { myLocalStorage } from "../../helper"
@@ -140,7 +140,7 @@ const NavigationHeader = ({ activeTab }) => {
           {hamburger}
         </button>
         <div className={styles.profileNav}>
-          {pic ? <ProfileNav prop={pic} /> : <ProfileImage1 />}
+          {pic ? <ProfileNav prop={pic} /> : <PILoggedOut />}
         </div>
       </section>
     </div>
