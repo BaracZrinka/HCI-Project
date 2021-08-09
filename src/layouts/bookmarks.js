@@ -73,7 +73,7 @@ const BookmarkPost = ({ pageContext }) => {
             </div>
           </section>
           <BlogPostBody
-            profileImage={<ProfileNav />}
+            profileImage={<ProfileNav prop = {userAcc}/>}
             userAcc={userAcc}
             tags={tags}
             authorsName={authorsName}

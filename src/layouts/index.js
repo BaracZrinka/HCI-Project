@@ -85,7 +85,7 @@ const HottestSectionPost = ({ pageContext }) => {
             </div>
           </section>
           <BlogPostBody
-            profileImage={<ProfileNav />}
+            profileImage={<ProfileNav prop = {userAcc}/>}
             authorsName={authorsName}
             tags={tags}
             userAcc={userAcc}

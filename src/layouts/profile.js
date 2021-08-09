@@ -73,9 +73,10 @@ const ProfilePost = ({ pageContext }) => {
             </div>
           </section>
           <BlogPostBody
-            profileImage={<ProfileNav />}
-            userAcc={userAcc}
+            profileImage={<ProfileNav prop = {userAcc}/>}
+            authorsName = {userAcc}
             tags={tags}
+            userAcc={userAcc}
           />
 
           <article>{renderRichText(body)}</article>
