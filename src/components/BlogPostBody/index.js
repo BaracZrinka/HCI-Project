@@ -14,7 +14,6 @@ const BlogPostBody = ({ profileImage, authorsName, text, tags, userAcc }) => {
     myLocalStorage.setItem("owner", property)
   }
   
-  console.log(text);
   let randomPic = [ <ProfileImage1/>,<ProfileImage2/>,< ProfileImage3/>];
   let randomValue = Math.floor(Math.random() * 3) + 0;
 

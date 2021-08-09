@@ -31,7 +31,6 @@ const AddNewFeed = () => {
 
   const onDateChange = newDate => {
     setDate(newDate)
-    console.log(newDate)
   }
 
   let isValid = () => {

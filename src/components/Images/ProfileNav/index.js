@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import styles from "./style.module.css"
 
 const ProfileNav = ({prop}) => {
-  console.log(prop)
+  
   const data = useStaticQuery(graphql`
     query {
       desktop: file(relativePath: { eq: "profilePic.png" }) {

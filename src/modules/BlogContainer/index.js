@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBookmark } from "@fortawesome/free-regular-svg-icons"
 import { faSearch } from "@fortawesome/free-solid-svg-icons"
 import { library } from "@fortawesome/fontawesome-svg-core"
-import { GenIcon } from "react-icons"
+
 
 library.add(
   faBookmark
@@ -88,7 +88,6 @@ const BlogContainer = ({ tags }) => {
   )
 
   if (tags) {
-    //console.log("exist")
     let check = 0
 
     filtered = data.allContentfulBlogFeed.nodes.map(node => {

@@ -66,6 +66,4 @@ const About = () => (
 )
 
 export default About
-/*<form action="http://localhost:8000/signup">
-         <button type="submit">Create an account</button>
-    </form>*/
+

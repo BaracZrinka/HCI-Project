@@ -30,7 +30,6 @@ const Backdrop = props => {
 
   const change = () => {
     setButton(true)
-    console.log("changed")
   }
 
   let spinner = (

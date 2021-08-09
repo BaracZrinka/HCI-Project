@@ -39,6 +39,7 @@ const ProfilePost = ({ pageContext }) => {
   }
   let userAcc = myLocalStorage.getItem("loggedIn")
 
+
   return (
     <HeaderFooterLayout>
       <main className={styles.container}>

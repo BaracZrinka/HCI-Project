@@ -39,18 +39,6 @@ const HottestSectionPost = ({ pageContext }) => {
   }
   const { body, title, coverImage, next, prev, authorsName, tags } = pageContext
 
-  /* const setArray = descr => {
-    console.log("hottest"+descr)
-    myLocalStorage.setItem(title, descr);
-    setCheck(true)
-  }
- 
-    
-  const removeArray = property => {  
-    myLocalStorage.removeItem(property)
-   setCheck(false)
-  }*/
-
   return (
     <HeaderFooterLayout>
       <main className={styles.container}>
