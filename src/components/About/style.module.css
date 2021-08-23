@@ -70,6 +70,7 @@
 }
 .joinSection {
   grid-area: join;
+  display:inline-flex;
 
   padding-left: 10%;
   padding-right: 10%;
@@ -84,7 +85,6 @@
   opacity: 01;
 }
 .question {
-  display: flex;
   font-size: 32px;
   letter-spacing: 1.3px;
   line-height: 1.4;
@@ -93,7 +93,7 @@
   text-shadow: 0 0 15px black;
 }
 .buttonDiv {
-  display: flex;
+
   align-content: center;
   align-self: center;
 }
