@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import Navigation from "../Navigation"
-import Logo from "../Logo"
+
 import PILoggedOut from "../Images/PILoggedOut"
 import ProfileNav from "../Images/ProfileNav"
 import styles from "./style.module.css"
@@ -9,6 +9,8 @@ import { FiMenu } from "react-icons/fi"
 import { IoClose } from "react-icons/io5"
 import { Link } from "gatsby"
 import { navs as navTabs } from "../../constants/const"
+import LogoImage from "../Images/LogoImage"
+
 
 //import { colors } from "react-select/src/theme"
 
@@ -130,9 +132,20 @@ const NavigationHeader = ({ activeTab }) => {
   return (
     <div className={styles.container}>
       <section className={styles.navigationHeader}>
-        <div className={styles.logo}>
-          <Logo />
+
+        <div className={styles.logo1}>
+          <div className={styles.div1}>
+            <Link to={"/"}>
+              <LogoImage />
+            </Link>
+          </div>
+          <div className={styles.div2}>
+            <Link to={"/"}>
+              <span className={styles.logoText}>BeBIO</span>
+            </Link>
+          </div>
         </div>
+
         <div className={styles.navigation}>
           <Navigation activeTab={activeTab} />
         </div>
@@ -140,7 +153,15 @@ const NavigationHeader = ({ activeTab }) => {
           {hamburger}
         </button>
         <div className={styles.profileNav}>
-          {pic ? <Link to = {"/profile"}><ProfileNav prop={pic} /> </Link>: <Link to = {`/login`}><PILoggedOut /> </Link>}
+          {pic ? (
+            <Link to={"/profile"}>
+              <ProfileNav prop={pic} />{" "}
+            </Link>
+          ) : (
+            <Link to={`/login`}>
+              <PILoggedOut />{" "}
+            </Link>
+          )}
         </div>
       </section>
     </div>

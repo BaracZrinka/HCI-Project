@@ -14,10 +14,10 @@
   grid-column-end: 3;
   height: 80px;
   display: grid;
-  grid-template-columns: 20% 74% 6%;
+  grid-template-columns: 25% 69% 6%;
   grid-template-rows: 1fr;
 }
-.navigationHeader > .logo {
+.navigationHeader > .logo1 {
   grid-column-start: 1;
 }
 .navigation {
@@ -33,9 +33,7 @@
   justify-self: flex-end;
   align-self: center;
 }
-.logo {
-  display: flex;
-}
+
 .hamburger {
   display: none;
   border: transparent;
@@ -56,6 +54,25 @@
   animation: animateToggle 0.2s ease-in-out;
   margin-top: 0px;
 }
+.logo1 {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 1fr;
+  align-items: center;
+}
+.div1 {
+  grid-column-start: 1;
+}
+.div2 {
+  grid-column-start: 2;
+  justify-self: start;
+}
+.logoText {
+  font-size: 40px;
+  font-weight: bolder;
+  color: #696f45;
+}
+
 @keyframes animateToggle {
   0% {
     opacity: 0;
@@ -70,7 +87,7 @@
 .top {
   font-size: 50px;
 }
-@media only screen and (max-width: 1030px) {
+@media only screen and (max-width: 1050px) {
   .hamburger {
     display: inline-block;
     opacity: 1;
@@ -78,15 +95,23 @@
     justify-content: flex-end;
     align-items: center;
   }
+  .navigationHeader {
+    grid-template-columns: 30% 64% 6%;
+  }
   .navigation {
     display: none;
   }
 }
 @media only screen and (max-width: 930px) {
-  .logo {
+  .logo1 {
     margin-left: -45px;
   }
   .profileNav {
     margin-right: -45px;
+  }
+}
+@media only screen and (max-width: 730px) {
+  .logoText {
+    display: none;
   }
 }

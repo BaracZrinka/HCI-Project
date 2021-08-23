@@ -70,7 +70,6 @@
 }
 .joinSection {
   grid-area: join;
-  display: flex;
 
   padding-left: 10%;
   padding-right: 10%;
