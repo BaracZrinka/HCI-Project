@@ -62,11 +62,13 @@
 }
 .heading {
   grid-row: 1/2;
-  display: flex;
-  justify-content: space-between;
+  display:grid;
+  grid-template-columns: 133px auto 24px;
+  grid-template-areas: "name . bookmark";
   margin-top: 60px;
 }
 .nameAndEdit {
+  grid-area: name;
   display: flex;
 }
 .username {
@@ -77,9 +79,7 @@
   font-weight: normal;
 }
 .editDiv {
-  display: flex;
-  align-self: center;
-  margin-top: 30px;
+  margin-top: 5px;
   transition: transform 0.2s;
   cursor: pointer;
 }
@@ -88,6 +88,7 @@
   transform: scale(1.2);
 }
 .bookmarkDiv {
+  grid-area: bookmark;
   margin-top: 5px;
   transition: transform 0.2s;
 }
@@ -116,7 +117,7 @@ a {
   .num2 {
     font-size: 18px;
   }
-  .secondDiv{
+  .secondDiv {
     margin-left: 20px;
   }
 }
@@ -169,7 +170,10 @@ a {
       "label2";
     margin-top: 20px;
   }
-  .secondDiv{
+  .secondDiv {
     margin-left: 10px;
+  }
+  .editDiv{
+    margin-top:7px;
   }
 }
