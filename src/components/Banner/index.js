@@ -13,20 +13,20 @@ const Banner = () => {
           is possible and easy with a community that<br></br> shares and cares!
         </div>
       </div>
-      <section className={styles.section}>
-        <div className={styles.buttonDiv}>
+      <div className={styles.section}>
+        <div className={styles.buttonDiv1}>
           <Link to={"/signup"}>
             <button className={styles.button1}>Join our community</button>
           </Link>
         </div>
-        <div className={styles.buttonDiv}>
+        <div className={styles.buttonDiv2}>
           <Link to={"/blog"}>
             <button className={styles.button2}>
               Explore without an account
             </button>
           </Link>
         </div>
-      </section>
+      </div>
     </div>
   )
 }

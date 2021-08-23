@@ -42,11 +42,11 @@ const About = () => (
       <div className={styles.question}>
         Like what you hear? Agree or disagree? Join BeBIO and share your
         thoughts!
-      </div>
-      <div className={styles.buttonDiv}>
-        <Link to={"/signup"}>
-          <button className={styles.button}>Create an account</button>
-        </Link>
+        <div className={styles.buttonDiv}>
+          <Link to={"/signup"}>
+            <button className={styles.button}>Create an account</button>
+          </Link>
+        </div>
       </div>
     </div>
 

@@ -85,6 +85,7 @@
   opacity: 01;
 }
 .question {
+  display: flex;
   font-size: 32px;
   letter-spacing: 1.3px;
   line-height: 1.4;
@@ -172,7 +173,7 @@
     margin-bottom: 50px;
   }
   .buttonDiv {
-    align-self: flex-end;
+    align-self: center;
   }
   .button {
     font-size: 18px;

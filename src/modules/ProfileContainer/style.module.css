@@ -67,12 +67,10 @@
 .con {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .buttonPosition {
-  display: flex;
-  align-self: center;
-
   transition: transform 0.2s;
 }
 .button1 {
