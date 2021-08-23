@@ -165,7 +165,7 @@ const BlogFeed = ({ pageContext }) => {
       </main>
 
       <div className={styles.links}>
-        <a href="http://localhost:8000/blog">&#8592; Go back to blog feed</a>
+      <Link to = {"/blog"}>&#8592; Go back to blog feed </Link>
       </div>
     </HeaderFooterLayout>
   )

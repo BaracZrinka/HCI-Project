@@ -2,6 +2,7 @@ import React from "react"
 import styles from "./style.module.css"
 import AboutImg1 from "../Images/AboutImg1"
 import AboutImg2 from "../Images/AboutImg2"
+import { Link } from "gatsby"
 
 const About = () => (
   <div className={styles.container}>
@@ -13,9 +14,7 @@ const About = () => (
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
         commodo consequat."
         <div className={styles.links}>
-          <a href="http://localhost:8000/review">
-            Read more about ingredients &#8594;
-          </a>
+          <Link to={"/review"}>Read more about ingredients &#8594;</Link>
         </div>
       </div>
 
@@ -34,9 +33,7 @@ const About = () => (
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
         laboris nisi ut aliquip ex ea commodo consequat."
         <div className={styles.links}>
-          <a href="http://localhost:8000/blog">
-            Read more about sustainability &#8594;
-          </a>
+          <Link to={"/blog"}>Read more about sustainability &#8594;</Link>
         </div>
       </div>
     </div>
@@ -47,9 +44,9 @@ const About = () => (
         thoughts!
       </div>
       <div className={styles.buttonDiv}>
-        <a href="http://localhost:8000/signup">
+        <Link to={"/signup"}>
           <button className={styles.button}>Create an account</button>
-        </a>
+        </Link>
       </div>
     </div>
 
@@ -66,4 +63,3 @@ const About = () => (
 )
 
 export default About
-

@@ -1,5 +1,6 @@
 import React from "react"
 import styles from "./style.module.css"
+import {Link} from "gatsby"
 
 const Page404 = () => (
   <div className={styles.background}>
@@ -10,9 +11,9 @@ const Page404 = () => (
       </div>
 
       <div className={styles.buttondiv}>
-        <a href="http://localhost:8000">
+        <Link to={"/"}>
           <button className={styles.button}>Return to Home</button>
-        </a>
+        </Link>
       </div>
 
       <div className={styles.area}>

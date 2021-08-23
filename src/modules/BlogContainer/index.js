@@ -150,9 +150,9 @@ const BlogContainer = ({ tags }) => {
               </div>
             </div>
             <div className={styles.links}>
-              <a href="http://localhost:8000/blog">
+             <Link to = {"/blog"}>
                 &#8592; Go back to blog feed
-              </a>
+              </Link>
             </div>
           </div>
         </>

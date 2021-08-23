@@ -14,7 +14,7 @@ const AddNewFeed = () => {
   const change = property => {
     setCount(count + 1)
     setButton(true)
-    if (property) {
+    if (property == "calendar") {
       setCalendar(
         <Calendar
           onChange={onDateChange}

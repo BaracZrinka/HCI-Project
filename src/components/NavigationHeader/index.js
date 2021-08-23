@@ -140,7 +140,7 @@ const NavigationHeader = ({ activeTab }) => {
           {hamburger}
         </button>
         <div className={styles.profileNav}>
-          {pic ? <ProfileNav prop={pic} /> : <Link to = {`/login`}><PILoggedOut /> </Link>}
+          {pic ? <Link to = {"/profile"}><ProfileNav prop={pic} /> </Link>: <Link to = {`/login`}><PILoggedOut /> </Link>}
         </div>
       </section>
     </div>

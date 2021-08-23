@@ -1,18 +1,19 @@
 import React from "react"
 import styles from "./style.module.css"
 import LogoImage from "../Images/LogoImage"
+import { Link } from "gatsby"
 
 const Logo = () => (
   <section className={styles.logo1}>
     <div className={styles.divs}>
-      <a href="http://localhost:8000">
+      <Link to={"/"}>
         <LogoImage />
-      </a>
+      </Link>
     </div>
     <div className={styles.divs}>
-      <a href="http://localhost:8000">
+      <Link to={"/"}>
         <span className={styles.logoText}>BeBIO</span>
-      </a>
+      </Link>
     </div>
   </section>
 )

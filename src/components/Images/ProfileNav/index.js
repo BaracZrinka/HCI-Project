@@ -24,6 +24,7 @@ const ProfileNav = ({prop}) => {
       className={prop? styles.fluid : styles.titleImage}
       fluid={data.desktop.childImageSharp.fluid}
     ></Img>
+   
   )
 }
 export default ProfileNav

@@ -129,7 +129,7 @@ const HottestSectionPost = ({ pageContext }) => {
       </main>
 
       <div className={styles.links}>
-        <a href="http://localhost:8000">&#8592; Go back to homepage</a>
+      <Link to = {"/"}>&#8592; Go back to homepage </Link>
       </div>
     </HeaderFooterLayout>
   )

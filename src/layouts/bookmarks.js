@@ -130,7 +130,7 @@ const BookmarkPost = ({ pageContext }) => {
       </main>
 
       <div className={styles.links}>
-        <a href="http://localhost:8000/bookmarks">&#8592; Go back to bookmarks</a>
+      <Link to = {"/bookmarks"}>&#8592; Go back to bookmarks </Link>
       </div>
     </HeaderFooterLayout>
   )

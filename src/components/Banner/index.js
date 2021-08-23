@@ -1,8 +1,6 @@
 import React from "react"
-//import { useStaticQuery, graphql } from "gatsby"
-//import BackgroundImage from "gatsby-background-image"
 import styles from "./style.module.css"
-//import banner from "../../images/banner.jpg"
+import { Link } from "gatsby"
 
 const Banner = () => {
   return (
@@ -17,16 +15,16 @@ const Banner = () => {
       </div>
       <section className={styles.section}>
         <div className={styles.buttonDiv}>
-          <a href="http://localhost:8000/signup">
+          <Link to={"/signup"}>
             <button className={styles.button1}>Join our community</button>
-          </a>
+          </Link>
         </div>
         <div className={styles.buttonDiv}>
-          <a href="http://localhost:8000/blog">
+          <Link to={"/blog"}>
             <button className={styles.button2}>
               Explore without an account
             </button>
-          </a>
+          </Link>
         </div>
       </section>
     </div>

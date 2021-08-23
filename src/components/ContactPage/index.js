@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styles from "./style.module.css"
 import Envelope from "../Images/Envelope"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -8,7 +8,13 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons"
 
-const ContactPage = ({ activeTab }) => (
+const ContactPage = ({ activeTab }) => {
+
+  const [submit, setSubmit] = useState(false)
+  const [count, setCount] = useState (0)
+  console.log(count);
+  return(
+
   <div className={styles.container}>
     <div className={styles.question}>Have some questions?</div>
 
@@ -31,7 +37,7 @@ const ContactPage = ({ activeTab }) => (
         </a>
       </nav>
     </div>
-
+    
     <div className={styles.body}>
       <div className={styles.envelopeContainer}>
         <Envelope />
@@ -40,6 +46,7 @@ const ContactPage = ({ activeTab }) => (
       <div className={styles.forms}>
         <div className={styles.text}>
           <textarea
+            onClickCapture = {() =>setCount(count+1)}
             placeholder="Name"
             maxLength="160"
             className={styles.textarea2}
@@ -47,6 +54,7 @@ const ContactPage = ({ activeTab }) => (
         </div>
         <div className={styles.text}>
           <textarea
+            onClickCapture = {() =>setCount(count+1)}
             placeholder="Your email"
             maxLength="160"
             className={styles.textarea2}
@@ -54,6 +62,7 @@ const ContactPage = ({ activeTab }) => (
         </div>
         <div className={styles.text}>
           <textarea
+            onClickCapture = {() =>setCount(count+1)}
             placeholder="Your questions..."
             maxLength="460"
             rows="6"
@@ -61,8 +70,9 @@ const ContactPage = ({ activeTab }) => (
           ></textarea>
         </div>
         <div className={styles.buttonContainer}>
-          <button className={styles.button}>Submit</button>
+          <button className={styles.button} onClick = {() => setSubmit(true)}>Submit</button>
         </div>
+        {submit? (count == 3 ?<span className = {styles.msg}>Your&nbsp;question&nbsp;is&nbsp;succesfully&nbsp;sent!</span> : <span className = {styles.msg1}>All fields must be filled!</span>) : ""}
       </div>
     </div>
 
@@ -76,5 +86,6 @@ const ContactPage = ({ activeTab }) => (
       </svg>
     </div>
   </div>
-)
+  )
+}
 export default ContactPage

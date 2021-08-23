@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { navigate } from "gatsby"
+import { navigate, Link } from "gatsby"
 import styles from "./style.module.css"
 import { myLocalStorage } from "../../helper"
 //import { faChessBishop } from "@fortawesome/free-solid-svg-icons"
@@ -75,7 +75,7 @@ const LogInPage = () => {
       </section>
       <span className={styles.spanclass}>
         Don't have an account?&nbsp;
-        <a href="http://localhost:8000/signup">Sign up</a>
+        <Link to = {"/signup"}>Sign up </Link>
       </span>
 
       <div className={styles.area}>
